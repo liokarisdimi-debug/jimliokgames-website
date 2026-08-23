@@ -1,0 +1,391 @@
+/* =========================================================
+   JIMLIOK GAMES — EXTRA CSS
+   ========================================================= */
+
+/* Smooth selection */
+::selection {
+    background: #7c3cff;
+    color: white;
+}
+
+/* Header glow */
+header {
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, .25);
+}
+
+/* Logo animation */
+.logo-icon {
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(124, 60, 255, .35);
+    } 
+
+    50% {
+        box-shadow:
+            0 0 45px rgba(37, 99, 255, .75);
+    }
+}
+
+/* Hero background lights */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: .18;
+
+    pointer-events: none;
+}
+
+.hero::before {
+    top: 150px;
+    left: -150px;
+    background: #7c3cff;
+}
+
+.hero::after {
+    right: -150px;
+    bottom: 0;
+    background: #2563ff;
+}
+
+/* Hero title */
+.hero h1 {
+    text-shadow:
+        0 0 35px rgba(124, 60, 255, .12);
+}
+
+/* Buttons */
+.primary-button,
+.secondary-button,
+.discord-button,
+.game-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-button::before,
+.discord-button::before,
+.game-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.25),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: .6s;
+}
+
+.primary-button:hover::before,
+.discord-button:hover::before,
+.game-button:hover::before {
+    left: 130%;
+}
+
+/* Stats cards */
+.stat {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.stat::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -45px;
+    bottom: -45px;
+
+    border-radius: 50%;
+
+    background: #7c3cff;
+
+    filter: blur(45px);
+
+    opacity: .15;
+}
+
+.stat:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(124, 60, 255, .55);
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, .25);
+}
+
+/* Game cards */
+.game {
+    position: relative;
+}
+
+.game::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: var(--radius);
+
+    padding: 1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 40%,
+            rgba(124,60,255,.45),
+            transparent 70%
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    opacity: 0;
+
+    transition: opacity .3s;
+
+    pointer-events: none;
+}
+
+.game:hover::before {
+    opacity: 1;
+}
+
+.game-image {
+    position: relative;
+
+    overflow: hidden;
+
+    transition: transform .5s ease;
+}
+
+.game:hover .game-image {
+    transform: scale(1.03);
+}
+
+/* Game image shine */
+.game-image::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.12),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: .7s;
+}
+
+.game:hover .game-image::after {
+    left: 130%;
+}
+
+/* Ranking */
+.ranking-item {
+    transition:
+        transform .25s,
+        background .25s;
+}
+
+.ranking-item:hover {
+    transform: translateX(5px);
+
+    background:
+        rgba(124,60,255,.10);
+}
+
+/* News cards */
+.news-card {
+    transition:
+        transform .3s,
+        border-color .3s,
+        box-shadow .3s;
+}
+
+.news-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(124,60,255,.45);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+}
+
+/* CTA */
+.cta {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    top: -130px;
+    left: 10%;
+
+    border-radius: 50%;
+
+    background: #7c3cff;
+
+    filter: blur(90px);
+
+    opacity: .15;
+}
+
+.cta::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: 5%;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: #2563ff;
+
+    filter: blur(90px);
+
+    opacity: .15;
+}
+
+/* Keep CTA content above effects */
+.cta > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Live indicator */
+.live {
+    animation:
+        livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .55;
+    }
+}
+
+/* Footer links */
+footer a {
+    transition:
+        color .2s,
+        transform .2s;
+}
+
+footer a:hover {
+    color: white;
+
+    transform:
+        translateX(4px);
+}
+
+/* Mobile improvements */
+@media (max-width: 600px) {
+
+    header {
+        height: 64px;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .game:hover {
+        transform: translateY(-4px);
+    }
+
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+}
