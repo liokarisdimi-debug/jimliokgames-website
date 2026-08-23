@@ -20,11 +20,10 @@
     >
 
     <style>
-
         :root {
             --bg: #03040b;
             --bg2: #070916;
-            --panel: rgba(12, 15, 32, .92);
+            --panel: rgba(12,15,32,.92);
 
             --purple: #7c3cff;
             --purple2: #a855f7;
@@ -38,7 +37,6 @@
             --green: #22c55e;
 
             --border: rgba(255,255,255,.10);
-
             --radius: 18px;
         }
 
@@ -85,12 +83,10 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background:
-                linear-gradient(
-                    var(--purple),
-                    var(--blue)
-                );
-
+            background: linear-gradient(
+                var(--purple),
+                var(--blue)
+            );
             border-radius: 20px;
         }
 
@@ -105,25 +101,19 @@
             z-index: 1000;
 
             background: rgba(2,3,10,.78);
-
             backdrop-filter: blur(20px);
 
-            border-bottom:
-                1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
         .header-inner {
             width: 94%;
             max-width: 1500px;
-
             height: 100%;
-
             margin: auto;
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
         }
 
@@ -134,7 +124,6 @@
 
             font-size: 18px;
             font-weight: 900;
-
             letter-spacing: 1px;
         }
 
@@ -155,10 +144,21 @@
                 );
 
             box-shadow:
-                0 0 30px
-                rgba(124,60,255,.45);
+                0 0 30px rgba(124,60,255,.45);
 
             font-size: 13px;
+
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0%,100% {
+                box-shadow: 0 0 20px rgba(124,60,255,.35);
+            }
+
+            50% {
+                box-shadow: 0 0 45px rgba(124,60,255,.75);
+            }
         }
 
         .logo span {
@@ -173,10 +173,8 @@
 
         nav a {
             color: #cbd5e1;
-
             font-size: 12px;
             font-weight: 700;
-
             transition: .25s;
         }
 
@@ -189,9 +187,7 @@
         .secondary-button,
         .game-button {
             cursor: pointer;
-
             font-weight: 800;
-
             transition: .25s;
         }
 
@@ -210,6 +206,9 @@
                     #5865f2,
                     var(--purple)
                 );
+
+            box-shadow:
+                0 0 20px rgba(88,101,242,.20);
         }
 
         .discord-button:hover,
@@ -225,21 +224,16 @@
             padding-top: 72px;
 
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             align-items: center;
 
             position: relative;
-
             overflow: hidden;
         }
 
         .hero-background {
             position: absolute;
-
             inset: 72px 0 0 0;
-
             z-index: -2;
 
             background:
@@ -263,7 +257,6 @@
             color: var(--purple2);
 
             font-size: 13px;
-
             font-weight: 800;
 
             letter-spacing: 3px;
@@ -272,8 +265,7 @@
         }
 
         .hero h1 {
-            font-size:
-                clamp(52px,7vw,105px);
+            font-size: clamp(52px,7vw,105px);
 
             line-height: .88;
 
@@ -294,7 +286,6 @@
                 );
 
             -webkit-background-clip: text;
-
             color: transparent;
         }
 
@@ -312,9 +303,7 @@
 
         .hero-buttons {
             display: flex;
-
             gap: 14px;
-
             margin-top: 30px;
         }
 
@@ -343,22 +332,18 @@
         }
 
         .secondary-button {
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
             color: white;
 
-            background:
-                rgba(255,255,255,.05);
+            background: rgba(255,255,255,.05);
         }
 
         .hero-visual {
             height: 500px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
         }
 
@@ -377,43 +362,32 @@
                 );
 
             box-shadow:
-                0 0 120px
-                rgba(80,50,255,.30);
+                0 0 120px rgba(80,50,255,.30);
 
             animation:
                 floatOrb 6s ease-in-out infinite;
         }
 
         @keyframes floatOrb {
-
-            0% {
+            0%,100% {
                 transform: translateY(0);
             }
 
             50% {
                 transform: translateY(-20px);
             }
-
-            100% {
-                transform: translateY(0);
-            }
-
         }
 
         section {
             width: 94%;
             max-width: 1500px;
-
             margin: 90px auto;
         }
 
         .section-heading {
             display: flex;
-
             justify-content: space-between;
-
             align-items: end;
-
             margin-bottom: 25px;
         }
 
@@ -429,19 +403,14 @@
 
         .dashboard {
             margin-top: -40px;
-
             position: relative;
-
             z-index: 10;
         }
 
         .dashboard-title {
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             margin-bottom: 15px;
         }
 
@@ -452,9 +421,7 @@
 
         .live {
             color: var(--green);
-
             font-size: 11px;
-
             font-weight: 800;
         }
 
@@ -473,16 +440,12 @@
             background: var(--green);
 
             box-shadow:
-                0 0 15px
-                var(--green);
+                0 0 15px var(--green);
         }
 
         .stats {
             display: grid;
-
-            grid-template-columns:
-                repeat(4,1fr);
-
+            grid-template-columns: repeat(4,1fr);
             gap: 12px;
         }
 
@@ -491,11 +454,9 @@
 
             padding: 20px;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            border-radius:
-                var(--radius);
+            border-radius: var(--radius);
 
             background:
                 linear-gradient(
@@ -549,21 +510,16 @@
 
         .games {
             display: grid;
-
-            grid-template-columns:
-                repeat(4,1fr);
-
+            grid-template-columns: repeat(4,1fr);
             gap: 18px;
         }
 
         .game {
             overflow: hidden;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            border-radius:
-                var(--radius);
+            border-radius: var(--radius);
 
             background:
                 linear-gradient(
@@ -576,8 +532,7 @@
         }
 
         .game:hover {
-            transform:
-                translateY(-8px);
+            transform: translateY(-8px);
 
             border-color:
                 rgba(124,60,255,.65);
@@ -590,9 +545,7 @@
             height: 220px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             text-align: center;
@@ -600,7 +553,6 @@
             padding: 20px;
 
             font-size: 24px;
-
             font-weight: 900;
 
             background:
@@ -663,7 +615,6 @@
             color: var(--purple2);
 
             font-size: 10px;
-
             font-weight: 700;
         }
 
@@ -706,45 +657,34 @@
 
         .analytics {
             display: grid;
-
-            grid-template-columns:
-                1.4fr 1fr;
-
+            grid-template-columns: 1.4fr 1fr;
             gap: 18px;
         }
 
         .panel {
             padding: 22px;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            border-radius:
-                var(--radius);
+            border-radius: var(--radius);
 
-            background:
-                rgba(7,10,24,.90);
+            background: rgba(7,10,24,.90);
         }
 
         .panel h3 {
             margin-bottom: 20px;
-
             font-size: 16px;
         }
 
         .ranking {
             display: flex;
-
             flex-direction: column;
-
             gap: 15px;
         }
 
         .ranking-item {
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
 
             gap: 10px;
@@ -753,8 +693,7 @@
 
             border-radius: 10px;
 
-            background:
-                rgba(255,255,255,.035);
+            background: rgba(255,255,255,.035);
 
             font-size: 12px;
 
@@ -776,21 +715,16 @@
 
         .news {
             display: grid;
-
-            grid-template-columns:
-                repeat(3,1fr);
-
+            grid-template-columns: repeat(3,1fr);
             gap: 18px;
         }
 
         .news-card {
             padding: 23px;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            border-radius:
-                var(--radius);
+            border-radius: var(--radius);
 
             background:
                 linear-gradient(
@@ -816,7 +750,6 @@
             color: var(--purple2);
 
             font-size: 10px;
-
             font-weight: 900;
 
             letter-spacing: 1px;
@@ -824,7 +757,6 @@
 
         .news-card h3 {
             margin-top: 10px;
-
             font-size: 17px;
         }
 
@@ -844,8 +776,7 @@
             text-align: center;
 
             border:
-                1px solid
-                rgba(124,60,255,.35);
+                1px solid rgba(124,60,255,.35);
 
             border-radius: 25px;
 
@@ -862,17 +793,14 @@
         }
 
         .cta h2 {
-            font-size:
-                clamp(32px,5vw,58px);
-
+            font-size: clamp(32px,5vw,58px);
             font-weight: 900;
         }
 
         .cta p {
             max-width: 650px;
 
-            margin:
-                15px auto 25px;
+            margin: 15px auto 25px;
 
             color: var(--muted);
 
@@ -880,8 +808,7 @@
         }
 
         footer {
-            padding:
-                60px 3% 25px;
+            padding: 60px 3% 25px;
 
             border-top:
                 1px solid var(--border);
@@ -905,7 +832,6 @@
 
         footer h4 {
             margin-bottom: 15px;
-
             font-size: 13px;
         }
 
@@ -933,8 +859,7 @@
             width: 94%;
             max-width: 1500px;
 
-            margin:
-                45px auto 0;
+            margin: 45px auto 0;
 
             padding-top: 20px;
 
@@ -961,8 +886,7 @@
             }
 
             .hero-content {
-                padding:
-                    120px 7% 60px;
+                padding: 120px 7% 60px;
             }
 
             .hero-visual {
@@ -991,7 +915,6 @@
                 grid-template-columns:
                     1fr 1fr;
             }
-
         }
 
         @media (max-width:600px) {
@@ -1002,7 +925,6 @@
 
             .hero h1 {
                 font-size: 50px;
-
                 letter-spacing: -3px;
             }
 
@@ -1024,12 +946,9 @@
 
             .copyright {
                 flex-direction: column;
-
                 gap: 10px;
             }
-
         }
-
     </style>
 
     <link rel="stylesheet" href="style.css">
@@ -1186,13 +1105,25 @@
 
         <div class="stat">
             <div class="stat-label">Last Update</div>
-            <div class="stat-value" id="lastUpdate" style="font-size:16px">--</div>
+            <div
+                class="stat-value"
+                id="lastUpdate"
+                style="font-size:16px"
+            >
+                --
+            </div>
             <div class="stat-growth">AUTOMATIC</div>
         </div>
 
         <div class="stat">
             <div class="stat-label">API Status</div>
-            <div class="stat-value" id="apiStatus" style="font-size:18px">WAITING</div>
+            <div
+                class="stat-value"
+                id="apiStatus"
+                style="font-size:18px"
+            >
+                WAITING
+            </div>
             <div class="stat-growth">LIVE CONNECTION</div>
         </div>
 
@@ -1501,7 +1432,7 @@
 
         <p>
             Jimliok Games is an independent
-            game development team creating
+            game development studio creating
             original gaming experiences.
         </p>
 
@@ -1637,7 +1568,8 @@ function openDiscord() {
 
     window.open(
         "https://discord.gg/64g9dMky2",
-        "_blank"
+        "_blank",
+        "noopener,noreferrer"
     );
 
 }
@@ -1734,26 +1666,51 @@ function escapeHTML(value) {
 
 
 /* ================================
-   ROBLOX API
+   LOAD ROBLOX DATA
 ================================ */
 
 async function loadRealRobloxData() {
 
     try {
 
+        const controller =
+            new AbortController();
+
+        const timeout =
+            setTimeout(
+                () => controller.abort(),
+                15000
+            );
+
+
         const response =
             await fetch(
                 API_URL,
                 {
-                    cache: "no-store"
+                    method: "GET",
+
+                    mode: "cors",
+
+                    cache: "no-store",
+
+                    headers: {
+                        "Accept":
+                            "application/json"
+                    },
+
+                    signal:
+                        controller.signal
                 }
             );
+
+
+        clearTimeout(timeout);
 
 
         if (!response.ok) {
 
             throw new Error(
-                "API error: " +
+                "HTTP " +
                 response.status
             );
 
@@ -1858,7 +1815,8 @@ async function loadRealRobloxData() {
         document.getElementById(
             "lastUpdate"
         ).textContent =
-            new Date().toLocaleTimeString();
+            new Date()
+                .toLocaleTimeString();
 
 
         document.getElementById(
@@ -2000,7 +1958,7 @@ async function loadRealRobloxData() {
     } catch (error) {
 
         console.error(
-            "Could not load Roblox data:",
+            "Roblox API error:",
             error
         );
 
@@ -2017,13 +1975,15 @@ async function loadRealRobloxData() {
 
 
 /* ================================
-   LOAD DATA
+   START
 ================================ */
 
 loadRealRobloxData();
 
 
-/* Refresh every 60 seconds */
+/* ================================
+   AUTO REFRESH
+================================ */
 
 setInterval(
     loadRealRobloxData,
@@ -2031,15 +1991,14 @@ setInterval(
 );
 
 
-/* Console */
-
 console.log(
     "%cJIMLIOK GAMES",
     "font-size:30px;font-weight:900;color:#8b5cf6"
 );
 
 console.log(
-    "LIVE ROBLOX DASHBOARD"
+    "Roblox API:https://jimliokgames-website.onrender.com/api/games",
+    API_URL
 );
 
 </script>
