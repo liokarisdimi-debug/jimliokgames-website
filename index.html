@@ -1,957 +1,772 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Jimliok Games</title>
-
-    <meta
-        name="description"
-        content="Jimliok Games — We create worlds. You live them."
-    >
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
-
-    <style>
-        :root {
-            --bg: #03040b;
-            --bg2: #070916;
-            --panel: rgba(12,15,32,.92);
-
-            --purple: #7c3cff;
-            --purple2: #a855f7;
-            --blue: #2563ff;
-            --cyan: #00d9ff;
-
-            --white: #ffffff;
-            --text: #e5e7eb;
-            --muted: #9ca3af;
-
-            --green: #22c55e;
-
-            --border: rgba(255,255,255,.10);
-            --radius: 18px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Inter, sans-serif;
-            color: var(--white);
-
-            background:
-                radial-gradient(
-                    circle at 50% -20%,
-                    rgba(90,40,255,.30),
-                    transparent 40%
-                ),
-                var(--bg);
-
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #02030a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(
-                var(--purple),
-                var(--blue)
-            );
-            border-radius: 20px;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 72px;
-
-            z-index: 1000;
-
-            background: rgba(2,3,10,.78);
-            backdrop-filter: blur(20px);
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-inner {
-            width: 94%;
-            max-width: 1500px;
-            height: 100%;
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            font-size: 18px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 11px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--purple),
-                    var(--blue)
-                );
-
-            box-shadow:
-                0 0 30px rgba(124,60,255,.45);
-
-            font-size: 13px;
-
-            animation: logoGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes logoGlow {
-            0%,100% {
-                box-shadow: 0 0 20px rgba(124,60,255,.35);
-            }
-
-            50% {
-                box-shadow: 0 0 45px rgba(124,60,255,.75);
-            }
-        }
-
-        .logo span {
-            color: var(--purple2);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #cbd5e1;
-            font-size: 12px;
-            font-weight: 700;
-            transition: .25s;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        .discord-button,
-        .primary-button,
-        .secondary-button,
-        .game-button {
-            cursor: pointer;
-            font-weight: 800;
-            transition: .25s;
-        }
-
-        .discord-button {
-            border: none;
-
-            padding: 11px 18px;
-
-            border-radius: 10px;
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #5865f2,
-                    var(--purple)
-                );
-
-            box-shadow:
-                0 0 20px rgba(88,101,242,.20);
-        }
-
-        .discord-button:hover,
-        .primary-button:hover,
-        .secondary-button:hover,
-        .game-button:hover {
-            transform: translateY(-3px);
-        }
-
-        .hero {
-            min-height: 760px;
-
-            padding-top: 72px;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-background {
-            position: absolute;
-            inset: 72px 0 0 0;
-            z-index: -2;
-
-            background:
-                radial-gradient(
-                    circle at 70% 50%,
-                    rgba(70,40,255,.35),
-                    transparent 45%
-                ),
-                radial-gradient(
-                    circle at 30% 70%,
-                    rgba(0,160,255,.12),
-                    transparent 40%
-                );
-        }
-
-        .hero-content {
-            padding-left: 8vw;
-        }
-
-        .eyebrow {
-            color: var(--purple2);
-
-            font-size: 13px;
-            font-weight: 800;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-size: clamp(52px,7vw,105px);
-
-            line-height: .88;
-
-            letter-spacing: -6px;
-
-            font-weight: 900;
-        }
-
-        .hero h1 span {
-            display: block;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    white,
-                    #a855f7,
-                    #2563ff
-                );
-
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .hero-description {
-            max-width: 570px;
-
-            margin-top: 28px;
-
-            color: #aeb5c4;
-
-            font-size: 15px;
-
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            margin-top: 30px;
-        }
-
-        .primary-button,
-        .secondary-button {
-            display: inline-block;
-
-            padding: 14px 22px;
-
-            border-radius: 11px;
-
-            font-size: 13px;
-        }
-
-        .primary-button {
-            border: none;
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--purple),
-                    var(--blue)
-                );
-        }
-
-        .secondary-button {
-            border: 1px solid var(--border);
-
-            color: white;
-
-            background: rgba(255,255,255,.05);
-        }
-
-        .hero-visual {
-            height: 500px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .orb {
-            width: 430px;
-            height: 430px;
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(120,80,255,.32),
-                    rgba(40,80,255,.08),
-                    transparent 70%
-                );
-
-            box-shadow:
-                0 0 120px rgba(80,50,255,.30);
-
-            animation:
-                floatOrb 6s ease-in-out infinite;
-        }
-
-        @keyframes floatOrb {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        section {
-            width: 94%;
-            max-width: 1500px;
-            margin: 90px auto;
-        }
-
-        .section-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-bottom: 25px;
-        }
-
-        .section-heading h2 {
-            font-size: 30px;
-            font-weight: 900;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .dashboard {
-            margin-top: -40px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .dashboard-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-
-        .dashboard-title h2 {
-            font-size: 18px;
-            font-weight: 900;
-        }
-
-        .live {
-            color: var(--green);
-            font-size: 11px;
-            font-weight: 800;
-        }
-
-        .live::before {
-            content: "";
-
-            display: inline-block;
-
-            width: 8px;
-            height: 8px;
-
-            margin-right: 6px;
-
-            border-radius: 50%;
-
-            background: var(--green);
-
-            box-shadow:
-                0 0 15px var(--green);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 12px;
-        }
-
-        .stat {
-            min-height: 125px;
-
-            padding: 20px;
-
-            border: 1px solid var(--border);
-
-            border-radius: var(--radius);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(16,20,45,.95),
-                    rgba(6,8,20,.92)
-                );
-
-            transition: .3s;
-        }
-
-        .stat:hover {
-            transform: translateY(-6px);
-
-            border-color:
-                rgba(124,60,255,.55);
-
-            box-shadow:
-                0 15px 50px rgba(0,0,0,.25);
-        }
-
-        .stat-label {
-            color: var(--muted);
-
-            font-size: 10px;
-
-            text-transform: uppercase;
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
-        }
-
-        .stat-value {
-            margin-top: 7px;
-
-            font-size: 27px;
-
-            font-weight: 900;
-        }
-
-        .stat-growth {
-            margin-top: 7px;
-
-            color: var(--green);
-
-            font-size: 10px;
-
-            font-weight: 800;
-        }
-
-        .games {
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 18px;
-        }
-
-        .game {
-            overflow: hidden;
-
-            border: 1px solid var(--border);
-
-            border-radius: var(--radius);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(15,18,40,.95),
-                    rgba(5,7,18,.95)
-                );
-
-            transition: .3s;
-        }
-
-        .game:hover {
-            transform: translateY(-8px);
-
-            border-color:
-                rgba(124,60,255,.65);
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,.25);
-        }
-
-        .game-image {
-            height: 220px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 20px;
-
-            font-size: 24px;
-            font-weight: 900;
-
-            background:
-                radial-gradient(
-                    circle at 50% 30%,
-                    rgba(124,60,255,.65),
-                    transparent 50%
-                ),
-                #0c0e24;
-
-            transition: transform .5s ease;
-        }
-
-        .game:hover .game-image {
-            transform: scale(1.03);
-        }
-
-        .game:nth-child(2) .game-image {
-            background:
-                radial-gradient(
-                    circle at 50% 30%,
-                    rgba(255,0,170,.45),
-                    transparent 50%
-                ),
-                #100b24;
-        }
-
-        .game:nth-child(3) .game-image {
-            background:
-                radial-gradient(
-                    circle at 50% 30%,
-                    rgba(0,180,255,.45),
-                    transparent 50%
-                ),
-                #061322;
-        }
-
-        .game:nth-child(4) .game-image {
-            background:
-                radial-gradient(
-                    circle at 50% 30%,
-                    rgba(0,255,140,.35),
-                    transparent 50%
-                ),
-                #071713;
-        }
-
-        .game-content {
-            padding: 19px;
-        }
-
-        .game h3 {
-            font-size: 17px;
-            font-weight: 800;
-        }
-
-        .game-type {
-            margin-top: 5px;
-
-            color: var(--purple2);
-
-            font-size: 10px;
-            font-weight: 700;
-        }
-
-        .game-stats {
-            margin-top: 14px;
-
-            color: var(--muted);
-
-            font-size: 11px;
-
-            line-height: 1.7;
-        }
-
-        .game-button {
-            display: block;
-
-            width: 100%;
-
-            margin-top: 18px;
-
-            padding: 12px;
-
-            border: none;
-
-            border-radius: 9px;
-
-            text-align: center;
-
-            color: white;
-
-            font-size: 12px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--purple),
-                    var(--blue)
-                );
-        }
-
-        .analytics {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 18px;
-        }
-
-        .panel {
-            padding: 22px;
-
-            border: 1px solid var(--border);
-
-            border-radius: var(--radius);
-
-            background: rgba(7,10,24,.90);
-        }
-
-        .panel h3 {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        .ranking {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .ranking-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 10px;
-
-            padding: 13px;
-
-            border-radius: 10px;
-
-            background: rgba(255,255,255,.035);
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            transition: .25s;
-        }
-
-        .ranking-item:hover {
-            transform: translateX(5px);
-
-            background:
-                rgba(124,60,255,.10);
-        }
-
-        .ranking-item span {
-            color: var(--purple2);
-        }
-
-        .news {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 18px;
-        }
-
-        .news-card {
-            padding: 23px;
-
-            border: 1px solid var(--border);
-
-            border-radius: var(--radius);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(15,18,40,.90),
-                    rgba(5,7,18,.90)
-                );
-
-            transition: .3s;
-        }
-
-        .news-card:hover {
-            transform: translateY(-7px);
-
-            border-color:
-                rgba(124,60,255,.45);
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,.25);
-        }
-
-        .news-date {
-            color: var(--purple2);
-
-            font-size: 10px;
-            font-weight: 900;
-
-            letter-spacing: 1px;
-        }
-
-        .news-card h3 {
-            margin-top: 10px;
-            font-size: 17px;
-        }
-
-        .news-card p {
-            margin-top: 10px;
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-            line-height: 1.7;
-        }
-
-        .cta {
-            padding: 75px 30px;
-
-            text-align: center;
-
-            border:
-                1px solid rgba(124,60,255,.35);
-
-            border-radius: 25px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(124,60,255,.25),
-                    transparent 65%
-                ),
-                #080a18;
-
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta h2 {
-            font-size: clamp(32px,5vw,58px);
-            font-weight: 900;
-        }
-
-        .cta p {
-            max-width: 650px;
-
-            margin: 15px auto 25px;
-
-            color: var(--muted);
-
-            line-height: 1.7;
-        }
-
-        footer {
-            padding: 60px 3% 25px;
-
-            border-top:
-                1px solid var(--border);
-
-            background: #02030a;
-        }
-
-        .footer-grid {
-            width: 94%;
-            max-width: 1500px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                2fr 1fr 1fr 1fr;
-
-            gap: 40px;
-        }
-
-        footer h4 {
-            margin-bottom: 15px;
-            font-size: 13px;
-        }
-
-        footer a,
-        footer p {
-            display: block;
-
-            margin-bottom: 9px;
-
-            color: var(--muted);
-
-            font-size: 12px;
-        }
-
-        footer a {
-            transition: .2s;
-        }
-
-        footer a:hover {
-            color: white;
-            transform: translateX(4px);
-        }
-
-        .copyright {
-            width: 94%;
-            max-width: 1500px;
-
-            margin: 45px auto 0;
-
-            padding-top: 20px;
-
-            border-top:
-                1px solid var(--border);
-
-            display: flex;
-
-            justify-content: space-between;
-
-            color: #6b7280;
-
-            font-size: 10px;
-        }
-
-        @media (max-width:1100px) {
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                padding: 120px 7% 60px;
-            }
-
-            .hero-visual {
-                display: none;
-            }
-
-            .stats {
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
-
-            .games {
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
-
-            .analytics {
-                grid-template-columns: 1fr;
-            }
-
-            .news {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns:
-                    1fr 1fr;
-            }
-        }
-
-        @media (max-width:600px) {
-
-            .discord-button {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 50px;
-                letter-spacing: -3px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .games {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .copyright {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jimliok Games</title>
+
+<meta name="description"
+      content="Jimliok Games — We create worlds. You live them.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+
+<style>
+
+:root {
+    --bg: #03040b;
+    --panel: rgba(12,15,32,.92);
+    --purple: #7c3cff;
+    --purple2: #a855f7;
+    --blue: #2563ff;
+    --cyan: #00d9ff;
+    --white: #fff;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --green: #22c55e;
+    --red: #ef4444;
+    --border: rgba(255,255,255,.1);
+    --radius: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    color: var(--white);
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            rgba(90,40,255,.3),
+            transparent 40%
+        ),
+        var(--bg);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #02030a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        var(--purple),
+        var(--blue)
+    );
+    border-radius: 20px;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    z-index: 1000;
+    background: rgba(2,3,10,.78);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    width: 94%;
+    max-width: 1500px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: linear-gradient(
+        135deg,
+        var(--purple),
+        var(--blue)
+    );
+    box-shadow: 0 0 30px rgba(124,60,255,.45);
+    font-size: 13px;
+}
+
+.logo span {
+    color: var(--purple2);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.discord-button,
+.primary-button,
+.secondary-button,
+.game-button {
+    cursor: pointer;
+    font-weight: 800;
+    transition: .25s;
+}
+
+.discord-button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #5865f2,
+        var(--purple)
+    );
+}
+
+.discord-button:hover,
+.primary-button:hover,
+.secondary-button:hover,
+.game-button:hover {
+    transform: translateY(-3px);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 760px;
+    padding-top: 72px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 72px 0 0 0;
+    z-index: -2;
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(70,40,255,.35),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 30% 70%,
+            rgba(0,160,255,.12),
+            transparent 40%
+        );
+}
+
+.hero-content {
+    padding-left: 8vw;
+}
+
+.eyebrow {
+    color: var(--purple2);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(52px,7vw,105px);
+    line-height: .88;
+    letter-spacing: -6px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    display: block;
+    background: linear-gradient(
+        90deg,
+        white,
+        #a855f7,
+        #2563ff
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 570px;
+    margin-top: 28px;
+    color: #aeb5c4;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 11px;
+    font-size: 13px;
+}
+
+.primary-button {
+    border: none;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--purple),
+        var(--blue)
+    );
+}
+
+.secondary-button {
+    border: 1px solid var(--border);
+    color: white;
+    background: rgba(255,255,255,.05);
+}
+
+.hero-visual {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orb {
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(120,80,255,.32),
+            rgba(40,80,255,.08),
+            transparent 70%
+        );
+    box-shadow:
+        0 0 120px rgba(80,50,255,.3);
+    animation: floatOrb 6s ease-in-out infinite;
+}
+
+@keyframes floatOrb {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* SECTIONS */
+
+section {
+    width: 94%;
+    max-width: 1500px;
+    margin: 90px auto;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    margin-top: -40px;
+    position: relative;
+    z-index: 10;
+}
+
+.dashboard-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.dashboard-title h2 {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.live {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.live.error {
+    color: var(--red);
+}
+
+.live::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 15px currentColor;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;
+}
+
+.stat {
+    min-height: 125px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(
+        145deg,
+        rgba(16,20,45,.95),
+        rgba(6,8,20,.92)
+    );
+    transition: .3s;
+}
+
+.stat:hover {
+    transform: translateY(-6px);
+    border-color: rgba(124,60,255,.55);
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    margin-top: 7px;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.stat-growth {
+    margin-top: 7px;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* GAMES */
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.game {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(
+        145deg,
+        rgba(15,18,40,.95),
+        rgba(5,7,18,.95)
+    );
+    transition: .3s;
+}
+
+.game:hover {
+    transform: translateY(-8px);
+    border-color: rgba(124,60,255,.65);
+}
+
+.game-image {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 900;
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(124,60,255,.65),
+            transparent 50%
+        ),
+        #0c0e24;
+}
+
+.game:nth-child(2) .game-image {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255,0,170,.45),
+            transparent 50%
+        ),
+        #100b24;
+}
+
+.game:nth-child(3) .game-image {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(0,180,255,.45),
+            transparent 50%
+        ),
+        #061322;
+}
+
+.game:nth-child(4) .game-image {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(0,255,140,.35),
+            transparent 50%
+        ),
+        #071713;
+}
+
+.game-content {
+    padding: 19px;
+}
+
+.game h3 {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.game-type {
+    margin-top: 5px;
+    color: var(--purple2);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.game-stats {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.game-button {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 9px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--blue)
+    );
+}
+
+/* PANELS */
+
+.analytics {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 18px;
+}
+
+.panel {
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: rgba(7,10,24,.9);
+}
+
+.panel h3 {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 13px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.035);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ranking-item span {
+    color: var(--purple2);
+}
+
+/* NEWS */
+
+.news {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.news-card {
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(
+        145deg,
+        rgba(15,18,40,.9),
+        rgba(5,7,18,.9)
+    );
+    transition: .3s;
+}
+
+.news-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(124,60,255,.45);
+}
+
+.news-date {
+    color: var(--purple2);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.news-card h3 {
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.news-card p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* CTA */
+
+.cta {
+    padding: 75px 30px;
+    text-align: center;
+    border: 1px solid rgba(124,60,255,.35);
+    border-radius: 25px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(124,60,255,.25),
+            transparent 65%
+        ),
+        #080a18;
+}
+
+.cta h2 {
+    font-size: clamp(32px,5vw,58px);
+    font-weight: 900;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 15px auto 25px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 60px 3% 25px;
+    border-top: 1px solid var(--border);
+    background: #02030a;
+}
+
+.footer-grid {
+    width: 94%;
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+footer h4 {
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+footer a,
+footer p {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.copyright {
+    width: 94%;
+    max-width: 1500px;
+    margin: 45px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    color: #6b7280;
+    font-size: 10px;
+}
+
+/* MOBILE */
+
+@media (max-width:1100px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding: 120px 7% 60px;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .games {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .analytics {
+        grid-template-columns: 1fr;
+    }
+
+    .news {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:600px) {
+
+    .discord-button {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        letter-spacing: -3px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .games {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -959,516 +774,454 @@
 
 <header>
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <a href="#home" class="logo">
+<a href="#home" class="logo">
 
-            <div class="logo-icon">
-                JG
-            </div>
+<div class="logo-icon">JG</div>
 
-            <div>
-                JIMLIOK
-                <span>GAMES</span>
-            </div>
+<div>
+JIMLIOK <span>GAMES</span>
+</div>
 
-        </a>
+</a>
 
-        <nav>
-            <a href="#home">HOME</a>
-            <a href="#games">GAMES</a>
-            <a href="#stats">STATS</a>
-            <a href="#news">NEWS</a>
-            <a href="#about">ABOUT</a>
-            <a href="#community">COMMUNITY</a>
-        </nav>
+<nav>
+<a href="#home">HOME</a>
+<a href="#games">GAMES</a>
+<a href="#stats">STATS</a>
+<a href="#news">NEWS</a>
+<a href="#about">ABOUT</a>
+<a href="#community">COMMUNITY</a>
+</nav>
 
-        <button
-            class="discord-button"
-            onclick="openDiscord()"
-        >
-            JOIN DISCORD
-        </button>
+<button class="discord-button" onclick="openDiscord()">
+JOIN DISCORD
+</button>
 
-    </div>
+</div>
 
 </header>
-
 
 <main>
 
 <section class="hero" id="home">
 
-    <div class="hero-background"></div>
+<div class="hero-background"></div>
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="eyebrow">
-            INDEPENDENT GAME STUDIO
-        </div>
+<div class="eyebrow">
+INDEPENDENT GAME STUDIO
+</div>
 
-        <h1>
-            JIMLIOK
-            <span>GAMES</span>
-        </h1>
+<h1>
+JIMLIOK
+<span>GAMES</span>
+</h1>
 
-        <p class="hero-description">
-            We create worlds.
-            You live them.
+<p class="hero-description">
+We create worlds. You live them.
+<br><br>
+Discover the games, projects and experiences created by Jimliok Games.
+</p>
 
-            Discover the games,
-            projects and experiences
-            created by Jimliok Games.
-        </p>
+<div class="hero-buttons">
 
-        <div class="hero-buttons">
+<a href="#games" class="primary-button">
+EXPLORE GAMES →
+</a>
 
-            <a
-                href="#games"
-                class="primary-button"
-            >
-                EXPLORE GAMES →
-            </a>
+<button class="secondary-button" onclick="watchTrailer()">
+▶ WATCH TRAILER
+</button>
 
-            <button
-                class="secondary-button"
-                onclick="watchTrailer()"
-            >
-                ▶ WATCH TRAILER
-            </button>
+</div>
 
-        </div>
+</div>
 
-    </div>
-
-    <div class="hero-visual">
-        <div class="orb"></div>
-    </div>
+<div class="hero-visual">
+<div class="orb"></div>
+</div>
 
 </section>
 
 
 <section class="dashboard" id="stats">
 
-    <div class="dashboard-title">
+<div class="dashboard-title">
 
-        <h2>
-            LIVE ROBLOX STATS
-        </h2>
+<h2>LIVE ROBLOX STATS</h2>
 
-        <span
-            class="live"
-            id="connectionStatus"
-        >
-            CONNECTING
-        </span>
+<span class="live" id="connectionStatus">
+CONNECTING
+</span>
 
-    </div>
+</div>
 
-    <div class="stats">
+<div class="stats">
 
-        <div class="stat">
-            <div class="stat-label">Total Visits</div>
-            <div class="stat-value" id="visits">--</div>
-            <div class="stat-growth">REAL ROBLOX DATA</div>
-        </div>
+<div class="stat">
+<div class="stat-label">Total Visits</div>
+<div class="stat-value" id="visits">--</div>
+<div class="stat-growth">REAL ROBLOX DATA</div>
+</div>
 
-        <div class="stat">
-            <div class="stat-label">Players Now</div>
-            <div class="stat-value" id="players">--</div>
-            <div class="stat-growth">LIVE</div>
-        </div>
+<div class="stat">
+<div class="stat-label">Players Now</div>
+<div class="stat-value" id="players">--</div>
+<div class="stat-growth">LIVE</div>
+</div>
 
-        <div class="stat">
-            <div class="stat-label">Published Games</div>
-            <div class="stat-value" id="gamesCount">--</div>
-            <div class="stat-growth">ROBLOX</div>
-        </div>
+<div class="stat">
+<div class="stat-label">Published Games</div>
+<div class="stat-value" id="gamesCount">--</div>
+<div class="stat-growth">ROBLOX</div>
+</div>
 
-        <div class="stat">
-            <div class="stat-label">Total Likes</div>
-            <div class="stat-value" id="likes">--</div>
-            <div class="stat-growth">REAL DATA</div>
-        </div>
+<div class="stat">
+<div class="stat-label">Total Likes</div>
+<div class="stat-value" id="likes">--</div>
+<div class="stat-growth">REAL DATA</div>
+</div>
 
-        <div class="stat">
-            <div class="stat-label">Favorites</div>
-            <div class="stat-value" id="favorites">--</div>
-            <div class="stat-growth">REAL DATA</div>
-        </div>
+<div class="stat">
+<div class="stat-label">Favorites</div>
+<div class="stat-value" id="favorites">--</div>
+<div class="stat-growth">REAL DATA</div>
+</div>
 
-        <div class="stat">
-            <div class="stat-label">Online Now</div>
-            <div class="stat-value" id="online">--</div>
-            <div class="stat-growth">LIVE</div>
-        </div>
+<div class="stat">
+<div class="stat-label">Online Now</div>
+<div class="stat-value" id="online">--</div>
+<div class="stat-growth">LIVE</div>
+</div>
 
-        <div class="stat">
-            <div class="stat-label">Last Update</div>
-            <div
-                class="stat-value"
-                id="lastUpdate"
-                style="font-size:16px"
-            >
-                --
-            </div>
-            <div class="stat-growth">AUTOMATIC</div>
-        </div>
+<div class="stat">
+<div class="stat-label">Last Update</div>
+<div class="stat-value" id="lastUpdate" style="font-size:16px">
+--
+</div>
+<div class="stat-growth">AUTOMATIC</div>
+</div>
 
-        <div class="stat">
-            <div class="stat-label">API Status</div>
-            <div
-                class="stat-value"
-                id="apiStatus"
-                style="font-size:18px"
-            >
-                WAITING
-            </div>
-            <div class="stat-growth">LIVE CONNECTION</div>
-        </div>
+<div class="stat">
+<div class="stat-label">API Status</div>
+<div class="stat-value" id="apiStatus" style="font-size:18px">
+WAITING
+</div>
+<div class="stat-growth">LIVE CONNECTION</div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
 <section id="games">
 
-    <div class="section-heading">
+<div class="section-heading">
 
-        <div>
-            <h2>FEATURED GAMES</h2>
-            <p>Play our games on Roblox.</p>
-        </div>
+<div>
+<h2>FEATURED GAMES</h2>
+<p>Play our games on Roblox.</p>
+</div>
 
-    </div>
-
-
-    <div class="games">
-
-        <article class="game">
-
-            <div class="game-image">
-                ARMMAGEDON
-            </div>
-
-            <div class="game-content">
-
-                <h3>ARMMAGEDON</h3>
-
-                <div class="game-type">
-                    PLATFORMER • ACTION
-                </div>
-
-                <div
-                    class="game-stats"
-                    id="armmagedonStats"
-                >
-                    Loading Roblox data...
-                </div>
-
-                <a
-                    class="game-button"
-                    href="https://www.roblox.com/games/118307484925962/ARMMAGEDON"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    PLAY NOW
-                </a>
-
-            </div>
-
-        </article>
+</div>
 
 
-        <article class="game">
+<div class="games">
 
-            <div class="game-image">
-                ZOMBIE WORLD
-            </div>
+<article class="game">
 
-            <div class="game-content">
+<div class="game-image">
+ARMMAGEDON
+</div>
 
-                <h3>Zombie World</h3>
+<div class="game-content">
 
-                <div class="game-type">
-                    SURVIVAL • HORROR
-                </div>
+<h3>ARMMAGEDON</h3>
 
-                <div
-                    class="game-stats"
-                    id="zombieStats"
-                >
-                    Loading Roblox data...
-                </div>
+<div class="game-type">
+PLATFORMER • ACTION
+</div>
 
-                <a
-                    class="game-button"
-                    href="https://www.roblox.com/games/73482230314135"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    PLAY NOW
-                </a>
+<div class="game-stats" id="armmagedonStats">
+Loading Roblox data...
+</div>
 
-            </div>
+<a
+class="game-button"
+href="https://www.roblox.com/games/118307484925962/ARMMAGEDON"
+target="_blank"
+rel="noopener noreferrer">
+PLAY NOW
+</a>
 
-        </article>
+</div>
+
+</article>
 
 
-        <article class="game">
+<article class="game">
 
-            <div class="game-image">
-                LASER TAG
-            </div>
+<div class="game-image">
+ZOMBIE WORLD
+</div>
 
-            <div class="game-content">
+<div class="game-content">
 
-                <h3>Jim's Laser Tag</h3>
+<h3>Zombie World</h3>
 
-                <div class="game-type">
-                    SHOOTER • MULTIPLAYER
-                </div>
+<div class="game-type">
+SURVIVAL • HORROR
+</div>
 
-                <div
-                    class="game-stats"
-                    id="laserStats"
-                >
-                    Loading Roblox data...
-                </div>
+<div class="game-stats" id="zombieStats">
+Loading Roblox data...
+</div>
 
-                <a
-                    class="game-button"
-                    href="https://www.roblox.com/games/109370449470980"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    PLAY NOW
-                </a>
+<a
+class="game-button"
+href="https://www.roblox.com/games/73482230314135"
+target="_blank"
+rel="noopener noreferrer">
+PLAY NOW
+</a>
 
-            </div>
+</div>
 
-        </article>
+</article>
 
 
-        <article class="game">
+<article class="game">
 
-            <div class="game-image">
-                MEGA HYPER OBBY
-            </div>
+<div class="game-image">
+LASER TAG
+</div>
 
-            <div class="game-content">
+<div class="game-content">
 
-                <h3>Mega Hyper Obby</h3>
+<h3>Jim's Laser Tag</h3>
 
-                <div class="game-type">
-                    OBBY • CHALLENGE
-                </div>
+<div class="game-type">
+SHOOTER • MULTIPLAYER
+</div>
 
-                <div
-                    class="game-stats"
-                    id="obbyStats"
-                >
-                    Loading Roblox data...
-                </div>
+<div class="game-stats" id="laserStats">
+Loading Roblox data...
+</div>
 
-                <a
-                    class="game-button"
-                    href="https://www.roblox.com/games/113111954801108"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    PLAY NOW
-                </a>
+<a
+class="game-button"
+href="https://www.roblox.com/games/109370449470980"
+target="_blank"
+rel="noopener noreferrer">
+PLAY NOW
+</a>
 
-            </div>
+</div>
 
-        </article>
+</article>
 
-    </div>
+
+<article class="game">
+
+<div class="game-image">
+MEGA HYPER OBBY
+</div>
+
+<div class="game-content">
+
+<h3>Mega Hyper Obby</h3>
+
+<div class="game-type">
+OBBY • CHALLENGE
+</div>
+
+<div class="game-stats" id="obbyStats">
+Loading Roblox data...
+</div>
+
+<a
+class="game-button"
+href="https://www.roblox.com/games/113111954801108"
+target="_blank"
+rel="noopener noreferrer">
+PLAY NOW
+</a>
+
+</div>
+
+</article>
+
+</div>
 
 </section>
 
 
 <section>
 
-    <div class="analytics">
+<div class="analytics">
 
-        <div class="panel">
+<div class="panel">
 
-            <h3>GAME PERFORMANCE</h3>
+<h3>GAME PERFORMANCE</h3>
 
-            <div
-                id="gamePerformance"
-                class="ranking"
-            >
+<div id="gamePerformance" class="ranking">
 
-                <div class="ranking-item">
-                    <span>—</span>
-                    Loading...
-                    <span>—</span>
-                </div>
+<div class="ranking-item">
+<span>—</span>
+Loading...
+<span>—</span>
+</div>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
 
-        <div class="panel">
+<div class="panel">
 
-            <h3>REAL-TIME INFORMATION</h3>
+<h3>REAL-TIME INFORMATION</h3>
 
-            <div class="ranking">
+<div class="ranking">
 
-                <div class="ranking-item">
-                    Roblox API
-                    <span id="robloxApi">WAITING</span>
-                </div>
+<div class="ranking-item">
+Roblox API
+<span id="robloxApi">WAITING</span>
+</div>
 
-                <div class="ranking-item">
-                    Games
-                    <span id="gameApiCount">--</span>
-                </div>
+<div class="ranking-item">
+Games
+<span id="gameApiCount">--</span>
+</div>
 
-                <div class="ranking-item">
-                    Players
-                    <span id="playerApiCount">--</span>
-                </div>
+<div class="ranking-item">
+Players
+<span id="playerApiCount">--</span>
+</div>
 
-                <div class="ranking-item">
-                    Refresh
-                    <span>60 SEC</span>
-                </div>
+<div class="ranking-item">
+Refresh
+<span>60 SEC</span>
+</div>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
 <section id="news">
 
-    <div class="section-heading">
+<div class="section-heading">
 
-        <div>
-            <h2>LATEST NEWS</h2>
-            <p>News and updates from Jimliok Games.</p>
-        </div>
+<div>
+<h2>LATEST NEWS</h2>
+<p>News and updates from Jimliok Games.</p>
+</div>
 
-    </div>
+</div>
 
+<div class="news">
 
-    <div class="news">
+<article class="news-card">
 
-        <article class="news-card">
+<div class="news-date">
+GAME DEVELOPMENT
+</div>
 
-            <div class="news-date">
-                GAME DEVELOPMENT
-            </div>
+<h3>
+New projects are coming
+</h3>
 
-            <h3>
-                New projects are coming
-            </h3>
+<p>
+Jimliok Games continues to create new games and new gaming experiences.
+</p>
 
-            <p>
-                Jimliok Games continues to
-                create new games and new
-                gaming experiences.
-            </p>
-
-        </article>
+</article>
 
 
-        <article class="news-card">
+<article class="news-card">
 
-            <div class="news-date">
-                ARMMAGEDON
-            </div>
+<div class="news-date">
+ARMMAGEDON
+</div>
 
-            <h3>
-                Game updates
-            </h3>
+<h3>
+Game updates
+</h3>
 
-            <p>
-                New content and new
-                challenges are coming.
-            </p>
+<p>
+New content and new challenges are coming.
+</p>
 
-        </article>
+</article>
 
 
-        <article class="news-card">
+<article class="news-card">
 
-            <div class="news-date">
-                COMMUNITY
-            </div>
+<div class="news-date">
+COMMUNITY
+</div>
 
-            <h3>
-                Join the community
-            </h3>
+<h3>
+Join the community
+</h3>
 
-            <p>
-                Stay updated with the
-                latest Jimliok Games news.
-            </p>
+<p>
+Stay updated with the latest Jimliok Games news.
+</p>
 
-        </article>
+</article>
 
-    </div>
+</div>
 
 </section>
 
 
 <section id="about">
 
-    <div class="cta">
+<div class="cta">
 
-        <h2>
-            WE CREATE WORLDS.
-        </h2>
+<h2>
+WE CREATE WORLDS.
+</h2>
 
-        <p>
-            Jimliok Games is an independent
-            game development studio creating
-            original gaming experiences.
-        </p>
+<p>
+Jimliok Games is an independent game development studio creating original gaming experiences.
+</p>
 
-        <a
-            href="#games"
-            class="primary-button"
-        >
-            EXPLORE OUR GAMES
-        </a>
+<a href="#games" class="primary-button">
+EXPLORE OUR GAMES
+</a>
 
-    </div>
+</div>
 
 </section>
 
 
 <section id="community">
 
-    <div class="cta">
+<div class="cta">
 
-        <h2>
-            JOIN THE COMMUNITY
-        </h2>
+<h2>
+JOIN THE COMMUNITY
+</h2>
 
-        <p>
-            Become part of the Jimliok Games
-            community.
-        </p>
+<p>
+Become part of the Jimliok Games community.
+</p>
 
-        <button
-            class="discord-button"
-            onclick="openDiscord()"
-        >
-            JOIN DISCORD
-        </button>
+<button class="discord-button" onclick="openDiscord()">
+JOIN DISCORD
+</button>
 
-    </div>
+</div>
 
 </section>
 
@@ -1477,107 +1230,105 @@
 
 <footer>
 
-    <div class="footer-grid">
+<div class="footer-grid">
 
-        <div>
+<div>
 
-            <div class="logo">
+<div class="logo">
 
-                <div class="logo-icon">
-                    JG
-                </div>
+<div class="logo-icon">
+JG
+</div>
 
-                <div>
-                    JIMLIOK
-                    <span>GAMES</span>
-                </div>
+<div>
+JIMLIOK <span>GAMES</span>
+</div>
 
-            </div>
+</div>
 
-            <p style="margin-top:15px">
-                We create worlds.
-                You live them.
-            </p>
+<p style="margin-top:15px">
+We create worlds. You live them.
+</p>
 
-        </div>
+</div>
 
 
-        <div>
+<div>
 
-            <h4>EXPLORE</h4>
+<h4>EXPLORE</h4>
 
-            <a href="#games">Games</a>
-            <a href="#news">News</a>
-            <a href="#stats">Stats</a>
+<a href="#games">Games</a>
+<a href="#news">News</a>
+<a href="#stats">Stats</a>
 
-        </div>
-
-
-        <div>
-
-            <h4>COMPANY</h4>
-
-            <a href="#about">About</a>
-            <a href="#community">Community</a>
-
-        </div>
+</div>
 
 
-        <div>
+<div>
 
-            <h4>SUPPORT</h4>
+<h4>COMPANY</h4>
 
-            <a href="#">FAQ</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy</a>
+<a href="#about">About</a>
+<a href="#community">Community</a>
 
-        </div>
-
-    </div>
+</div>
 
 
-    <div class="copyright">
+<div>
 
-        <span>
-            © 2026 Jimliok Games.
-            All rights reserved.
-        </span>
+<h4>SUPPORT</h4>
 
-        <span>
-            Created by Jimliok Games
-            |
-            Music by Jimliok Music
-        </span>
+<a href="#">FAQ</a>
+<a href="#">Contact</a>
+<a href="#">Privacy</a>
 
-    </div>
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+<span>
+© 2026 Jimliok Games. All rights reserved.
+</span>
+
+<span>
+Created by Jimliok Games | Music by Jimliok Music
+</span>
+
+</div>
 
 </footer>
 
 
 <script>
 
+/* =========================================
+   JIMLIOK GAMES ROBLOX API
+========================================= */
+
 const API_URL =
     "https://jimliokgames-website.onrender.com/api/games";
 
 
-/* ================================
-   DISCORD
-================================ */
+console.log("JIMLIOK API SCRIPT STARTED");
+console.log("API URL:", API_URL);
+
+
+/* DISCORD */
 
 function openDiscord() {
 
     window.open(
         "https://discord.gg/64g9dMky2",
-        "_blank",
-        "noopener,noreferrer"
+        "_blank"
     );
 
 }
 
 
-/* ================================
-   TRAILER
-================================ */
+/* TRAILER */
 
 function watchTrailer() {
 
@@ -1588,9 +1339,7 @@ function watchTrailer() {
 }
 
 
-/* ================================
-   NUMBER FORMAT
-================================ */
+/* NUMBER FORMAT */
 
 function formatNumber(number) {
 
@@ -1600,9 +1349,7 @@ function formatNumber(number) {
 }
 
 
-/* ================================
-   CONNECTION STATUS
-================================ */
+/* CONNECTION STATUS */
 
 function setConnectionStatus(connected) {
 
@@ -1624,94 +1371,59 @@ function setConnectionStatus(connected) {
 
     if (connected) {
 
-        status.textContent =
-            "LIVE";
+        status.textContent = "LIVE";
+        status.classList.remove("error");
 
-        apiStatus.textContent =
-            "ONLINE";
+        apiStatus.textContent = "ONLINE";
 
-        robloxApi.textContent =
-            "CONNECTED";
+        robloxApi.textContent = "CONNECTED";
 
     } else {
 
-        status.textContent =
-            "OFFLINE";
+        status.textContent = "ERROR";
+        status.classList.add("error");
 
-        apiStatus.textContent =
-            "OFFLINE";
+        apiStatus.textContent = "ERROR";
 
-        robloxApi.textContent =
-            "ERROR";
+        robloxApi.textContent = "ERROR";
 
     }
 
 }
 
 
-/* ================================
-   ESCAPE HTML
-================================ */
-
-function escapeHTML(value) {
-
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-}
-
-
-/* ================================
-   LOAD ROBLOX DATA
-================================ */
+/* LOAD DATA */
 
 async function loadRealRobloxData() {
 
+    console.log("Starting Roblox API request...");
+
     try {
-
-        const controller =
-            new AbortController();
-
-        const timeout =
-            setTimeout(
-                () => controller.abort(),
-                15000
-            );
-
 
         const response =
             await fetch(
-                API_URL,
+                API_URL + "?t=" + Date.now(),
                 {
                     method: "GET",
-
                     mode: "cors",
-
                     cache: "no-store",
-
                     headers: {
-                        "Accept":
-                            "application/json"
-                    },
-
-                    signal:
-                        controller.signal
+                        "Accept": "application/json"
+                    }
                 }
             );
 
 
-        clearTimeout(timeout);
+        console.log(
+            "API HTTP status:",
+            response.status
+        );
 
 
         if (!response.ok) {
 
             throw new Error(
-                "HTTP " +
-                response.status
+                "HTTP " + response.status
             );
 
         }
@@ -1721,10 +1433,16 @@ async function loadRealRobloxData() {
             await response.json();
 
 
+        console.log(
+            "API RESPONSE:",
+            games
+        );
+
+
         if (!Array.isArray(games)) {
 
             throw new Error(
-                "Invalid API response"
+                "API response is not an array"
             );
 
         }
@@ -1739,170 +1457,123 @@ async function loadRealRobloxData() {
         let totalFavorites = 0;
 
 
-        games.forEach(
-            game => {
+        games.forEach(game => {
 
-                totalVisits +=
-                    Number(
-                        game.visits || 0
-                    );
+            totalVisits +=
+                Number(game.visits || 0);
 
-                totalPlayers +=
-                    Number(
-                        game.playing || 0
-                    );
+            totalPlayers +=
+                Number(game.playing || 0);
 
-                totalLikes +=
-                    Number(
-                        game.likes || 0
-                    );
+            totalLikes +=
+                Number(game.likes || 0);
 
-                totalFavorites +=
-                    Number(
-                        game.favorites || 0
-                    );
+            totalFavorites +=
+                Number(game.favorites || 0);
 
-            }
-        );
+        });
 
 
-        document.getElementById(
-            "visits"
-        ).textContent =
-            formatNumber(
-                totalVisits
-            );
+        document.getElementById("visits")
+            .textContent =
+            formatNumber(totalVisits);
 
 
-        document.getElementById(
-            "players"
-        ).textContent =
-            formatNumber(
-                totalPlayers
-            );
+        document.getElementById("players")
+            .textContent =
+            formatNumber(totalPlayers);
 
 
-        document.getElementById(
-            "gamesCount"
-        ).textContent =
+        document.getElementById("gamesCount")
+            .textContent =
             games.length;
 
 
-        document.getElementById(
-            "likes"
-        ).textContent =
-            formatNumber(
-                totalLikes
-            );
+        document.getElementById("likes")
+            .textContent =
+            formatNumber(totalLikes);
 
 
-        document.getElementById(
-            "favorites"
-        ).textContent =
-            formatNumber(
-                totalFavorites
-            );
+        document.getElementById("favorites")
+            .textContent =
+            formatNumber(totalFavorites);
 
 
-        document.getElementById(
-            "online"
-        ).textContent =
-            formatNumber(
-                totalPlayers
-            );
+        document.getElementById("online")
+            .textContent =
+            formatNumber(totalPlayers);
 
 
-        document.getElementById(
-            "lastUpdate"
-        ).textContent =
-            new Date()
-                .toLocaleTimeString();
+        document.getElementById("lastUpdate")
+            .textContent =
+            new Date().toLocaleTimeString();
 
 
-        document.getElementById(
-            "gameApiCount"
-        ).textContent =
+        document.getElementById("gameApiCount")
+            .textContent =
             games.length;
 
 
-        document.getElementById(
-            "playerApiCount"
-        ).textContent =
-            formatNumber(
-                totalPlayers
-            );
+        document.getElementById("playerApiCount")
+            .textContent =
+            formatNumber(totalPlayers);
 
 
-        games.forEach(
-            game => {
+        /* GAME CARDS */
 
-                const text =
-                    `👥 ${formatNumber(game.playing)} playing • ` +
-                    `👁 ${formatNumber(game.visits)} visits • ` +
-                    `👍 ${formatNumber(game.likes)} likes • ` +
-                    `⭐ ${formatNumber(game.favorites)} favorites`;
+        games.forEach(game => {
 
-
-                if (
-                    game.name ===
-                    "ARMMAGEDON"
-                ) {
-
-                    document.getElementById(
-                        "armmagedonStats"
-                    ).textContent =
-                        text;
-
-                }
+            const text =
+                `👥 ${formatNumber(game.playing)} playing • ` +
+                `👁 ${formatNumber(game.visits)} visits • ` +
+                `👍 ${formatNumber(game.likes)} likes • ` +
+                `⭐ ${formatNumber(game.favorites)} favorites`;
 
 
-                if (
-                    game.name ===
-                    "Zombie World"
-                ) {
+            if (game.name === "ARMMAGEDON") {
 
-                    document.getElementById(
-                        "zombieStats"
-                    ).textContent =
-                        text;
-
-                }
-
-
-                if (
-                    game.name ===
-                    "Jims Laser Tag"
-                ) {
-
-                    document.getElementById(
-                        "laserStats"
-                    ).textContent =
-                        text;
-
-                }
-
-
-                if (
-                    game.name ===
-                    "Mega Hyper Obby"
-                ) {
-
-                    document.getElementById(
-                        "obbyStats"
-                    ).textContent =
-                        text;
-
-                }
+                document.getElementById(
+                    "armmagedonStats"
+                ).textContent = text;
 
             }
-        );
 
+
+            if (game.name === "Zombie World") {
+
+                document.getElementById(
+                    "zombieStats"
+                ).textContent = text;
+
+            }
+
+
+            if (game.name === "Jims Laser Tag") {
+
+                document.getElementById(
+                    "laserStats"
+                ).textContent = text;
+
+            }
+
+
+            if (game.name === "Mega Hyper Obby") {
+
+                document.getElementById(
+                    "obbyStats"
+                ).textContent = text;
+
+            }
+
+        });
+
+
+        /* RANKING */
 
         const sortedGames =
             [...games].sort(
                 (a,b) =>
-                    Number(b.visits || 0)
-                    -
+                    Number(b.visits || 0) -
                     Number(a.visits || 0)
             );
 
@@ -1929,61 +1600,98 @@ async function loadRealRobloxData() {
                     "ranking-item";
 
 
-                item.innerHTML = `
+                const rank =
+                    document.createElement(
+                        "span"
+                    );
 
-                    <span>
-                        #${index + 1}
-                    </span>
-
-                    <strong>
-                        ${escapeHTML(game.name)}
-                    </strong>
-
-                    <span>
-                        ${formatNumber(game.visits)}
-                        visits
-                    </span>
-
-                `;
+                rank.textContent =
+                    "#" + (index + 1);
 
 
-                ranking.appendChild(
-                    item
-                );
+                const name =
+                    document.createElement(
+                        "strong"
+                    );
+
+                name.textContent =
+                    game.name;
+
+
+                const visits =
+                    document.createElement(
+                        "span"
+                    );
+
+                visits.textContent =
+                    formatNumber(game.visits) +
+                    " visits";
+
+
+                item.appendChild(rank);
+                item.appendChild(name);
+                item.appendChild(visits);
+
+                ranking.appendChild(item);
 
             }
         );
 
 
+        console.log(
+            "Roblox data loaded successfully!"
+        );
+
     } catch (error) {
 
         console.error(
-            "Roblox API error:",
+            "ROBLOX API ERROR:",
             error
         );
 
+
         setConnectionStatus(false);
+
 
         document.getElementById(
             "lastUpdate"
+        ).textContent = "ERROR";
+
+
+        document.getElementById(
+            "armmagedonStats"
         ).textContent =
-            "ERROR";
+            "Unable to load Roblox data.";
+
+
+        document.getElementById(
+            "zombieStats"
+        ).textContent =
+            "Unable to load Roblox data.";
+
+
+        document.getElementById(
+            "laserStats"
+        ).textContent =
+            "Unable to load Roblox data.";
+
+
+        document.getElementById(
+            "obbyStats"
+        ).textContent =
+            "Unable to load Roblox data.";
 
     }
 
 }
 
 
-/* ================================
-   START
-================================ */
+/* START */
 
 loadRealRobloxData();
 
 
-/* ================================
-   AUTO REFRESH
-================================ */
+/* REFRESH EVERY 60 SECONDS */
 
 setInterval(
     loadRealRobloxData,
@@ -1996,12 +1704,8 @@ console.log(
     "font-size:30px;font-weight:900;color:#8b5cf6"
 );
 
-console.log(
-    "Roblox API:https://jimliokgames-website.onrender.com/api/games",
-    API_URL
-);
-
 </script>
 
 </body>
 </html>
+```
