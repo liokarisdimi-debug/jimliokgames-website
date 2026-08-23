@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,164 +7,175 @@
 <title>Jimliok Games</title>
 
 <meta name="description"
-      content="Jimliok Games — We create worlds. You live them.">
+content="Official Jimliok Games website — Roblox games, live statistics, projects, news and community.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet">
+rel="stylesheet">
 
 <style>
 
 :root {
-    --bg: #03040b;
-    --panel: rgba(12,15,32,.92);
-    --purple: #7c3cff;
-    --purple2: #a855f7;
-    --blue: #2563ff;
-    --cyan: #00d9ff;
-    --white: #fff;
-    --text: #e5e7eb;
-    --muted: #9ca3af;
-    --green: #22c55e;
-    --red: #ef4444;
-    --border: rgba(255,255,255,.1);
-    --radius: 18px;
+    --bg:#03040b;
+    --panel:rgba(12,15,32,.92);
+    --purple:#7c3cff;
+    --purple2:#a855f7;
+    --blue:#2563ff;
+    --white:#fff;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --green:#22c55e;
+    --border:rgba(255,255,255,.10);
+    --radius:18px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 body {
-    font-family: Inter, sans-serif;
-    color: var(--white);
+    font-family:Inter,Arial,sans-serif;
+    color:var(--white);
     background:
         radial-gradient(
             circle at 50% -20%,
-            rgba(90,40,255,.3),
+            rgba(90,40,255,.30),
             transparent 40%
         ),
         var(--bg);
-    overflow-x: hidden;
+    overflow-x:hidden;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+    color:inherit;
+    text-decoration:none;
 }
 
 button {
-    font-family: inherit;
+    font-family:inherit;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width:8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #02030a;
+    background:#02030a;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
+    background:linear-gradient(
         var(--purple),
         var(--blue)
     );
-    border-radius: 20px;
+    border-radius:20px;
 }
 
 /* HEADER */
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 72px;
-    z-index: 1000;
-    background: rgba(2,3,10,.78);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:72px;
+    z-index:1000;
+    background:rgba(2,3,10,.78);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
 }
 
 .header-inner {
-    width: 94%;
-    max-width: 1500px;
-    height: 100%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width:94%;
+    max-width:1500px;
+    height:100%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: 1px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:18px;
+    font-weight:900;
+    letter-spacing:1px;
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 11px;
-    background: linear-gradient(
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    border-radius:11px;
+    background:linear-gradient(
         135deg,
         var(--purple),
         var(--blue)
     );
-    box-shadow: 0 0 30px rgba(124,60,255,.45);
-    font-size: 13px;
+    box-shadow:0 0 30px rgba(124,60,255,.45);
+    font-size:13px;
+    animation:logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+
+    0%,100% {
+        box-shadow:0 0 20px rgba(124,60,255,.35);
+    }
+
+    50% {
+        box-shadow:0 0 45px rgba(124,60,255,.75);
+    }
+
 }
 
 .logo span {
-    color: var(--purple2);
+    color:var(--purple2);
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+    display:flex;
+    align-items:center;
+    gap:25px;
 }
 
 nav a {
-    color: #cbd5e1;
-    font-size: 12px;
-    font-weight: 700;
-    transition: .25s;
+    color:#cbd5e1;
+    font-size:12px;
+    font-weight:700;
+    transition:.25s;
 }
 
 nav a:hover {
-    color: white;
+    color:white;
 }
 
 .discord-button,
 .primary-button,
 .secondary-button,
 .game-button {
-    cursor: pointer;
-    font-weight: 800;
-    transition: .25s;
+    cursor:pointer;
+    font-weight:800;
+    transition:.25s;
 }
 
 .discord-button {
-    border: none;
-    padding: 11px 18px;
-    border-radius: 10px;
-    color: white;
-    background: linear-gradient(
+    border:none;
+    padding:11px 18px;
+    border-radius:10px;
+    color:white;
+    background:linear-gradient(
         135deg,
         #5865f2,
         var(--purple)
@@ -176,25 +186,26 @@ nav a:hover {
 .primary-button:hover,
 .secondary-button:hover,
 .game-button:hover {
-    transform: translateY(-3px);
+    transform:translateY(-3px);
 }
 
 /* HERO */
 
 .hero {
-    min-height: 760px;
-    padding-top: 72px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+    min-height:760px;
+    padding-top:72px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
 }
 
 .hero-background {
-    position: absolute;
-    inset: 72px 0 0 0;
-    z-index: -2;
+    position:absolute;
+    inset:72px 0 0 0;
+    z-index:-2;
+
     background:
         radial-gradient(
             circle at 70% 50%,
@@ -209,62 +220,62 @@ nav a:hover {
 }
 
 .hero-content {
-    padding-left: 8vw;
+    padding-left:8vw;
 }
 
 .eyebrow {
-    color: var(--purple2);
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 18px;
+    color:var(--purple2);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:3px;
+    margin-bottom:18px;
 }
 
 .hero h1 {
-    font-size: clamp(52px,7vw,105px);
-    line-height: .88;
-    letter-spacing: -6px;
-    font-weight: 900;
+    font-size:clamp(52px,7vw,105px);
+    line-height:.88;
+    letter-spacing:-6px;
+    font-weight:900;
 }
 
 .hero h1 span {
-    display: block;
-    background: linear-gradient(
+    display:block;
+    background:linear-gradient(
         90deg,
         white,
         #a855f7,
         #2563ff
     );
-    -webkit-background-clip: text;
-    color: transparent;
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
 .hero-description {
-    max-width: 570px;
-    margin-top: 28px;
-    color: #aeb5c4;
-    font-size: 15px;
-    line-height: 1.8;
+    max-width:570px;
+    margin-top:28px;
+    color:#aeb5c4;
+    font-size:15px;
+    line-height:1.8;
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 14px;
-    margin-top: 30px;
+    display:flex;
+    gap:14px;
+    margin-top:30px;
 }
 
 .primary-button,
 .secondary-button {
-    display: inline-block;
-    padding: 14px 22px;
-    border-radius: 11px;
-    font-size: 13px;
+    display:inline-block;
+    padding:14px 22px;
+    border-radius:11px;
+    font-size:13px;
 }
 
 .primary-button {
-    border: none;
-    color: white;
-    background: linear-gradient(
+    border:none;
+    color:white;
+    background:linear-gradient(
         135deg,
         var(--purple),
         var(--blue)
@@ -272,189 +283,190 @@ nav a:hover {
 }
 
 .secondary-button {
-    border: 1px solid var(--border);
-    color: white;
-    background: rgba(255,255,255,.05);
+    border:1px solid var(--border);
+    color:white;
+    background:rgba(255,255,255,.05);
 }
 
 .hero-visual {
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .orb {
-    width: 430px;
-    height: 430px;
-    border-radius: 50%;
-    background:
-        radial-gradient(
-            circle,
-            rgba(120,80,255,.32),
-            rgba(40,80,255,.08),
-            transparent 70%
-        );
-    box-shadow:
-        0 0 120px rgba(80,50,255,.3);
-    animation: floatOrb 6s ease-in-out infinite;
+    width:430px;
+    height:430px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(120,80,255,.32),
+        rgba(40,80,255,.08),
+        transparent 70%
+    );
+    box-shadow:0 0 120px rgba(80,50,255,.30);
+    animation:floatOrb 6s ease-in-out infinite;
 }
 
 @keyframes floatOrb {
+
     0%,100% {
-        transform: translateY(0);
+        transform:translateY(0);
     }
 
     50% {
-        transform: translateY(-20px);
+        transform:translateY(-20px);
     }
+
 }
 
 /* SECTIONS */
 
 section {
-    width: 94%;
-    max-width: 1500px;
-    margin: 90px auto;
+    width:94%;
+    max-width:1500px;
+    margin:90px auto;
 }
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 25px;
-}
-
-.section-heading h2 {
-    font-size: 30px;
-    font-weight: 900;
-}
-
-.section-heading p {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-/* DASHBOARD */
 
 .dashboard {
-    margin-top: -40px;
-    position: relative;
-    z-index: 10;
+    margin-top:-40px;
+    position:relative;
+    z-index:10;
 }
 
 .dashboard-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:15px;
 }
 
 .dashboard-title h2 {
-    font-size: 18px;
-    font-weight: 900;
+    font-size:18px;
+    font-weight:900;
 }
 
 .live {
-    color: var(--green);
-    font-size: 11px;
-    font-weight: 800;
-}
-
-.live.error {
-    color: var(--red);
+    color:var(--green);
+    font-size:11px;
+    font-weight:800;
 }
 
 .live::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin-right: 6px;
-    border-radius: 50%;
-    background: currentColor;
-    box-shadow: 0 0 15px currentColor;
+    content:"";
+    display:inline-block;
+    width:8px;
+    height:8px;
+    margin-right:6px;
+    border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 15px var(--green);
 }
 
 .stats {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 12px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
 .stat {
-    min-height: 125px;
-    padding: 20px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: linear-gradient(
-        145deg,
-        rgba(16,20,45,.95),
-        rgba(6,8,20,.92)
-    );
-    transition: .3s;
+    min-height:125px;
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16,20,45,.95),
+            rgba(6,8,20,.92)
+        );
+
+    transition:.3s;
 }
 
 .stat:hover {
-    transform: translateY(-6px);
-    border-color: rgba(124,60,255,.55);
+    transform:translateY(-6px);
+    border-color:rgba(124,60,255,.55);
 }
 
 .stat-label {
-    color: var(--muted);
-    font-size: 10px;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 1px;
+    color:var(--muted);
+    font-size:10px;
+    text-transform:uppercase;
+    font-weight:800;
+    letter-spacing:1px;
 }
 
 .stat-value {
-    margin-top: 7px;
-    font-size: 27px;
-    font-weight: 900;
+    margin-top:7px;
+    font-size:27px;
+    font-weight:900;
 }
 
 .stat-growth {
-    margin-top: 7px;
-    color: var(--green);
-    font-size: 10px;
-    font-weight: 800;
+    margin-top:7px;
+    color:var(--green);
+    font-size:10px;
+    font-weight:800;
 }
 
 /* GAMES */
 
+.section-heading {
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:25px;
+}
+
+.section-heading h2 {
+    font-size:30px;
+    font-weight:900;
+}
+
+.section-heading p {
+    color:var(--muted);
+    font-size:13px;
+}
+
 .games {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 18px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 }
 
 .game {
-    overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: linear-gradient(
-        145deg,
-        rgba(15,18,40,.95),
-        rgba(5,7,18,.95)
-    );
-    transition: .3s;
+    overflow:hidden;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,18,40,.95),
+            rgba(5,7,18,.95)
+        );
+
+    transition:.3s;
 }
 
 .game:hover {
-    transform: translateY(-8px);
-    border-color: rgba(124,60,255,.65);
+    transform:translateY(-8px);
+    border-color:rgba(124,60,255,.65);
 }
 
 .game-image {
-    height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: 900;
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    font-size:24px;
+    font-weight:900;
+
     background:
         radial-gradient(
             circle at 50% 30%,
@@ -462,6 +474,12 @@ section {
             transparent 50%
         ),
         #0c0e24;
+
+    transition:transform .5s ease;
+}
+
+.game:hover .game-image {
+    transform:scale(1.03);
 }
 
 .game:nth-child(2) .game-image {
@@ -495,138 +513,150 @@ section {
 }
 
 .game-content {
-    padding: 19px;
+    padding:19px;
 }
 
 .game h3 {
-    font-size: 17px;
-    font-weight: 800;
+    font-size:17px;
+    font-weight:800;
 }
 
 .game-type {
-    margin-top: 5px;
-    color: var(--purple2);
-    font-size: 10px;
-    font-weight: 700;
+    margin-top:5px;
+    color:var(--purple2);
+    font-size:10px;
+    font-weight:700;
 }
 
 .game-stats {
-    margin-top: 14px;
-    color: var(--muted);
-    font-size: 11px;
-    line-height: 1.7;
+    margin-top:14px;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.7;
 }
 
 .game-button {
-    display: block;
-    width: 100%;
-    margin-top: 18px;
-    padding: 12px;
-    border: none;
-    border-radius: 9px;
-    text-align: center;
-    color: white;
-    font-size: 12px;
-    background: linear-gradient(
-        90deg,
-        var(--purple),
-        var(--blue)
-    );
+    display:block;
+    width:100%;
+    margin-top:18px;
+    padding:12px;
+    border:none;
+    border-radius:9px;
+    text-align:center;
+    color:white;
+    font-size:12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
 }
 
-/* PANELS */
+/* ANALYTICS */
 
 .analytics {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 18px;
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:18px;
 }
 
 .panel {
-    padding: 22px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: rgba(7,10,24,.9);
+    padding:22px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:rgba(7,10,24,.90);
 }
 
 .panel h3 {
-    margin-bottom: 20px;
-    font-size: 16px;
+    margin-bottom:20px;
+    font-size:16px;
 }
 
 .ranking {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
 }
 
 .ranking-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 13px;
-    border-radius: 10px;
-    background: rgba(255,255,255,.035);
-    font-size: 12px;
-    font-weight: 700;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:13px;
+    border-radius:10px;
+    background:rgba(255,255,255,.035);
+    font-size:12px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.ranking-item:hover {
+    transform:translateX(5px);
+    background:rgba(124,60,255,.10);
 }
 
 .ranking-item span {
-    color: var(--purple2);
+    color:var(--purple2);
 }
 
 /* NEWS */
 
 .news {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 .news-card {
-    padding: 23px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: linear-gradient(
-        145deg,
-        rgba(15,18,40,.9),
-        rgba(5,7,18,.9)
-    );
-    transition: .3s;
+    padding:23px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,18,40,.90),
+            rgba(5,7,18,.90)
+        );
+
+    transition:.3s;
 }
 
 .news-card:hover {
-    transform: translateY(-7px);
-    border-color: rgba(124,60,255,.45);
+    transform:translateY(-7px);
+    border-color:rgba(124,60,255,.45);
 }
 
 .news-date {
-    color: var(--purple2);
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 1px;
+    color:var(--purple2);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
 }
 
 .news-card h3 {
-    margin-top: 10px;
-    font-size: 17px;
+    margin-top:10px;
+    font-size:17px;
 }
 
 .news-card p {
-    margin-top: 10px;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.7;
+    margin-top:10px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
 }
 
 /* CTA */
 
 .cta {
-    padding: 75px 30px;
-    text-align: center;
-    border: 1px solid rgba(124,60,255,.35);
-    border-radius: 25px;
+    padding:75px 30px;
+    text-align:center;
+    border:1px solid rgba(124,60,255,.35);
+    border-radius:25px;
+
     background:
         radial-gradient(
             circle,
@@ -637,137 +667,137 @@ section {
 }
 
 .cta h2 {
-    font-size: clamp(32px,5vw,58px);
-    font-weight: 900;
+    font-size:clamp(32px,5vw,58px);
+    font-weight:900;
 }
 
 .cta p {
-    max-width: 650px;
-    margin: 15px auto 25px;
-    color: var(--muted);
-    line-height: 1.7;
+    max-width:650px;
+    margin:15px auto 25px;
+    color:var(--muted);
+    line-height:1.7;
 }
 
 /* FOOTER */
 
 footer {
-    padding: 60px 3% 25px;
-    border-top: 1px solid var(--border);
-    background: #02030a;
+    padding:60px 3% 25px;
+    border-top:1px solid var(--border);
+    background:#02030a;
 }
 
 .footer-grid {
-    width: 94%;
-    max-width: 1500px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
+    width:94%;
+    max-width:1500px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
 }
 
 footer h4 {
-    margin-bottom: 15px;
-    font-size: 13px;
+    margin-bottom:15px;
+    font-size:13px;
 }
 
 footer a,
 footer p {
-    display: block;
-    margin-bottom: 9px;
-    color: var(--muted);
-    font-size: 12px;
+    display:block;
+    margin-bottom:9px;
+    color:var(--muted);
+    font-size:12px;
+}
+
+footer a:hover {
+    color:white;
 }
 
 .copyright {
-    width: 94%;
-    max-width: 1500px;
-    margin: 45px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    color: #6b7280;
-    font-size: 10px;
+    width:94%;
+    max-width:1500px;
+    margin:45px auto 0;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#6b7280;
+    font-size:10px;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
-@media (max-width:1100px) {
+@media(max-width:1100px) {
 
     nav {
-        display: none;
+        display:none;
     }
 
     .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
     }
 
     .hero-content {
-        padding: 120px 7% 60px;
+        padding:120px 7% 60px;
     }
 
     .hero-visual {
-        display: none;
+        display:none;
     }
 
     .stats {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .games {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .analytics {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
     }
 
     .news {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:1fr 1fr;
     }
+
 }
 
-@media (max-width:600px) {
+@media(max-width:600px) {
 
     .discord-button {
-        display: none;
+        display:none;
     }
 
     .hero h1 {
-        font-size: 50px;
-        letter-spacing: -3px;
+        font-size:50px;
+        letter-spacing:-3px;
     }
 
     .hero-buttons {
-        flex-direction: column;
+        flex-direction:column;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .games {
-        grid-template-columns: 1fr;
-    }
-
+    .stats,
+    .games,
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
     }
 
     .copyright {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction:column;
+        gap:10px;
     }
+
 }
 
 </style>
-
-<link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -803,6 +833,7 @@ JOIN DISCORD
 
 </header>
 
+
 <main>
 
 <section class="hero" id="home">
@@ -822,8 +853,8 @@ JIMLIOK
 
 <p class="hero-description">
 We create worlds. You live them.
-<br><br>
-Discover the games, projects and experiences created by Jimliok Games.
+Discover the games, projects and experiences
+created by Jimliok Games.
 </p>
 
 <div class="hero-buttons">
@@ -1140,7 +1171,8 @@ New projects are coming
 </h3>
 
 <p>
-Jimliok Games continues to create new games and new gaming experiences.
+Jimliok Games continues to create
+new games and new gaming experiences.
 </p>
 
 </article>
@@ -1193,7 +1225,8 @@ WE CREATE WORLDS.
 </h2>
 
 <p>
-Jimliok Games is an independent game development studio creating original gaming experiences.
+Jimliok Games is an independent game development
+studio creating original gaming experiences.
 </p>
 
 <a href="#games" class="primary-button">
@@ -1312,17 +1345,14 @@ const API_URL =
     "https://jimliokgames-website.onrender.com/api/games";
 
 
-console.log("JIMLIOK API SCRIPT STARTED");
-console.log("API URL:", API_URL);
-
-
 /* DISCORD */
 
 function openDiscord() {
 
     window.open(
         "https://discord.gg/64g9dMky2",
-        "_blank"
+        "_blank",
+        "noopener,noreferrer"
     );
 
 }
@@ -1333,7 +1363,7 @@ function openDiscord() {
 function watchTrailer() {
 
     alert(
-        "Το Jimliok Games trailer θα προστεθεί εδώ."
+        "The Jimliok Games trailer will be added here."
     );
 
 }
@@ -1372,7 +1402,6 @@ function setConnectionStatus(connected) {
     if (connected) {
 
         status.textContent = "LIVE";
-        status.classList.remove("error");
 
         apiStatus.textContent = "ONLINE";
 
@@ -1380,8 +1409,7 @@ function setConnectionStatus(connected) {
 
     } else {
 
-        status.textContent = "ERROR";
-        status.classList.add("error");
+        status.textContent = "OFFLINE";
 
         apiStatus.textContent = "ERROR";
 
@@ -1392,23 +1420,49 @@ function setConnectionStatus(connected) {
 }
 
 
-/* LOAD DATA */
+/* ESCAPE HTML */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* LOAD ROBLOX DATA */
 
 async function loadRealRobloxData() {
 
-    console.log("Starting Roblox API request...");
+    const status =
+        document.getElementById(
+            "connectionStatus"
+        );
+
+    status.textContent = "CONNECTING";
+
 
     try {
 
+        console.log(
+            "Connecting to Roblox API:",
+            API_URL
+        );
+
+
         const response =
             await fetch(
-                API_URL + "?t=" + Date.now(),
+                API_URL,
                 {
-                    method: "GET",
-                    mode: "cors",
-                    cache: "no-store",
-                    headers: {
-                        "Accept": "application/json"
+                    method:"GET",
+                    cache:"no-store",
+                    headers:{
+                        "Accept":
+                            "application/json"
                     }
                 }
             );
@@ -1423,7 +1477,8 @@ async function loadRealRobloxData() {
         if (!response.ok) {
 
             throw new Error(
-                "HTTP " + response.status
+                "HTTP " +
+                response.status
             );
 
         }
@@ -1434,7 +1489,7 @@ async function loadRealRobloxData() {
 
 
         console.log(
-            "API RESPONSE:",
+            "Roblox API data:",
             games
         );
 
@@ -1442,7 +1497,7 @@ async function loadRealRobloxData() {
         if (!Array.isArray(games)) {
 
             throw new Error(
-                "API response is not an array"
+                "API did not return an array"
             );
 
         }
@@ -1457,7 +1512,7 @@ async function loadRealRobloxData() {
         let totalFavorites = 0;
 
 
-        games.forEach(game => {
+        games.forEach(function(game) {
 
             totalVisits +=
                 Number(game.visits || 0);
@@ -1474,63 +1529,85 @@ async function loadRealRobloxData() {
         });
 
 
-        document.getElementById("visits")
-            .textContent =
+        document.getElementById(
+            "visits"
+        ).textContent =
             formatNumber(totalVisits);
 
 
-        document.getElementById("players")
-            .textContent =
+        document.getElementById(
+            "players"
+        ).textContent =
             formatNumber(totalPlayers);
 
 
-        document.getElementById("gamesCount")
-            .textContent =
+        document.getElementById(
+            "gamesCount"
+        ).textContent =
             games.length;
 
 
-        document.getElementById("likes")
-            .textContent =
+        document.getElementById(
+            "likes"
+        ).textContent =
             formatNumber(totalLikes);
 
 
-        document.getElementById("favorites")
-            .textContent =
+        document.getElementById(
+            "favorites"
+        ).textContent =
             formatNumber(totalFavorites);
 
 
-        document.getElementById("online")
-            .textContent =
+        document.getElementById(
+            "online"
+        ).textContent =
             formatNumber(totalPlayers);
 
 
-        document.getElementById("lastUpdate")
-            .textContent =
+        document.getElementById(
+            "lastUpdate"
+        ).textContent =
             new Date().toLocaleTimeString();
 
 
-        document.getElementById("gameApiCount")
-            .textContent =
+        document.getElementById(
+            "gameApiCount"
+        ).textContent =
             games.length;
 
 
-        document.getElementById("playerApiCount")
-            .textContent =
+        document.getElementById(
+            "playerApiCount"
+        ).textContent =
             formatNumber(totalPlayers);
 
 
         /* GAME CARDS */
 
-        games.forEach(game => {
+        games.forEach(function(game) {
 
             const text =
-                `👥 ${formatNumber(game.playing)} playing • ` +
-                `👁 ${formatNumber(game.visits)} visits • ` +
-                `👍 ${formatNumber(game.likes)} likes • ` +
-                `⭐ ${formatNumber(game.favorites)} favorites`;
+                "👥 " +
+                formatNumber(game.playing) +
+                " playing • " +
+
+                "👁 " +
+                formatNumber(game.visits) +
+                " visits • " +
+
+                "👍 " +
+                formatNumber(game.likes) +
+                " likes • " +
+
+                "⭐ " +
+                formatNumber(game.favorites) +
+                " favorites";
 
 
-            if (game.name === "ARMMAGEDON") {
+            if (
+                game.name === "ARMMAGEDON"
+            ) {
 
                 document.getElementById(
                     "armmagedonStats"
@@ -1539,7 +1616,9 @@ async function loadRealRobloxData() {
             }
 
 
-            if (game.name === "Zombie World") {
+            if (
+                game.name === "Zombie World"
+            ) {
 
                 document.getElementById(
                     "zombieStats"
@@ -1548,7 +1627,9 @@ async function loadRealRobloxData() {
             }
 
 
-            if (game.name === "Jims Laser Tag") {
+            if (
+                game.name === "Jims Laser Tag"
+            ) {
 
                 document.getElementById(
                     "laserStats"
@@ -1557,7 +1638,9 @@ async function loadRealRobloxData() {
             }
 
 
-            if (game.name === "Mega Hyper Obby") {
+            if (
+                game.name === "Mega Hyper Obby"
+            ) {
 
                 document.getElementById(
                     "obbyStats"
@@ -1568,13 +1651,18 @@ async function loadRealRobloxData() {
         });
 
 
-        /* RANKING */
+        /* PERFORMANCE */
 
         const sortedGames =
             [...games].sort(
-                (a,b) =>
-                    Number(b.visits || 0) -
-                    Number(a.visits || 0)
+                function(a,b) {
+
+                    return (
+                        Number(b.visits || 0) -
+                        Number(a.visits || 0)
+                    );
+
+                }
             );
 
 
@@ -1588,7 +1676,7 @@ async function loadRealRobloxData() {
 
 
         sortedGames.forEach(
-            (game,index) => {
+            function(game,index) {
 
                 const item =
                     document.createElement(
@@ -1600,12 +1688,12 @@ async function loadRealRobloxData() {
                     "ranking-item";
 
 
-                const rank =
+                const position =
                     document.createElement(
                         "span"
                     );
 
-                rank.textContent =
+                position.textContent =
                     "#" + (index + 1);
 
 
@@ -1624,12 +1712,16 @@ async function loadRealRobloxData() {
                     );
 
                 visits.textContent =
-                    formatNumber(game.visits) +
+                    formatNumber(
+                        game.visits
+                    ) +
                     " visits";
 
 
-                item.appendChild(rank);
+                item.appendChild(position);
+
                 item.appendChild(name);
+
                 item.appendChild(visits);
 
                 ranking.appendChild(item);
@@ -1639,13 +1731,15 @@ async function loadRealRobloxData() {
 
 
         console.log(
-            "Roblox data loaded successfully!"
+            "Jimliok Games API connected successfully."
         );
 
-    } catch (error) {
+    }
+
+    catch(error) {
 
         console.error(
-            "ROBLOX API ERROR:",
+            "Roblox API error:",
             error
         );
 
@@ -1655,31 +1749,32 @@ async function loadRealRobloxData() {
 
         document.getElementById(
             "lastUpdate"
-        ).textContent = "ERROR";
+        ).textContent =
+            "ERROR";
 
 
         document.getElementById(
             "armmagedonStats"
         ).textContent =
-            "Unable to load Roblox data.";
+            "API connection error";
 
 
         document.getElementById(
             "zombieStats"
         ).textContent =
-            "Unable to load Roblox data.";
+            "API connection error";
 
 
         document.getElementById(
             "laserStats"
         ).textContent =
-            "Unable to load Roblox data.";
+            "API connection error";
 
 
         document.getElementById(
             "obbyStats"
         ).textContent =
-            "Unable to load Roblox data.";
+            "API connection ";
 
     }
 
@@ -1699,13 +1794,19 @@ setInterval(
 );
 
 
+/* CONSOLE */
+
 console.log(
     "%cJIMLIOK GAMES",
     "font-size:30px;font-weight:900;color:#8b5cf6"
+);
+
+console.log(
+    "Roblox API:",
+    API_URL
 );
 
 </script>
 
 </body>
 </html>
-```
