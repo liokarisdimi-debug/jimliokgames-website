@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Jimliok Games | Game Hub</title>
 
-<meta
-    name="description"
-    content="Jimliok Games — We create worlds. You live them."
->
+<meta name="description" content="Jimliok Games — We create worlds. You live them.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -75,6 +68,7 @@ a {
 
 button {
     font-family: inherit;
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -90,13 +84,18 @@ button {
         var(--purple),
         var(--blue)
     );
+
     border-radius: 20px;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     position: fixed;
+
     top: 0;
     left: 0;
 
@@ -115,21 +114,29 @@ header {
 .header-inner {
     width: 94%;
     max-width: 1500px;
+
     height: 100%;
+
     margin: auto;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
 .logo {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 
     font-size: 18px;
+
     font-weight: 900;
+
     letter-spacing: 1px;
 }
 
@@ -138,6 +145,7 @@ header {
     height: 40px;
 
     display: grid;
+
     place-items: center;
 
     border-radius: 11px;
@@ -161,14 +169,17 @@ header {
 
 nav {
     display: flex;
+
     align-items: center;
-    gap: 24px;
+
+    gap: 20px;
 }
 
 nav a {
     color: #cbd5e1;
 
     font-size: 12px;
+
     font-weight: 800;
 
     transition: .25s;
@@ -177,6 +188,43 @@ nav a {
 nav a:hover {
     color: white;
 }
+
+
+/* YOUTUBE */
+
+.youtube-button {
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff0033,
+            #ff1744
+        );
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: .25s;
+
+    box-shadow:
+        0 5px 20px rgba(255,0,50,.15);
+}
+
+.youtube-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(255,0,50,.35);
+}
+
+
+/* DISCORD */
 
 .discord-button {
     border: none;
@@ -194,8 +242,6 @@ nav a:hover {
             var(--purple)
         );
 
-    cursor: pointer;
-
     font-weight: 800;
 
     transition: .25s;
@@ -205,7 +251,10 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
     min-height: 760px;
@@ -236,6 +285,7 @@ nav a:hover {
             rgba(70,40,255,.35),
             transparent 45%
         ),
+
         radial-gradient(
             circle at 30% 70%,
             rgba(0,160,255,.12),
@@ -374,7 +424,10 @@ nav a:hover {
 
 }
 
-/* SECTIONS */
+
+/* =========================
+   SECTIONS
+========================= */
 
 section {
     width: 94%;
@@ -406,7 +459,10 @@ section {
     font-size: 13px;
 }
 
-/* DASHBOARD */
+
+/* =========================
+   LIVE STATS
+========================= */
 
 .dashboard {
     margin-top: -40px;
@@ -523,7 +579,10 @@ section {
     font-weight: 800;
 }
 
-/* GAME HUB */
+
+/* =========================
+   GAME HUB
+========================= */
 
 .game-hub-title {
     display: flex;
@@ -727,7 +786,10 @@ section {
     transform: translateY(-3px);
 }
 
-/* ANALYTICS */
+
+/* =========================
+   ANALYTICS
+========================= */
 
 .analytics {
     display: grid;
@@ -789,7 +851,10 @@ section {
     color: var(--purple2);
 }
 
-/* NEWS */
+
+/* =========================
+   NEWS
+========================= */
 
 .news {
     display: grid;
@@ -851,7 +916,10 @@ section {
     line-height: 1.7;
 }
 
-/* CTA */
+
+/* =========================
+   CTA
+========================= */
 
 .cta {
     padding: 75px 30px;
@@ -889,7 +957,10 @@ section {
     line-height: 1.7;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     padding: 60px 3% 25px;
@@ -957,7 +1028,10 @@ footer a:hover {
     font-size: 10px;
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width:1200px) {
 
@@ -1043,12 +1117,15 @@ footer a:hover {
 }
 
 </style>
-
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -1067,23 +1144,40 @@ JIMLIOK
 
 </a>
 
+
 <nav>
 
 <a href="#home">HOME</a>
+
 <a href="#games">GAME HUB</a>
+
 <a href="#stats">STATS</a>
+
 <a href="#news">NEWS</a>
+
 <a href="#about">ABOUT</a>
+
 <a href="#community">COMMUNITY</a>
 
-</nav>
+
+<a
+    href="https://www.youtube.com/@Jimliokmusic-o8n"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="youtube-button"
+>
+    YOUTUBE
+</a>
+
 
 <button
-class="discord-button"
-onclick="openDiscord()"
+    class="discord-button"
+    onclick="openDiscord()"
 >
-JOIN DISCORD
+    DISCORD
 </button>
+
+</nav>
 
 </div>
 
@@ -1092,14 +1186,18 @@ JOIN DISCORD
 
 <main>
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section
-class="hero"
-id="home"
+    class="hero"
+    id="home"
 >
 
 <div class="hero-background"></div>
+
 
 <div class="hero-content">
 
@@ -1107,10 +1205,17 @@ id="home"
 INDEPENDENT GAME STUDIO
 </div>
 
+
 <h1>
+
 JIMLIOK
-<span>GAMES</span>
+
+<span>
+GAMES
+</span>
+
 </h1>
+
 
 <p class="hero-description">
 
@@ -1126,18 +1231,29 @@ news and community.
 
 </p>
 
+
 <div class="hero-buttons">
 
 <a
-href="#games"
-class="primary-button"
+    href="#games"
+    class="primary-button"
 >
-EXPLORE GAME HUB →
+    EXPLORE GAME HUB →
+</a>
+
+<a
+    href="https://www.youtube.com/@Jimliokmusic-o8n"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="youtube-button"
+>
+    WATCH ON YOUTUBE
 </a>
 
 </div>
 
 </div>
+
 
 <div class="hero-visual">
 
@@ -1148,11 +1264,13 @@ EXPLORE GAME HUB →
 </section>
 
 
-<!-- LIVE STATS -->
+<!-- =========================
+     LIVE STATS
+========================= -->
 
 <section
-class="dashboard"
-id="stats"
+    class="dashboard"
+    id="stats"
 >
 
 <div class="dashboard-title">
@@ -1162,8 +1280,8 @@ LIVE ROBLOX STATS
 </h2>
 
 <span
-class="live"
-id="connectionStatus"
+    class="live"
+    id="connectionStatus"
 >
 CONNECTING
 </span>
@@ -1173,6 +1291,7 @@ CONNECTING
 
 <div class="stats">
 
+
 <div class="stat">
 
 <div class="stat-label">
@@ -1180,8 +1299,8 @@ Total Visits
 </div>
 
 <div
-class="stat-value"
-id="visits"
+    class="stat-value"
+    id="visits"
 >
 --
 </div>
@@ -1200,8 +1319,8 @@ Players Now
 </div>
 
 <div
-class="stat-value"
-id="players"
+    class="stat-value"
+    id="players"
 >
 --
 </div>
@@ -1220,8 +1339,8 @@ Published Games
 </div>
 
 <div
-class="stat-value"
-id="gamesCount"
+    class="stat-value"
+    id="gamesCount"
 >
 --
 </div>
@@ -1240,8 +1359,8 @@ Total Likes
 </div>
 
 <div
-class="stat-value"
-id="likes"
+    class="stat-value"
+    id="likes"
 >
 --
 </div>
@@ -1260,8 +1379,8 @@ Favorites
 </div>
 
 <div
-class="stat-value"
-id="favorites"
+    class="stat-value"
+    id="favorites"
 >
 --
 </div>
@@ -1280,8 +1399,8 @@ Online Now
 </div>
 
 <div
-class="stat-value"
-id="online"
+    class="stat-value"
+    id="online"
 >
 --
 </div>
@@ -1300,9 +1419,9 @@ Last Update
 </div>
 
 <div
-class="stat-value"
-id="lastUpdate"
-style="font-size:16px"
+    class="stat-value"
+    id="lastUpdate"
+    style="font-size:16px"
 >
 --
 </div>
@@ -1321,9 +1440,9 @@ API Status
 </div>
 
 <div
-class="stat-value"
-id="apiStatus"
-style="font-size:18px"
+    class="stat-value"
+    id="apiStatus"
+    style="font-size:18px"
 >
 WAITING
 </div>
@@ -1334,14 +1453,18 @@ LIVE CONNECTION
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- GAME HUB -->
+<!-- =========================
+     GAME HUB
+========================= -->
 
 <section id="games">
+
 
 <div class="section-heading">
 
@@ -1390,56 +1513,17 @@ PLATFORMER • ACTION
 </div>
 
 <div
-class="game-stats"
-id="armmagedonStats"
+    class="game-stats"
+    id="armmagedonStats"
 >
 Loading Roblox data...
 </div>
 
 <a
-class="game-button"
-href="https://www.roblox.com/games/118307484925962/ARMMAGEDON"
-target="_blank"
-rel="noopener noreferrer"
->
-PLAY NOW
-</a>
-
-</div>
-
-</article>
-
-
-<!-- ZOMBIE WORLD -->
-
-<article class="game">
-
-<div class="game-image">
-ZOMBIE WORLD
-</div>
-
-<div class="game-content">
-
-<h3>
-Zombie World
-</h3>
-
-<div class="game-type">
-SURVIVAL • HORROR
-</div>
-
-<div
-class="game-stats"
-id="zombieStats"
->
-Loading Roblox data...
-</div>
-
-<a
-class="game-button"
-href="https://www.roblox.com/games/73482230314135"
-target="_blank"
-rel="noopener noreferrer"
+    class="game-button"
+    href="https://www.roblox.com/games/118307484925962"
+    target="_blank"
+    rel="noopener noreferrer"
 >
 PLAY NOW
 </a>
@@ -1468,17 +1552,56 @@ SHOOTER • MULTIPLAYER
 </div>
 
 <div
-class="game-stats"
-id="laserStats"
+    class="game-stats"
+    id="laserStats"
 >
 Loading Roblox data...
 </div>
 
 <a
-class="game-button"
-href="https://www.roblox.com/games/109370449470980"
-target="_blank"
-rel="noopener noreferrer"
+    class="game-button"
+    href="https://www.roblox.com/games/109370449470980"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+PLAY NOW
+</a>
+
+</div>
+
+</article>
+
+
+<!-- ZOMBIE WORLD -->
+
+<article class="game">
+
+<div class="game-image">
+ZOMBIE WORLD
+</div>
+
+<div class="game-content">
+
+<h3>
+Zombie World
+</h3>
+
+<div class="game-type">
+SURVIVAL • HORROR
+</div>
+
+<div
+    class="game-stats"
+    id="zombieStats"
+>
+Loading Roblox data...
+</div>
+
+<a
+    class="game-button"
+    href="https://www.roblox.com/games/73482230314135"
+    target="_blank"
+    rel="noopener noreferrer"
 >
 PLAY NOW
 </a>
@@ -1507,17 +1630,17 @@ OBBY • CHALLENGE
 </div>
 
 <div
-class="game-stats"
-id="obbyStats"
+    class="game-stats"
+    id="obbyStats"
 >
 Loading Roblox data...
 </div>
 
 <a
-class="game-button"
-href="https://www.roblox.com/games/113111954801108"
-target="_blank"
-rel="noopener noreferrer"
+    class="game-button"
+    href="https://www.roblox.com/games/113111954801108"
+    target="_blank"
+    rel="noopener noreferrer"
 >
 PLAY NOW
 </a>
@@ -1546,17 +1669,17 @@ OBBY • FUN
 </div>
 
 <div
-class="game-stats"
-id="opFunStats"
+    class="game-stats"
+    id="opFunStats"
 >
 Loading Roblox data...
 </div>
 
 <a
-class="game-button"
-href="https://www.roblox.com/games/103846454830311/op-fun-obby"
-target="_blank"
-rel="noopener noreferrer"
+    class="game-button"
+    href="https://www.roblox.com/games/103846454830311/op-fun-obby"
+    target="_blank"
+    rel="noopener noreferrer"
 >
 PLAY NOW
 </a>
@@ -1565,12 +1688,15 @@ PLAY NOW
 
 </article>
 
+
 </div>
 
 </section>
 
 
-<!-- PERFORMANCE -->
+<!-- =========================
+     PERFORMANCE
+========================= -->
 
 <section>
 
@@ -1584,17 +1710,21 @@ GAME PERFORMANCE
 </h3>
 
 <div
-id="gamePerformance"
-class="ranking"
+    id="gamePerformance"
+    class="ranking"
 >
 
 <div class="ranking-item">
 
-<span>—</span>
+<span>
+—
+</span>
 
 Loading...
 
-<span>—</span>
+<span>
+—
+</span>
 
 </div>
 
@@ -1655,6 +1785,7 @@ Refresh
 
 </div>
 
+
 </div>
 
 </div>
@@ -1664,7 +1795,9 @@ Refresh
 </section>
 
 
-<!-- NEWS -->
+<!-- =========================
+     NEWS
+========================= -->
 
 <section id="news">
 
@@ -1743,12 +1876,15 @@ latest Jimliok Games news.
 
 </article>
 
+
 </div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
@@ -1759,16 +1895,14 @@ WE CREATE WORLDS.
 </h2>
 
 <p>
-
 Jimliok Games is an independent
 game development studio creating
 original gaming experiences.
-
 </p>
 
 <a
-href="#games"
-class="primary-button"
+    href="#games"
+    class="primary-button"
 >
 EXPLORE OUR GAMES
 </a>
@@ -1778,7 +1912,9 @@ EXPLORE OUR GAMES
 </section>
 
 
-<!-- COMMUNITY -->
+<!-- =========================
+     COMMUNITY
+========================= -->
 
 <section id="community">
 
@@ -1794,20 +1930,33 @@ community.
 </p>
 
 <button
-class="discord-button"
-onclick="openDiscord()"
+    class="discord-button"
+    onclick="openDiscord()"
 >
 JOIN DISCORD
 </button>
+
+<a
+    href="https://www.youtube.com/@Jimliokmusic-o8n"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="youtube-button"
+    style="display:inline-block;margin-left:10px;"
+>
+YOUTUBE CHANNEL
+</a>
 
 </div>
 
 </section>
 
+
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1882,22 +2031,23 @@ SOCIAL
 </h4>
 
 <a
-href="https://www.youtube.com/@Jimliokmusic-o8n"
-target="_blank"
-rel="noopener noreferrer"
+    href="https://www.youtube.com/@Jimliokmusic-o8n"
+    target="_blank"
+    rel="noopener noreferrer"
 >
 YouTube
 </a>
 
 <a
-href="https://discord.gg/64g9dMky2"
-target="_blank"
-rel="noopener noreferrer"
+    href="https://discord.gg/64g9dMky2"
+    target="_blank"
+    rel="noopener noreferrer"
 >
 Discord
 </a>
 
 </div>
+
 
 </div>
 
@@ -1921,17 +2071,18 @@ Music by Jimliok Music
 
 <script>
 
-/* =========================================
-   EXISTING LIVE ROBLOX API
-   ========================================= */
+
+/* =========================
+   EXISTING LIVE API
+========================= */
 
 const API_URL =
     "https://jimliokgames-website.onrender.com/api/games";
 
 
-/* =========================================
+/* =========================
    DISCORD
-   ========================================= */
+========================= */
 
 function openDiscord() {
 
@@ -1944,9 +2095,9 @@ function openDiscord() {
 }
 
 
-/* =========================================
+/* =========================
    NUMBER FORMAT
-   ========================================= */
+========================= */
 
 function formatNumber(number) {
 
@@ -1956,9 +2107,9 @@ function formatNumber(number) {
 }
 
 
-/* =========================================
-   CONNECTION STATUS
-   ========================================= */
+/* =========================
+   CONNECTION
+========================= */
 
 function setConnectionStatus(connected) {
 
@@ -2005,25 +2156,9 @@ function setConnectionStatus(connected) {
 }
 
 
-/* =========================================
-   ESCAPE HTML
-   ========================================= */
-
-function escapeHTML(value) {
-
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-}
-
-
-/* =========================================
-   LOAD ROBLOX DATA
-   ========================================= */
+/* =========================
+   LOAD LIVE ROBLOX DATA
+========================= */
 
 async function loadRealRobloxData() {
 
@@ -2090,8 +2225,11 @@ async function loadRealRobloxData() {
 
 
         let totalVisits = 0;
+
         let totalPlayers = 0;
+
         let totalLikes = 0;
+
         let totalFavorites = 0;
 
 
@@ -2175,7 +2313,9 @@ async function loadRealRobloxData() {
             formatNumber(totalPlayers);
 
 
-        /* GAME CARDS */
+        /* =========================
+           GAME CARDS
+        ========================= */
 
         games.forEach(game => {
 
@@ -2201,11 +2341,11 @@ async function loadRealRobloxData() {
 
             if (
                 game.name ===
-                "Zombie World"
+                "Jims Laser Tag"
             ) {
 
                 document.getElementById(
-                    "zombieStats"
+                    "laserStats"
                 ).textContent =
                     text;
 
@@ -2214,11 +2354,11 @@ async function loadRealRobloxData() {
 
             if (
                 game.name ===
-                "Jims Laser Tag"
+                "Zombie World"
             ) {
 
                 document.getElementById(
-                    "laserStats"
+                    "zombieStats"
                 ).textContent =
                     text;
 
@@ -2253,7 +2393,9 @@ async function loadRealRobloxData() {
         });
 
 
-        /* PERFORMANCE */
+        /* =========================
+           PERFORMANCE
+        ========================= */
 
         const sortedGames =
             [...games].sort(
@@ -2331,16 +2473,37 @@ async function loadRealRobloxData() {
 }
 
 
-/* =========================================
+/* =========================
+   ESCAPE HTML
+========================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(/&/g, "&amp;")
+
+        .replace(/</g, "&lt;")
+
+        .replace(/>/g, "&gt;")
+
+        .replace(/"/g, "&quot;")
+
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================
    START
-   ========================================= */
+========================= */
 
 loadRealRobloxData();
 
 
-/* =========================================
+/* =========================
    AUTO REFRESH
-   ========================================= */
+========================= */
 
 setInterval(
     loadRealRobloxData,
@@ -2348,13 +2511,12 @@ setInterval(
 );
 
 
-/* =========================================
+/* =========================
    CONSOLE
-   ========================================= */
+========================= */
 
 console.log(
-    "%cJIMLIOK GAMES",
-    "font-size:30px;font-weight:900;color:#8b5cf6"
+    "JIMLIOK GAMES"
 );
 
 console.log(
