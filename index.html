@@ -24,7 +24,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.gstatic.com"
+        href="https://fonts.googleapis.com"
         crossorigin
     >
 
@@ -33,7 +33,6 @@
         rel="stylesheet"
     >
 
-    <!-- MAIN CSS -->
     <link
         rel="stylesheet"
         href="style.css"
@@ -241,8 +240,6 @@
     <div class="stats">
 
 
-        <!-- TOTAL VISITS -->
-
         <div class="stat">
 
             <div class="stat-label">
@@ -263,8 +260,6 @@
         </div>
 
 
-
-        <!-- PLAYERS -->
 
         <div class="stat">
 
@@ -287,8 +282,6 @@
 
 
 
-        <!-- GAMES -->
-
         <div class="stat">
 
             <div class="stat-label">
@@ -309,8 +302,6 @@
         </div>
 
 
-
-        <!-- LIKES -->
 
         <div class="stat">
 
@@ -333,8 +324,6 @@
 
 
 
-        <!-- FAVORITES -->
-
         <div class="stat">
 
             <div class="stat-label">
@@ -355,8 +344,6 @@
         </div>
 
 
-
-        <!-- ONLINE -->
 
         <div class="stat">
 
@@ -379,8 +366,6 @@
 
 
 
-        <!-- UPDATE -->
-
         <div class="stat">
 
             <div class="stat-label">
@@ -402,8 +387,6 @@
         </div>
 
 
-
-        <!-- API -->
 
         <div class="stat">
 
@@ -447,7 +430,6 @@
 
         <div>
 
-
             <div class="game-hub-title">
 
                 <h2>
@@ -466,7 +448,6 @@
                 Play our games on Roblox.
             </p>
 
-
         </div>
 
 
@@ -474,12 +455,9 @@
 
 
 
-    <!-- =================================================
-         SEARCH BAR
-    ================================================= -->
+    <!-- SEARCH -->
 
     <div class="game-search">
-
 
         <div class="search-icon">
             🔎
@@ -494,21 +472,16 @@
             autocomplete="off"
         >
 
-
     </div>
 
 
 
-    <!-- =================================================
-         GAMES
-    ================================================= -->
+    <!-- GAMES -->
 
     <div class="games">
 
 
-        <!-- =================================================
-             ARMMAGEDON
-        ================================================= -->
+        <!-- ARMMAGEDON -->
 
         <article
             class="game"
@@ -559,9 +532,7 @@
 
 
 
-        <!-- =================================================
-             JIM'S LASER TAG
-        ================================================= -->
+        <!-- JIM'S LASER TAG -->
 
         <article
             class="game"
@@ -612,9 +583,7 @@
 
 
 
-        <!-- =================================================
-             ZOMBIE WORLD
-        ================================================= -->
+        <!-- ZOMBIE WORLD -->
 
         <article
             class="game"
@@ -665,9 +634,7 @@
 
 
 
-        <!-- =================================================
-             MEGA HYPER OBBY
-        ================================================= -->
+        <!-- MEGA HYPER OBBY -->
 
         <article
             class="game"
@@ -718,9 +685,7 @@
 
 
 
-        <!-- =================================================
-             OP FUN OBBY
-        ================================================= -->
+        <!-- OP FUN OBBY -->
 
         <article
             class="game"
@@ -773,7 +738,6 @@
     </div>
 
 
-    <!-- SEARCH RESULT MESSAGE -->
 
     <div
         id="noGamesFound"
@@ -803,8 +767,6 @@
     <div class="analytics">
 
 
-        <!-- GAME PERFORMANCE -->
-
         <div class="panel">
 
 
@@ -817,7 +779,6 @@
                 id="gamePerformance"
                 class="ranking"
             >
-
 
                 <div class="ranking-item">
 
@@ -833,15 +794,12 @@
 
                 </div>
 
-
             </div>
 
 
         </div>
 
 
-
-        <!-- REAL TIME -->
 
         <div class="panel">
 
@@ -1056,9 +1014,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="youtube-button"
-            style="
-                margin-left:10px;
-            "
+            style="margin-left:10px"
         >
             YOUTUBE CHANNEL
         </a>
@@ -1084,24 +1040,19 @@
     <div class="footer-grid">
 
 
-        <!-- BRAND -->
-
         <div>
 
 
             <div class="logo">
 
-
                 <div class="logo-icon">
                     JG
                 </div>
-
 
                 <div>
                     JIMLIOK
                     <span>GAMES</span>
                 </div>
-
 
             </div>
 
@@ -1118,54 +1069,41 @@
 
 
 
-        <!-- EXPLORE -->
-
         <div>
-
 
             <h4>
                 EXPLORE
             </h4>
 
-
             <a href="#home">
                 Home
             </a>
-
 
             <a href="#games">
                 Game Hub
             </a>
 
-
             <a href="#stats">
                 Live Stats
             </a>
-
 
             <a href="#news">
                 News
             </a>
 
-
         </div>
 
 
 
-        <!-- COMMUNITY -->
-
         <div>
-
 
             <h4>
                 COMMUNITY
             </h4>
 
-
             <a href="#community">
                 Community
             </a>
-
 
             <a
                 href="https://discord.gg/64g9dMky2"
@@ -1175,7 +1113,6 @@
                 Discord
             </a>
 
-
             <a
                 href="https://www.youtube.com/@Jimliokmusic-o8n"
                 target="_blank"
@@ -1184,30 +1121,23 @@
                 YouTube
             </a>
 
-
         </div>
 
 
 
-        <!-- COMPANY -->
-
         <div>
-
 
             <h4>
                 JIMLIOK GAMES
             </h4>
 
-
             <p>
                 Independent Game Studio
             </p>
 
-
             <p>
                 Roblox Game Development
             </p>
-
 
         </div>
 
@@ -1239,15 +1169,11 @@
 
 
 <!-- =====================================================
-     JAVASCRIPT
+     MAIN JAVASCRIPT
 ===================================================== -->
 
 <script>
 
-
-/* =====================================================
-   API
-===================================================== */
 
 const API_URL =
     "https://jimliokgames-website.onrender.com/api/games";
@@ -1276,8 +1202,9 @@ function openDiscord() {
 
 function formatNumber(number) {
 
-    return Number(number || 0)
-        .toLocaleString("en-US");
+    return Number(
+        number || 0
+    ).toLocaleString("en-US");
 
 }
 
@@ -1291,18 +1218,15 @@ function setConnectionStatus(
     connected
 ) {
 
-
     const status =
         document.getElementById(
             "connectionStatus"
         );
 
-
     const apiStatus =
         document.getElementById(
             "apiStatus"
         );
-
 
     const robloxApi =
         document.getElementById(
@@ -1312,33 +1236,25 @@ function setConnectionStatus(
 
     if (connected) {
 
-
         status.textContent =
             "LIVE";
-
 
         apiStatus.textContent =
             "ONLINE";
 
-
         robloxApi.textContent =
             "CONNECTED";
 
-
     } else {
-
 
         status.textContent =
             "OFFLINE";
 
-
         apiStatus.textContent =
             "OFFLINE";
 
-
         robloxApi.textContent =
             "ERROR";
-
 
     }
 
@@ -1389,13 +1305,10 @@ function escapeHTML(value) {
 
 async function loadRealRobloxData() {
 
-
     try {
-
 
         const controller =
             new AbortController();
-
 
         const timeout =
             setTimeout(
@@ -1467,46 +1380,33 @@ async function loadRealRobloxData() {
 
 
 
-        /* =================================================
-           TOTALS
-        ================================================= */
-
         games.forEach(
             game => {
-
 
                 totalVisits +=
                     Number(
                         game.visits || 0
                     );
 
-
                 totalPlayers +=
                     Number(
                         game.playing || 0
                     );
-
 
                 totalLikes +=
                     Number(
                         game.likes || 0
                     );
 
-
                 totalFavorites +=
                     Number(
                         game.favorites || 0
                     );
 
-
             }
         );
 
 
-
-        /* =================================================
-           MAIN STATS
-        ================================================= */
 
         document.getElementById(
             "visits"
@@ -1576,13 +1476,10 @@ async function loadRealRobloxData() {
 
 
 
-        /* =================================================
-           GAME CARD STATS
-        ================================================= */
+        /* GAME CARD STATS */
 
         games.forEach(
             game => {
-
 
                 const text =
 
@@ -1595,21 +1492,17 @@ async function loadRealRobloxData() {
                     `⭐ ${formatNumber(game.favorites)} favorites`;
 
 
-
                 if (
                     game.name ===
                     "ARMMAGEDON"
                 ) {
-
 
                     document.getElementById(
                         "armmagedonStats"
                     ).textContent =
                         text;
 
-
                 }
-
 
 
                 if (
@@ -1617,15 +1510,12 @@ async function loadRealRobloxData() {
                     "Jims Laser Tag"
                 ) {
 
-
                     document.getElementById(
                         "laserStats"
                     ).textContent =
                         text;
 
-
                 }
-
 
 
                 if (
@@ -1633,15 +1523,12 @@ async function loadRealRobloxData() {
                     "Zombie World"
                 ) {
 
-
                     document.getElementById(
                         "zombieStats"
                     ).textContent =
                         text;
 
-
                 }
-
 
 
                 if (
@@ -1649,15 +1536,12 @@ async function loadRealRobloxData() {
                     "Mega Hyper Obby"
                 ) {
 
-
                     document.getElementById(
                         "obbyStats"
                     ).textContent =
                         text;
 
-
                 }
-
 
 
                 if (
@@ -1665,24 +1549,19 @@ async function loadRealRobloxData() {
                     "OP Fun Obby"
                 ) {
 
-
                     document.getElementById(
                         "opFunStats"
                     ).textContent =
                         text;
 
-
                 }
-
 
             }
         );
 
 
 
-        /* =================================================
-           GAME PERFORMANCE
-        ================================================= */
+        /* PERFORMANCE */
 
         const sortedGames =
             [...games].sort(
@@ -1708,7 +1587,6 @@ async function loadRealRobloxData() {
 
         sortedGames.forEach(
             (game, index) => {
-
 
                 const item =
                     document.createElement(
@@ -1742,22 +1620,17 @@ async function loadRealRobloxData() {
                     item
                 );
 
-
             }
         );
 
 
     }
-
-
     catch (error) {
-
 
         console.error(
             "Roblox API error:",
             error
         );
-
 
         setConnectionStatus(
             false
@@ -1768,7 +1641,6 @@ async function loadRealRobloxData() {
             "lastUpdate"
         ).textContent =
             "ERROR";
-
 
     }
 
@@ -1798,11 +1670,9 @@ const noGamesFound =
     );
 
 
-
 gameSearch.addEventListener(
     "input",
     function () {
-
 
         const search =
             this.value
@@ -1813,10 +1683,8 @@ gameSearch.addEventListener(
         let visibleGames = 0;
 
 
-
         gameCards.forEach(
             card => {
-
 
                 const name =
                     card
@@ -1843,47 +1711,35 @@ gameSearch.addEventListener(
 
                 if (matches) {
 
-
                     card.style.display =
                         "";
 
-
                     visibleGames++;
 
-
                 } else {
-
 
                     card.style.display =
                         "none";
 
-
                 }
-
 
             }
         );
-
 
 
         if (
             visibleGames === 0
         ) {
 
-
             noGamesFound.style.display =
                 "block";
 
-
         } else {
-
 
             noGamesFound.style.display =
                 "none";
 
-
         }
-
 
     }
 );
@@ -1891,7 +1747,7 @@ gameSearch.addEventListener(
 
 
 /* =====================================================
-   START API
+   START
 ===================================================== */
 
 loadRealRobloxData();
@@ -1899,7 +1755,7 @@ loadRealRobloxData();
 
 
 /* =====================================================
-   AUTO REFRESH
+   REFRESH EVERY 60 SECONDS
 ===================================================== */
 
 setInterval(
@@ -1908,13 +1764,8 @@ setInterval(
 );
 
 
-
-/* =====================================================
-   CONSOLE
-===================================================== */
-
 console.log(
-    "JIMLIOK GAMES"
+    "JIMLIOK GAMES WEBSITE"
 );
 
 console.log(
@@ -1923,6 +1774,16 @@ console.log(
 );
 
 
+</script>
+
+
+
+<!-- =====================================================
+     JIMLIOK AI — CHATBASE
+===================================================== -->
+
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="AeMbGeOp-XAduNWImUsa7";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
 
 
