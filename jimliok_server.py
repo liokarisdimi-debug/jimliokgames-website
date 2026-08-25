@@ -28,7 +28,8 @@ GAMES = {
     "ARMMAGEDON": 9972819827,
     "Jims Laser Tag": 9696622861,
     "Zombie World": 7949170676,
-    "Mega Hyper Obby": 8772376332
+    "Mega Hyper Obby": 8772376332,
+    "OP Fun Obby": 9705260160
 }
 
 
