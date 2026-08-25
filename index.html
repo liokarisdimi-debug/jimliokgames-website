@@ -1,1952 +1,1071 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jimliok Games | Game Hub</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Jimliok Games | Game Hub</title>
+
+    <meta
+        name="description"
+        content="Jimliok Games — Official Game Hub"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- MAIN CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-<meta name="description" content="Jimliok Games — We create worlds. You live them.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-:root {
-    --bg: #03040b;
-    --bg2: #070916;
-    --panel: rgba(10,14,30,.92);
-
-    --purple: #7c3cff;
-    --purple2: #a855f7;
-    --blue: #2563ff;
-    --cyan: #00d9ff;
-
-    --white: #ffffff;
-    --text: #e5e7eb;
-    --muted: #9ca3af;
-
-    --green: #22c55e;
-
-    --border: rgba(255,255,255,.10);
-
-    --radius: 20px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Inter, sans-serif;
-    color: var(--white);
-
-    background:
-        radial-gradient(
-            circle at 50% -20%,
-            rgba(100,50,255,.30),
-            transparent 40%
-        ),
-        var(--bg);
-
-    overflow-x: hidden;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    font-family: inherit;
-    cursor: pointer;
-}
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #02030a;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        var(--purple),
-        var(--blue)
-    );
-
-    border-radius: 20px;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 72px;
-
-    z-index: 1000;
-
-    background: rgba(2,3,10,.80);
-
-    backdrop-filter: blur(20px);
-
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-    width: 94%;
-    max-width: 1500px;
-
-    height: 100%;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    font-size: 18px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-.logo-icon {
-    width: 40px;
-    height: 40px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--purple),
-            var(--blue)
-        );
-
-    box-shadow:
-        0 0 30px rgba(124,60,255,.45);
-
-    font-size: 13px;
-}
-
-.logo span {
-    color: var(--purple2);
-}
-
-nav {
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-}
-
-nav a {
-    color: #cbd5e1;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    transition: .25s;
-}
-
-nav a:hover {
-    color: white;
-}
-
-
-/* YOUTUBE */
-
-.youtube-button {
-    padding: 11px 18px;
-
-    border-radius: 10px;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff0033,
-            #ff1744
-        );
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    transition: .25s;
-
-    box-shadow:
-        0 5px 20px rgba(255,0,50,.15);
-}
-
-.youtube-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 25px rgba(255,0,50,.35);
-}
-
-
-/* DISCORD */
-
-.discord-button {
-    border: none;
-
-    padding: 11px 18px;
-
-    border-radius: 10px;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #5865f2,
-            var(--purple)
-        );
-
-    font-weight: 800;
-
-    transition: .25s;
-}
-
-.discord-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 760px;
-
-    padding-top: 72px;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-
-    inset: 72px 0 0 0;
-
-    z-index: -1;
-
-    background:
-        radial-gradient(
-            circle at 70% 50%,
-            rgba(70,40,255,.35),
-            transparent 45%
-        ),
-
-        radial-gradient(
-            circle at 30% 70%,
-            rgba(0,160,255,.12),
-            transparent 40%
-        );
-}
-
-.hero-content {
-    padding-left: 8vw;
-}
-
-.eyebrow {
-    color: var(--purple2);
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-size: clamp(55px,7vw,105px);
-
-    line-height: .88;
-
-    letter-spacing: -6px;
-
-    font-weight: 900;
-}
-
-.hero h1 span {
-    display: block;
-
-    background:
-        linear-gradient(
-            90deg,
-            white,
-            #a855f7,
-            #2563ff
-        );
-
-    -webkit-background-clip: text;
-
-    color: transparent;
-}
-
-.hero-description {
-    max-width: 570px;
-
-    margin-top: 28px;
-
-    color: #aeb5c4;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-}
-
-.hero-buttons {
-    display: flex;
-
-    gap: 14px;
-
-    margin-top: 30px;
-}
-
-.primary-button {
-    display: inline-block;
-
-    padding: 14px 22px;
-
-    border-radius: 11px;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--purple),
-            var(--blue)
-        );
-
-    transition: .25s;
-}
-
-.primary-button:hover {
-    transform: translateY(-3px);
-}
-
-.hero-visual {
-    height: 500px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.orb {
-    width: 430px;
-    height: 430px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(120,80,255,.35),
-            rgba(40,80,255,.08),
-            transparent 70%
-        );
-
-    box-shadow:
-        0 0 140px rgba(80,50,255,.35);
-
-    animation: floatOrb 6s ease-in-out infinite;
-}
-
-@keyframes floatOrb {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    width: 94%;
-
-    max-width: 1500px;
-
-    margin: 90px auto;
-}
-
-.section-heading {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    margin-bottom: 25px;
-}
-
-.section-heading h2 {
-    font-size: 30px;
-
-    font-weight: 900;
-}
-
-.section-heading p {
-    color: var(--muted);
-
-    font-size: 13px;
-}
-
-
-/* =========================
-   LIVE STATS
-========================= */
-
-.dashboard {
-    margin-top: -40px;
-
-    position: relative;
-
-    z-index: 10;
-}
-
-.dashboard-title {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-bottom: 15px;
-}
-
-.dashboard-title h2 {
-    font-size: 18px;
-
-    font-weight: 900;
-}
-
-.live {
-    color: var(--green);
-
-    font-size: 11px;
-
-    font-weight: 900;
-}
-
-.live::before {
-    content: "";
-
-    display: inline-block;
-
-    width: 8px;
-    height: 8px;
-
-    margin-right: 6px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    box-shadow:
-        0 0 15px var(--green);
-}
-
-.stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap: 12px;
-}
-
-.stat {
-    min-height: 125px;
-
-    padding: 20px;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(16,20,45,.95),
-            rgba(6,8,20,.92)
-        );
-
-    transition: .3s;
-}
-
-.stat:hover {
-    transform: translateY(-5px);
-
-    border-color:
-        rgba(124,60,255,.55);
-}
-
-.stat-label {
-    color: var(--muted);
-
-    font-size: 10px;
-
-    text-transform: uppercase;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-}
-
-.stat-value {
-    margin-top: 7px;
-
-    font-size: 27px;
-
-    font-weight: 900;
-}
-
-.stat-growth {
-    margin-top: 7px;
-
-    color: var(--green);
-
-    font-size: 10px;
-
-    font-weight: 800;
-}
-
-
-/* =========================
-   GAME HUB
-========================= */
-
-.game-hub-title {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-.game-hub-badge {
-    padding: 6px 10px;
-
-    border-radius: 8px;
-
-    background:
-        rgba(124,60,255,.15);
-
-    border:
-        1px solid rgba(124,60,255,.35);
-
-    color: var(--purple2);
-
-    font-size: 10px;
-
-    font-weight: 900;
-}
-
-.games {
-    display: grid;
-
-    grid-template-columns:
-        repeat(5,1fr);
-
-    gap: 18px;
-}
-
-.game {
-    overflow: hidden;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15,18,40,.95),
-            rgba(5,7,18,.95)
-        );
-
-    transition: .3s;
-}
-
-.game:hover {
-    transform: translateY(-8px);
-
-    border-color:
-        rgba(124,60,255,.65);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.30);
-}
-
-.game-image {
-    height: 190px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 20px;
-
-    font-size: 22px;
-
-    font-weight: 900;
-
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(124,60,255,.65),
-            transparent 50%
-        ),
-        #0c0e24;
-
-    transition: .5s;
-}
-
-.game:hover .game-image {
-    transform: scale(1.03);
-}
-
-.game:nth-child(2) .game-image {
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(255,0,170,.45),
-            transparent 50%
-        ),
-        #100b24;
-}
-
-.game:nth-child(3) .game-image {
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(0,180,255,.45),
-            transparent 50%
-        ),
-        #061322;
-}
-
-.game:nth-child(4) .game-image {
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(0,255,140,.35),
-            transparent 50%
-        ),
-        #071713;
-}
-
-.game:nth-child(5) .game-image {
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(255,190,0,.45),
-            transparent 50%
-        ),
-        #171207;
-}
-
-.game-content {
-    padding: 18px;
-}
-
-.game h3 {
-    font-size: 16px;
-
-    font-weight: 900;
-}
-
-.game-type {
-    margin-top: 5px;
-
-    color: var(--purple2);
-
-    font-size: 9px;
-
-    font-weight: 800;
-}
-
-.game-stats {
-    margin-top: 13px;
-
-    color: var(--muted);
-
-    font-size: 10px;
-
-    line-height: 1.7;
-
-    min-height: 70px;
-}
-
-.game-button {
-    display: block;
-
-    width: 100%;
-
-    margin-top: 15px;
-
-    padding: 11px;
-
-    border: none;
-
-    border-radius: 9px;
-
-    text-align: center;
-
-    color: white;
-
-    font-size: 11px;
-
-    font-weight: 900;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--purple),
-            var(--blue)
-        );
-
-    transition: .25s;
-}
-
-.game-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   ANALYTICS
-========================= */
-
-.analytics {
-    display: grid;
-
-    grid-template-columns:
-        1.4fr 1fr;
-
-    gap: 18px;
-}
-
-.panel {
-    padding: 22px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    background:
-        rgba(7,10,24,.90);
-}
-
-.panel h3 {
-    margin-bottom: 20px;
-
-    font-size: 16px;
-}
-
-.ranking {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-}
-
-.ranking-item {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 13px;
-
-    border-radius: 10px;
-
-    background:
-        rgba(255,255,255,.035);
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-.ranking-item span {
-    color: var(--purple2);
-}
-
-
-/* =========================
-   NEWS
-========================= */
-
-.news {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 18px;
-}
-
-.news-card {
-    padding: 23px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15,18,40,.90),
-            rgba(5,7,18,.90)
-        );
-
-    transition: .3s;
-}
-
-.news-card:hover {
-    transform: translateY(-7px);
-
-    border-color:
-        rgba(124,60,255,.45);
-}
-
-.news-date {
-    color: var(--purple2);
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-.news-card h3 {
-    margin-top: 10px;
-
-    font-size: 17px;
-}
-
-.news-card p {
-    margin-top: 10px;
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================
-   CTA
-========================= */
-
-.cta {
-    padding: 75px 30px;
-
-    text-align: center;
-
-    border:
-        1px solid rgba(124,60,255,.35);
-
-    border-radius: 25px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(124,60,255,.25),
-            transparent 65%
-        ),
-        #080a18;
-}
-
-.cta h2 {
-    font-size:
-        clamp(32px,5vw,58px);
-
-    font-weight: 900;
-}
-
-.cta p {
-    max-width: 650px;
-
-    margin: 15px auto 25px;
-
-    color: var(--muted);
-
-    line-height: 1.7;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 60px 3% 25px;
-
-    border-top:
-        1px solid var(--border);
-
-    background: #02030a;
-}
-
-.footer-grid {
-    width: 94%;
-
-    max-width: 1500px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        2fr 1fr 1fr 1fr;
-
-    gap: 40px;
-}
-
-footer h4 {
-    margin-bottom: 15px;
-
-    font-size: 13px;
-}
-
-footer a,
-footer p {
-    display: block;
-
-    margin-bottom: 9px;
-
-    color: var(--muted);
-
-    font-size: 12px;
-}
-
-footer a:hover {
-    color: white;
-}
-
-.copyright {
-    width: 94%;
-
-    max-width: 1500px;
-
-    margin: 45px auto 0;
-
-    padding-top: 20px;
-
-    border-top:
-        1px solid var(--border);
-
-    display: flex;
-
-    justify-content: space-between;
-
-    color: #6b7280;
-
-    font-size: 10px;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width:1200px) {
-
-    nav {
-        display: none;
-    }
-
-    .games {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .stats {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-}
-
-@media (max-width:900px) {
-
-    .hero {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-content {
-        padding: 120px 7% 60px;
-    }
-
-    .hero-visual {
-        display: none;
-    }
-
-    .analytics {
-        grid-template-columns: 1fr;
-    }
-
-    .news {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-}
-
-@media (max-width:600px) {
-
-    .discord-button {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 50px;
-
-        letter-spacing: -3px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .games {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .copyright {
-        flex-direction: column;
-
-        gap: 10px;
-    }
-
-}
-
-</style>
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
-<div class="header-inner">
-
-<a href="#home" class="logo">
-
-<div class="logo-icon">
-JG
-</div>
-
-<div>
-JIMLIOK
-<span>GAMES</span>
-</div>
-
-</a>
+    <div class="header-inner">
 
 
-<nav>
+        <a
+            href="#home"
+            class="logo"
+        >
 
-<a href="#home">HOME</a>
+            <div class="logo-icon">
+                JG
+            </div>
 
-<a href="#games">GAME HUB</a>
+            <div>
+                JIMLIOK
+                <span>GAMES</span>
+            </div>
 
-<a href="#stats">STATS</a>
-
-<a href="#news">NEWS</a>
-
-<a href="#about">ABOUT</a>
-
-<a href="#community">COMMUNITY</a>
-
-
-<a
-    href="https://www.youtube.com/@Jimliokmusic-o8n"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="youtube-button"
->
-    YOUTUBE
-</a>
+        </a>
 
 
-<button
-    class="discord-button"
-    onclick="openDiscord()"
->
-    DISCORD
-</button>
+        <nav>
 
-</nav>
+            <a href="#home">
+                HOME
+            </a>
 
-</div>
+            <a href="#games">
+                GAME HUB
+            </a>
+
+            <a href="#stats">
+                STATS
+            </a>
+
+            <a href="#news">
+                NEWS
+            </a>
+
+            <a href="#community">
+                COMMUNITY
+            </a>
+
+
+            <!-- YOUTUBE -->
+
+            <a
+                href="https://www.youtube.com/@Jimliokmusic-o8n"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="youtube-button"
+            >
+                YOUTUBE
+            </a>
+
+
+            <!-- DISCORD -->
+
+            <button
+                class="discord-button"
+                onclick="openDiscord()"
+            >
+                DISCORD
+            </button>
+
+        </nav>
+
+    </div>
 
 </header>
+
 
 
 <main>
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section
     class="hero"
     id="home"
 >
 
-<div class="hero-background"></div>
+
+    <div class="hero-background"></div>
 
 
-<div class="hero-content">
-
-<div class="eyebrow">
-INDEPENDENT GAME STUDIO
-</div>
+    <div class="hero-content">
 
 
-<h1>
-
-JIMLIOK
-
-<span>
-GAMES
-</span>
-
-</h1>
+        <div class="eyebrow">
+            INDEPENDENT GAME STUDIO
+        </div>
 
 
-<p class="hero-description">
+        <h1>
 
-We create worlds.
-You live them.
+            JIMLIOK
 
-Welcome to the official
-Jimliok Games Game Hub.
+            <span>
+                GAMES
+            </span>
 
-Discover our games,
-live Roblox statistics,
-news and community.
-
-</p>
+        </h1>
 
 
-<div class="hero-buttons">
+        <p class="hero-description">
 
-<a
-    href="#games"
-    class="primary-button"
->
-    EXPLORE GAME HUB →
-</a>
+            Welcome to the official
+            Jimliok Games Game Hub.
 
-<a
-    href="https://www.youtube.com/@Jimliokmusic-o8n"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="youtube-button"
->
-    WATCH ON YOUTUBE
-</a>
+            Discover our Roblox games,
+            live statistics, news and
+            community.
 
-</div>
-
-</div>
+        </p>
 
 
-<div class="hero-visual">
+        <div class="hero-buttons">
 
-<div class="orb"></div>
 
-</div>
+            <a
+                href="#games"
+                class="primary-button"
+            >
+                EXPLORE GAME HUB →
+            </a>
+
+
+            <a
+                href="https://www.youtube.com/@Jimliokmusic-o8n"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="youtube-button"
+            >
+                YOUTUBE CHANNEL
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="orb"></div>
+
+    </div>
+
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      LIVE STATS
-========================= -->
+===================================================== -->
 
 <section
     class="dashboard"
     id="stats"
 >
 
-<div class="dashboard-title">
 
-<h2>
-LIVE ROBLOX STATS
-</h2>
-
-<span
-    class="live"
-    id="connectionStatus"
->
-CONNECTING
-</span>
-
-</div>
+    <div class="dashboard-title">
 
 
-<div class="stats">
+        <h2>
+            LIVE ROBLOX STATS
+        </h2>
 
 
-<div class="stat">
-
-<div class="stat-label">
-Total Visits
-</div>
-
-<div
-    class="stat-value"
-    id="visits"
->
---
-</div>
-
-<div class="stat-growth">
-REAL ROBLOX DATA
-</div>
-
-</div>
+        <span
+            class="live"
+            id="connectionStatus"
+        >
+            CONNECTING
+        </span>
 
 
-<div class="stat">
-
-<div class="stat-label">
-Players Now
-</div>
-
-<div
-    class="stat-value"
-    id="players"
->
---
-</div>
-
-<div class="stat-growth">
-LIVE
-</div>
-
-</div>
+    </div>
 
 
-<div class="stat">
 
-<div class="stat-label">
-Published Games
-</div>
-
-<div
-    class="stat-value"
-    id="gamesCount"
->
---
-</div>
-
-<div class="stat-growth">
-ROBLOX
-</div>
-
-</div>
+    <div class="stats">
 
 
-<div class="stat">
+        <!-- TOTAL VISITS -->
 
-<div class="stat-label">
-Total Likes
-</div>
+        <div class="stat">
 
-<div
-    class="stat-value"
-    id="likes"
->
---
-</div>
+            <div class="stat-label">
+                Total Visits
+            </div>
 
-<div class="stat-growth">
-REAL DATA
-</div>
+            <div
+                class="stat-value"
+                id="visits"
+            >
+                --
+            </div>
 
-</div>
+            <div class="stat-growth">
+                REAL ROBLOX DATA
+            </div>
 
-
-<div class="stat">
-
-<div class="stat-label">
-Favorites
-</div>
-
-<div
-    class="stat-value"
-    id="favorites"
->
---
-</div>
-
-<div class="stat-growth">
-REAL DATA
-</div>
-
-</div>
+        </div>
 
 
-<div class="stat">
 
-<div class="stat-label">
-Online Now
-</div>
+        <!-- PLAYERS -->
 
-<div
-    class="stat-value"
-    id="online"
->
---
-</div>
+        <div class="stat">
 
-<div class="stat-growth">
-LIVE
-</div>
+            <div class="stat-label">
+                Players Now
+            </div>
 
-</div>
+            <div
+                class="stat-value"
+                id="players"
+            >
+                --
+            </div>
 
+            <div class="stat-growth">
+                LIVE
+            </div>
 
-<div class="stat">
-
-<div class="stat-label">
-Last Update
-</div>
-
-<div
-    class="stat-value"
-    id="lastUpdate"
-    style="font-size:16px"
->
---
-</div>
-
-<div class="stat-growth">
-AUTOMATIC
-</div>
-
-</div>
+        </div>
 
 
-<div class="stat">
 
-<div class="stat-label">
-API Status
-</div>
+        <!-- GAMES -->
 
-<div
-    class="stat-value"
-    id="apiStatus"
-    style="font-size:18px"
->
-WAITING
-</div>
+        <div class="stat">
 
-<div class="stat-growth">
-LIVE CONNECTION
-</div>
+            <div class="stat-label">
+                Published Games
+            </div>
 
-</div>
+            <div
+                class="stat-value"
+                id="gamesCount"
+            >
+                --
+            </div>
+
+            <div class="stat-growth">
+                ROBLOX
+            </div>
+
+        </div>
 
 
-</div>
+
+        <!-- LIKES -->
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Total Likes
+            </div>
+
+            <div
+                class="stat-value"
+                id="likes"
+            >
+                --
+            </div>
+
+            <div class="stat-growth">
+                REAL DATA
+            </div>
+
+        </div>
+
+
+
+        <!-- FAVORITES -->
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Favorites
+            </div>
+
+            <div
+                class="stat-value"
+                id="favorites"
+            >
+                --
+            </div>
+
+            <div class="stat-growth">
+                REAL DATA
+            </div>
+
+        </div>
+
+
+
+        <!-- ONLINE -->
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Online Now
+            </div>
+
+            <div
+                class="stat-value"
+                id="online"
+            >
+                --
+            </div>
+
+            <div class="stat-growth">
+                LIVE
+            </div>
+
+        </div>
+
+
+
+        <!-- UPDATE -->
+
+        <div class="stat">
+
+            <div class="stat-label">
+                Last Update
+            </div>
+
+            <div
+                class="stat-value"
+                id="lastUpdate"
+                style="font-size:16px"
+            >
+                --
+            </div>
+
+            <div class="stat-growth">
+                AUTOMATIC
+            </div>
+
+        </div>
+
+
+
+        <!-- API -->
+
+        <div class="stat">
+
+            <div class="stat-label">
+                API Status
+            </div>
+
+            <div
+                class="stat-value"
+                id="apiStatus"
+                style="font-size:18px"
+            >
+                WAITING
+            </div>
+
+            <div class="stat-growth">
+                LIVE CONNECTION
+            </div>
+
+        </div>
+
+
+    </div>
+
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      GAME HUB
-========================= -->
+===================================================== -->
 
-<section id="games">
-
-
-<div class="section-heading">
-
-<div>
-
-<div class="game-hub-title">
-
-<h2>
-GAME HUB
-</h2>
-
-<div class="game-hub-badge">
-5 GAMES
-</div>
-
-</div>
-
-<p>
-Play our games on Roblox.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="games">
-
-
-<!-- ARMMAGEDON -->
-
-<article class="game">
-
-<div class="game-image">
-ARMMAGEDON
-</div>
-
-<div class="game-content">
-
-<h3>
-ARMMAGEDON
-</h3>
-
-<div class="game-type">
-PLATFORMER • ACTION
-</div>
-
-<div
-    class="game-stats"
-    id="armmagedonStats"
+<section
+    id="games"
 >
-Loading Roblox data...
-</div>
-
-<a
-    class="game-button"
-    href="https://www.roblox.com/games/118307484925962"
-    target="_blank"
-    rel="noopener noreferrer"
->
-PLAY NOW
-</a>
-
-</div>
-
-</article>
 
 
-<!-- LASER TAG -->
-
-<article class="game">
-
-<div class="game-image">
-LASER TAG
-</div>
-
-<div class="game-content">
-
-<h3>
-Jim's Laser Tag
-</h3>
-
-<div class="game-type">
-SHOOTER • MULTIPLAYER
-</div>
-
-<div
-    class="game-stats"
-    id="laserStats"
->
-Loading Roblox data...
-</div>
-
-<a
-    class="game-button"
-    href="https://www.roblox.com/games/109370449470980"
-    target="_blank"
-    rel="noopener noreferrer"
->
-PLAY NOW
-</a>
-
-</div>
-
-</article>
+    <div class="section-heading">
 
 
-<!-- ZOMBIE WORLD -->
-
-<article class="game">
-
-<div class="game-image">
-ZOMBIE WORLD
-</div>
-
-<div class="game-content">
-
-<h3>
-Zombie World
-</h3>
-
-<div class="game-type">
-SURVIVAL • HORROR
-</div>
-
-<div
-    class="game-stats"
-    id="zombieStats"
->
-Loading Roblox data...
-</div>
-
-<a
-    class="game-button"
-    href="https://www.roblox.com/games/73482230314135"
-    target="_blank"
-    rel="noopener noreferrer"
->
-PLAY NOW
-</a>
-
-</div>
-
-</article>
+        <div>
 
 
-<!-- MEGA HYPER OBBY -->
+            <div class="game-hub-title">
 
-<article class="game">
-
-<div class="game-image">
-MEGA HYPER OBBY
-</div>
-
-<div class="game-content">
-
-<h3>
-Mega Hyper Obby
-</h3>
-
-<div class="game-type">
-OBBY • CHALLENGE
-</div>
-
-<div
-    class="game-stats"
-    id="obbyStats"
->
-Loading Roblox data...
-</div>
-
-<a
-    class="game-button"
-    href="https://www.roblox.com/games/113111954801108"
-    target="_blank"
-    rel="noopener noreferrer"
->
-PLAY NOW
-</a>
-
-</div>
-
-</article>
+                <h2>
+                    GAME HUB
+                </h2>
 
 
-<!-- OP FUN OBBY -->
+                <div class="game-hub-badge">
+                    5 GAMES
+                </div>
 
-<article class="game">
-
-<div class="game-image">
-OP FUN OBBY
-</div>
-
-<div class="game-content">
-
-<h3>
-OP Fun Obby
-</h3>
-
-<div class="game-type">
-OBBY • FUN
-</div>
-
-<div
-    class="game-stats"
-    id="opFunStats"
->
-Loading Roblox data...
-</div>
-
-<a
-    class="game-button"
-    href="https://www.roblox.com/games/103846454830311/op-fun-obby"
-    target="_blank"
-    rel="noopener noreferrer"
->
-PLAY NOW
-</a>
-
-</div>
-
-</article>
+            </div>
 
 
-</div>
+            <p>
+                Play our games on Roblox.
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         SEARCH BAR
+    ================================================= -->
+
+    <div class="game-search">
+
+
+        <div class="search-icon">
+            🔎
+        </div>
+
+
+        <input
+            type="search"
+            id="gameSearch"
+            placeholder="Search games..."
+            aria-label="Search games"
+            autocomplete="off"
+        >
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         GAMES
+    ================================================= -->
+
+    <div class="games">
+
+
+        <!-- =================================================
+             ARMMAGEDON
+        ================================================= -->
+
+        <article
+            class="game"
+            data-game-name="ARMMAGEDON"
+        >
+
+
+            <div class="game-image">
+                ARMMAGEDON
+            </div>
+
+
+            <div class="game-content">
+
+
+                <h3>
+                    ARMMAGEDON
+                </h3>
+
+
+                <div class="game-type">
+                    PLATFORMER • ACTION
+                </div>
+
+
+                <div
+                    class="game-stats"
+                    id="armmagedonStats"
+                >
+                    Loading Roblox data...
+                </div>
+
+
+                <a
+                    class="game-button"
+                    href="https://www.roblox.com/games/118307484925962"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    PLAY NOW
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             JIM'S LASER TAG
+        ================================================= -->
+
+        <article
+            class="game"
+            data-game-name="Jims Laser Tag"
+        >
+
+
+            <div class="game-image">
+                LASER TAG
+            </div>
+
+
+            <div class="game-content">
+
+
+                <h3>
+                    Jim's Laser Tag
+                </h3>
+
+
+                <div class="game-type">
+                    SHOOTER • MULTIPLAYER
+                </div>
+
+
+                <div
+                    class="game-stats"
+                    id="laserStats"
+                >
+                    Loading Roblox data...
+                </div>
+
+
+                <a
+                    class="game-button"
+                    href="https://www.roblox.com/games/109370449470980"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    PLAY NOW
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             ZOMBIE WORLD
+        ================================================= -->
+
+        <article
+            class="game"
+            data-game-name="Zombie World"
+        >
+
+
+            <div class="game-image">
+                ZOMBIE WORLD
+            </div>
+
+
+            <div class="game-content">
+
+
+                <h3>
+                    Zombie World
+                </h3>
+
+
+                <div class="game-type">
+                    SURVIVAL • HORROR
+                </div>
+
+
+                <div
+                    class="game-stats"
+                    id="zombieStats"
+                >
+                    Loading Roblox data...
+                </div>
+
+
+                <a
+                    class="game-button"
+                    href="https://www.roblox.com/games/73482230314135"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    PLAY NOW
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             MEGA HYPER OBBY
+        ================================================= -->
+
+        <article
+            class="game"
+            data-game-name="Mega Hyper Obby"
+        >
+
+
+            <div class="game-image">
+                MEGA HYPER OBBY
+            </div>
+
+
+            <div class="game-content">
+
+
+                <h3>
+                    Mega Hyper Obby
+                </h3>
+
+
+                <div class="game-type">
+                    OBBY • CHALLENGE
+                </div>
+
+
+                <div
+                    class="game-stats"
+                    id="obbyStats"
+                >
+                    Loading Roblox data...
+                </div>
+
+
+                <a
+                    class="game-button"
+                    href="https://www.roblox.com/games/113111954801108"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    PLAY NOW
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             OP FUN OBBY
+        ================================================= -->
+
+        <article
+            class="game"
+            data-game-name="OP Fun Obby"
+        >
+
+
+            <div class="game-image">
+                OP FUN OBBY
+            </div>
+
+
+            <div class="game-content">
+
+
+                <h3>
+                    OP Fun Obby
+                </h3>
+
+
+                <div class="game-type">
+                    OBBY • FUN
+                </div>
+
+
+                <div
+                    class="game-stats"
+                    id="opFunStats"
+                >
+                    Loading Roblox data...
+                </div>
+
+
+                <a
+                    class="game-button"
+                    href="https://www.roblox.com/games/103846454830311/op-fun-obby"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    PLAY NOW
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
+
+    <!-- SEARCH RESULT MESSAGE -->
+
+    <div
+        id="noGamesFound"
+        style="
+            display:none;
+            text-align:center;
+            padding:40px;
+            color:#9ca3af;
+            font-size:14px;
+        "
+    >
+        No games found.
+    </div>
+
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      PERFORMANCE
-========================= -->
+===================================================== -->
 
 <section>
 
-<div class="analytics">
+
+    <div class="analytics">
 
 
-<div class="panel">
+        <!-- GAME PERFORMANCE -->
 
-<h3>
-GAME PERFORMANCE
-</h3>
-
-<div
-    id="gamePerformance"
-    class="ranking"
->
-
-<div class="ranking-item">
-
-<span>
-—
-</span>
-
-Loading...
-
-<span>
-—
-</span>
-
-</div>
-
-</div>
-
-</div>
+        <div class="panel">
 
 
-<div class="panel">
-
-<h3>
-REAL-TIME INFORMATION
-</h3>
-
-<div class="ranking">
+            <h3>
+                GAME PERFORMANCE
+            </h3>
 
 
-<div class="ranking-item">
-
-Roblox API
-
-<span id="robloxApi">
-WAITING
-</span>
-
-</div>
+            <div
+                id="gamePerformance"
+                class="ranking"
+            >
 
 
-<div class="ranking-item">
+                <div class="ranking-item">
 
-Games
+                    <span>
+                        —
+                    </span>
 
-<span id="gameApiCount">
---
-</span>
+                    Loading...
 
-</div>
+                    <span>
+                        —
+                    </span>
 
-
-<div class="ranking-item">
-
-Players
-
-<span id="playerApiCount">
---
-</span>
-
-</div>
+                </div>
 
 
-<div class="ranking-item">
-
-Refresh
-
-<span>
-60 SEC
-</span>
-
-</div>
+            </div>
 
 
-</div>
+        </div>
 
-</div>
 
-</div>
+
+        <!-- REAL TIME -->
+
+        <div class="panel">
+
+
+            <h3>
+                REAL-TIME INFORMATION
+            </h3>
+
+
+            <div class="ranking">
+
+
+                <div class="ranking-item">
+
+                    Roblox API
+
+                    <span id="robloxApi">
+                        WAITING
+                    </span>
+
+                </div>
+
+
+                <div class="ranking-item">
+
+                    Games
+
+                    <span id="gameApiCount">
+                        --
+                    </span>
+
+                </div>
+
+
+                <div class="ranking-item">
+
+                    Players
+
+                    <span id="playerApiCount">
+                        --
+                    </span>
+
+                </div>
+
+
+                <div class="ranking-item">
+
+                    Refresh
+
+                    <span>
+                        60 SEC
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      NEWS
-========================= -->
+===================================================== -->
 
-<section id="news">
-
-<div class="section-heading">
-
-<div>
-
-<h2>
-LATEST NEWS
-</h2>
-
-<p>
-News and updates from Jimliok Games.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="news">
-
-
-<article class="news-card">
-
-<div class="news-date">
-GAME DEVELOPMENT
-</div>
-
-<h3>
-New projects are coming
-</h3>
-
-<p>
-Jimliok Games continues to
-create new games and new
-gaming experiences.
-</p>
-
-</article>
-
-
-<article class="news-card">
-
-<div class="news-date">
-GAME HUB
-</div>
-
-<h3>
-Game Hub is live
-</h3>
-
-<p>
-All of our current Roblox
-games are now connected
-to the Jimliok Games hub.
-</p>
-
-</article>
-
-
-<article class="news-card">
-
-<div class="news-date">
-COMMUNITY
-</div>
-
-<h3>
-Join the community
-</h3>
-
-<p>
-Stay updated with the
-latest Jimliok Games news.
-</p>
-
-</article>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section id="about">
-
-<div class="cta">
-
-<h2>
-WE CREATE WORLDS.
-</h2>
-
-<p>
-Jimliok Games is an independent
-game development studio creating
-original gaming experiences.
-</p>
-
-<a
-    href="#games"
-    class="primary-button"
+<section
+    id="news"
 >
-EXPLORE OUR GAMES
-</a>
 
-</div>
+
+    <div class="section-heading">
+
+
+        <div>
+
+            <h2>
+                LATEST NEWS
+            </h2>
+
+            <p>
+                News and updates from Jimliok Games.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="news">
+
+
+        <article class="news-card">
+
+
+            <div class="news-date">
+                GAME DEVELOPMENT
+            </div>
+
+
+            <h3>
+                New projects are coming
+            </h3>
+
+
+            <p>
+                Jimliok Games continues
+                to create new games and
+                new gaming experiences.
+            </p>
+
+
+        </article>
+
+
+
+        <article class="news-card">
+
+
+            <div class="news-date">
+                GAME HUB
+            </div>
+
+
+            <h3>
+                Game Hub is live
+            </h3>
+
+
+            <p>
+                All of our current Roblox
+                games are now connected
+                to the Jimliok Games hub.
+            </p>
+
+
+        </article>
+
+
+
+        <article class="news-card">
+
+
+            <div class="news-date">
+                COMMUNITY
+            </div>
+
+
+            <h3>
+                Join the community
+            </h3>
+
+
+            <p>
+                Stay updated with the
+                latest Jimliok Games news.
+            </p>
+
+
+        </article>
+
+
+    </div>
+
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      COMMUNITY
-========================= -->
+===================================================== -->
 
-<section id="community">
-
-<div class="cta">
-
-<h2>
-JOIN THE COMMUNITY
-</h2>
-
-<p>
-Become part of the Jimliok Games
-community.
-</p>
-
-<button
-    class="discord-button"
-    onclick="openDiscord()"
+<section
+    id="community"
 >
-JOIN DISCORD
-</button>
 
-<a
-    href="https://www.youtube.com/@Jimliokmusic-o8n"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="youtube-button"
-    style="display:inline-block;margin-left:10px;"
->
-YOUTUBE CHANNEL
-</a>
 
-</div>
+    <div class="cta">
+
+
+        <h2>
+            JOIN THE COMMUNITY
+        </h2>
+
+
+        <p>
+            Become part of the Jimliok Games
+            community and stay connected.
+        </p>
+
+
+        <button
+            class="discord-button"
+            onclick="openDiscord()"
+        >
+            JOIN DISCORD
+        </button>
+
+
+        <a
+            href="https://www.youtube.com/@Jimliokmusic-o8n"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="youtube-button"
+            style="
+                margin-left:10px;
+            "
+        >
+            YOUTUBE CHANNEL
+        </a>
+
+
+    </div>
+
 
 </section>
 
@@ -1954,135 +1073,190 @@ YOUTUBE CHANNEL
 </main>
 
 
-<!-- =========================
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
-<div class="footer-grid">
+
+    <div class="footer-grid">
 
 
-<div>
+        <!-- BRAND -->
 
-<div class="logo">
-
-<div class="logo-icon">
-JG
-</div>
-
-<div>
-JIMLIOK
-<span>GAMES</span>
-</div>
-
-</div>
-
-<p style="margin-top:15px">
-We create worlds.
-You live them.
-</p>
-
-</div>
+        <div>
 
 
-<div>
-
-<h4>
-EXPLORE
-</h4>
-
-<a href="#games">
-Game Hub
-</a>
-
-<a href="#news">
-News
-</a>
-
-<a href="#stats">
-Stats
-</a>
-
-</div>
+            <div class="logo">
 
 
-<div>
-
-<h4>
-COMPANY
-</h4>
-
-<a href="#about">
-About
-</a>
-
-<a href="#community">
-Community
-</a>
-
-</div>
+                <div class="logo-icon">
+                    JG
+                </div>
 
 
-<div>
-
-<h4>
-SOCIAL
-</h4>
-
-<a
-    href="https://www.youtube.com/@Jimliokmusic-o8n"
-    target="_blank"
-    rel="noopener noreferrer"
->
-YouTube
-</a>
-
-<a
-    href="https://discord.gg/64g9dMky2"
-    target="_blank"
-    rel="noopener noreferrer"
->
-Discord
-</a>
-
-</div>
+                <div>
+                    JIMLIOK
+                    <span>GAMES</span>
+                </div>
 
 
-</div>
+            </div>
 
 
-<div class="copyright">
+            <p style="margin-top:15px">
 
-<span>
-© 2026 Jimliok Games.
-All rights reserved.
-</span>
+                Official Jimliok Games
+                website and Game Hub.
 
-<span>
-Created by Jimliok Games |
-Music by Jimliok Music
-</span>
+            </p>
 
-</div>
+
+        </div>
+
+
+
+        <!-- EXPLORE -->
+
+        <div>
+
+
+            <h4>
+                EXPLORE
+            </h4>
+
+
+            <a href="#home">
+                Home
+            </a>
+
+
+            <a href="#games">
+                Game Hub
+            </a>
+
+
+            <a href="#stats">
+                Live Stats
+            </a>
+
+
+            <a href="#news">
+                News
+            </a>
+
+
+        </div>
+
+
+
+        <!-- COMMUNITY -->
+
+        <div>
+
+
+            <h4>
+                COMMUNITY
+            </h4>
+
+
+            <a href="#community">
+                Community
+            </a>
+
+
+            <a
+                href="https://discord.gg/64g9dMky2"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Discord
+            </a>
+
+
+            <a
+                href="https://www.youtube.com/@Jimliokmusic-o8n"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                YouTube
+            </a>
+
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div>
+
+
+            <h4>
+                JIMLIOK GAMES
+            </h4>
+
+
+            <p>
+                Independent Game Studio
+            </p>
+
+
+            <p>
+                Roblox Game Development
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="copyright">
+
+
+        <span>
+            © 2026 Jimliok Games.
+            All rights reserved.
+        </span>
+
+
+        <span>
+            Created by Jimliok Games |
+            Music by Jimliok Games
+        </span>
+
+
+    </div>
+
 
 </footer>
 
 
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
 
-/* =========================
-   EXISTING LIVE API
-========================= */
+/* =====================================================
+   API
+===================================================== */
 
 const API_URL =
     "https://jimliokgames-website.onrender.com/api/games";
 
 
-/* =========================
+
+/* =====================================================
    DISCORD
-========================= */
+===================================================== */
 
 function openDiscord() {
 
@@ -2095,9 +1269,10 @@ function openDiscord() {
 }
 
 
-/* =========================
+
+/* =====================================================
    NUMBER FORMAT
-========================= */
+===================================================== */
 
 function formatNumber(number) {
 
@@ -2107,21 +1282,27 @@ function formatNumber(number) {
 }
 
 
-/* =========================
-   CONNECTION
-========================= */
 
-function setConnectionStatus(connected) {
+/* =====================================================
+   CONNECTION STATUS
+===================================================== */
+
+function setConnectionStatus(
+    connected
+) {
+
 
     const status =
         document.getElementById(
             "connectionStatus"
         );
 
+
     const apiStatus =
         document.getElementById(
             "apiStatus"
         );
+
 
     const robloxApi =
         document.getElementById(
@@ -2131,45 +1312,95 @@ function setConnectionStatus(connected) {
 
     if (connected) {
 
+
         status.textContent =
             "LIVE";
+
 
         apiStatus.textContent =
             "ONLINE";
 
+
         robloxApi.textContent =
             "CONNECTED";
 
+
     } else {
+
 
         status.textContent =
             "OFFLINE";
 
+
         apiStatus.textContent =
             "OFFLINE";
 
+
         robloxApi.textContent =
             "ERROR";
+
 
     }
 
 }
 
 
-/* =========================
-   LOAD LIVE ROBLOX DATA
-========================= */
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+
+/* =====================================================
+   LOAD ROBLOX DATA
+===================================================== */
 
 async function loadRealRobloxData() {
 
+
     try {
+
 
         const controller =
             new AbortController();
 
+
         const timeout =
             setTimeout(
-                () => controller.abort(),
+                () =>
+                    controller.abort(),
                 15000
             );
 
@@ -2221,7 +1452,9 @@ async function loadRealRobloxData() {
         }
 
 
-        setConnectionStatus(true);
+        setConnectionStatus(
+            true
+        );
 
 
         let totalVisits = 0;
@@ -2233,41 +1466,62 @@ async function loadRealRobloxData() {
         let totalFavorites = 0;
 
 
-        games.forEach(game => {
 
-            totalVisits +=
-                Number(
-                    game.visits || 0
-                );
+        /* =================================================
+           TOTALS
+        ================================================= */
 
-            totalPlayers +=
-                Number(
-                    game.playing || 0
-                );
+        games.forEach(
+            game => {
 
-            totalLikes +=
-                Number(
-                    game.likes || 0
-                );
 
-            totalFavorites +=
-                Number(
-                    game.favorites || 0
-                );
+                totalVisits +=
+                    Number(
+                        game.visits || 0
+                    );
 
-        });
 
+                totalPlayers +=
+                    Number(
+                        game.playing || 0
+                    );
+
+
+                totalLikes +=
+                    Number(
+                        game.likes || 0
+                    );
+
+
+                totalFavorites +=
+                    Number(
+                        game.favorites || 0
+                    );
+
+
+            }
+        );
+
+
+
+        /* =================================================
+           MAIN STATS
+        ================================================= */
 
         document.getElementById(
             "visits"
         ).textContent =
-            formatNumber(totalVisits);
+            formatNumber(
+                totalVisits
+            );
 
 
         document.getElementById(
             "players"
         ).textContent =
-            formatNumber(totalPlayers);
+            formatNumber(
+                totalPlayers
+            );
 
 
         document.getElementById(
@@ -2279,19 +1533,25 @@ async function loadRealRobloxData() {
         document.getElementById(
             "likes"
         ).textContent =
-            formatNumber(totalLikes);
+            formatNumber(
+                totalLikes
+            );
 
 
         document.getElementById(
             "favorites"
         ).textContent =
-            formatNumber(totalFavorites);
+            formatNumber(
+                totalFavorites
+            );
 
 
         document.getElementById(
             "online"
         ).textContent =
-            formatNumber(totalPlayers);
+            formatNumber(
+                totalPlayers
+            );
 
 
         document.getElementById(
@@ -2310,99 +1570,130 @@ async function loadRealRobloxData() {
         document.getElementById(
             "playerApiCount"
         ).textContent =
-            formatNumber(totalPlayers);
+            formatNumber(
+                totalPlayers
+            );
 
 
-        /* =========================
-           GAME CARDS
-        ========================= */
 
-        games.forEach(game => {
+        /* =================================================
+           GAME CARD STATS
+        ================================================= */
 
-            const text =
-                `👥 ${formatNumber(game.playing)} playing • ` +
-                `👁 ${formatNumber(game.visits)} visits • ` +
-                `👍 ${formatNumber(game.likes)} likes • ` +
-                `⭐ ${formatNumber(game.favorites)} favorites`;
+        games.forEach(
+            game => {
 
 
-            if (
-                game.name ===
-                "ARMMAGEDON"
-            ) {
+                const text =
 
-                document.getElementById(
-                    "armmagedonStats"
-                ).textContent =
-                    text;
+                    `👥 ${formatNumber(game.playing)} playing • ` +
+
+                    `👁 ${formatNumber(game.visits)} visits • ` +
+
+                    `👍 ${formatNumber(game.likes)} likes • ` +
+
+                    `⭐ ${formatNumber(game.favorites)} favorites`;
+
+
+
+                if (
+                    game.name ===
+                    "ARMMAGEDON"
+                ) {
+
+
+                    document.getElementById(
+                        "armmagedonStats"
+                    ).textContent =
+                        text;
+
+
+                }
+
+
+
+                if (
+                    game.name ===
+                    "Jims Laser Tag"
+                ) {
+
+
+                    document.getElementById(
+                        "laserStats"
+                    ).textContent =
+                        text;
+
+
+                }
+
+
+
+                if (
+                    game.name ===
+                    "Zombie World"
+                ) {
+
+
+                    document.getElementById(
+                        "zombieStats"
+                    ).textContent =
+                        text;
+
+
+                }
+
+
+
+                if (
+                    game.name ===
+                    "Mega Hyper Obby"
+                ) {
+
+
+                    document.getElementById(
+                        "obbyStats"
+                    ).textContent =
+                        text;
+
+
+                }
+
+
+
+                if (
+                    game.name ===
+                    "OP Fun Obby"
+                ) {
+
+
+                    document.getElementById(
+                        "opFunStats"
+                    ).textContent =
+                        text;
+
+
+                }
+
 
             }
+        );
 
 
-            if (
-                game.name ===
-                "Jims Laser Tag"
-            ) {
 
-                document.getElementById(
-                    "laserStats"
-                ).textContent =
-                    text;
-
-            }
-
-
-            if (
-                game.name ===
-                "Zombie World"
-            ) {
-
-                document.getElementById(
-                    "zombieStats"
-                ).textContent =
-                    text;
-
-            }
-
-
-            if (
-                game.name ===
-                "Mega Hyper Obby"
-            ) {
-
-                document.getElementById(
-                    "obbyStats"
-                ).textContent =
-                    text;
-
-            }
-
-
-            if (
-                game.name ===
-                "OP Fun Obby"
-            ) {
-
-                document.getElementById(
-                    "opFunStats"
-                ).textContent =
-                    text;
-
-            }
-
-        });
-
-
-        /* =========================
-           PERFORMANCE
-        ========================= */
+        /* =================================================
+           GAME PERFORMANCE
+        ================================================= */
 
         const sortedGames =
             [...games].sort(
-                (a,b) =>
-                    Number(b.visits || 0)
+                (a, b) =>
+                    Number(
+                        b.visits || 0
+                    )
                     -
-                    Number(a.visits || 0)
+                    Number(
+                        a.visits || 0
+                    )
             );
 
 
@@ -2416,7 +1707,8 @@ async function loadRealRobloxData() {
 
 
         sortedGames.forEach(
-            (game,index) => {
+            (game, index) => {
+
 
                 const item =
                     document.createElement(
@@ -2446,13 +1738,20 @@ async function loadRealRobloxData() {
                 `;
 
 
-                ranking.appendChild(item);
+                ranking.appendChild(
+                    item
+                );
+
 
             }
         );
 
 
-    } catch(error) {
+    }
+
+
+    catch (error) {
+
 
         console.error(
             "Roblox API error:",
@@ -2460,7 +1759,9 @@ async function loadRealRobloxData() {
         );
 
 
-        setConnectionStatus(false);
+        setConnectionStatus(
+            false
+        );
 
 
         document.getElementById(
@@ -2468,42 +1769,138 @@ async function loadRealRobloxData() {
         ).textContent =
             "ERROR";
 
+
     }
 
 }
 
 
-/* =========================
-   ESCAPE HTML
-========================= */
 
-function escapeHTML(value) {
+/* =====================================================
+   GAME SEARCH
+===================================================== */
 
-    return String(value)
-
-        .replace(/&/g, "&amp;")
-
-        .replace(/</g, "&lt;")
-
-        .replace(/>/g, "&gt;")
-
-        .replace(/"/g, "&quot;")
-
-        .replace(/'/g, "&#039;");
-
-}
+const gameSearch =
+    document.getElementById(
+        "gameSearch"
+    );
 
 
-/* =========================
-   START
-========================= */
+const gameCards =
+    document.querySelectorAll(
+        ".game"
+    );
+
+
+const noGamesFound =
+    document.getElementById(
+        "noGamesFound"
+    );
+
+
+
+gameSearch.addEventListener(
+    "input",
+    function () {
+
+
+        const search =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        let visibleGames = 0;
+
+
+
+        gameCards.forEach(
+            card => {
+
+
+                const name =
+                    card
+                        .getAttribute(
+                            "data-game-name"
+                        )
+                        .toLowerCase();
+
+
+                const content =
+                    card.innerText
+                        .toLowerCase();
+
+
+                const matches =
+                    name.includes(
+                        search
+                    )
+                    ||
+                    content.includes(
+                        search
+                    );
+
+
+                if (matches) {
+
+
+                    card.style.display =
+                        "";
+
+
+                    visibleGames++;
+
+
+                } else {
+
+
+                    card.style.display =
+                        "none";
+
+
+                }
+
+
+            }
+        );
+
+
+
+        if (
+            visibleGames === 0
+        ) {
+
+
+            noGamesFound.style.display =
+                "block";
+
+
+        } else {
+
+
+            noGamesFound.style.display =
+                "none";
+
+
+        }
+
+
+    }
+);
+
+
+
+/* =====================================================
+   START API
+===================================================== */
 
 loadRealRobloxData();
 
 
-/* =========================
+
+/* =====================================================
    AUTO REFRESH
-========================= */
+===================================================== */
 
 setInterval(
     loadRealRobloxData,
@@ -2511,9 +1908,10 @@ setInterval(
 );
 
 
-/* =========================
+
+/* =====================================================
    CONSOLE
-========================= */
+===================================================== */
 
 console.log(
     "JIMLIOK GAMES"
@@ -2524,7 +1922,10 @@ console.log(
     API_URL
 );
 
+
 </script>
 
+
 </body>
+
 </html>

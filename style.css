@@ -1,12 +1,14 @@
 /* =========================================================
    JIMLIOK GAMES
-   MAIN WEBSITE STYLE
+   OFFICIAL GAME HUB
 ========================================================= */
 
 :root {
     --bg: #03040b;
     --bg2: #070916;
+
     --panel: rgba(10, 14, 30, 0.92);
+    --panel2: rgba(15, 19, 40, 0.95);
 
     --purple: #7c3cff;
     --purple2: #a855f7;
@@ -18,8 +20,9 @@
     --muted: #9ca3af;
 
     --green: #22c55e;
+    --red: #ff1744;
 
-    --border: rgba(255, 255, 255, 0.10);
+    --border: rgba(255,255,255,0.10);
 
     --radius: 20px;
 }
@@ -40,7 +43,8 @@ html {
 }
 
 body {
-    font-family: Inter, Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
+
     color: var(--white);
 
     background:
@@ -49,7 +53,14 @@ body {
             rgba(100, 50, 255, 0.30),
             transparent 40%
         ),
+        radial-gradient(
+            circle at 100% 50%,
+            rgba(0, 90, 255, 0.08),
+            transparent 40%
+        ),
         var(--bg);
+
+    min-height: 100vh;
 
     overflow-x: hidden;
 }
@@ -59,9 +70,9 @@ a {
     text-decoration: none;
 }
 
-button {
+button,
+input {
     font-family: inherit;
-    cursor: pointer;
 }
 
 
@@ -78,12 +89,27 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        var(--purple),
-        var(--blue)
-    );
+    background:
+        linear-gradient(
+            var(--purple),
+            var(--blue)
+        );
 
     border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--purple2);
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+    background: var(--purple);
+    color: white;
 }
 
 
@@ -102,11 +128,15 @@ header {
 
     z-index: 1000;
 
-    background: rgba(2, 3, 10, 0.80);
+    background:
+        rgba(2, 3, 10, 0.82);
 
     backdrop-filter: blur(20px);
 
-    border-bottom: 1px solid var(--border);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom:
+        1px solid var(--border);
 }
 
 .header-inner {
@@ -136,11 +166,13 @@ header {
 
     gap: 10px;
 
-    font-size: 18px;
+    font-size: 17px;
 
     font-weight: 900;
 
     letter-spacing: 1px;
+
+    white-space: nowrap;
 }
 
 .logo-icon {
@@ -161,9 +193,12 @@ header {
         );
 
     box-shadow:
-        0 0 30px rgba(124, 60, 255, 0.45);
+        0 0 30px
+        rgba(124,60,255,0.45);
 
     font-size: 13px;
+
+    font-weight: 900;
 }
 
 .logo span {
@@ -180,13 +215,13 @@ nav {
 
     align-items: center;
 
-    gap: 20px;
+    gap: 18px;
 }
 
 nav a {
     color: #cbd5e1;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 800;
 
@@ -195,17 +230,23 @@ nav a {
 
 nav a:hover {
     color: white;
+
+    transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   YOUTUBE BUTTON
+   YOUTUBE
 ========================================================= */
 
 .youtube-button {
-    display: inline-block;
+    display: inline-flex;
 
-    padding: 11px 18px;
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 11px 17px;
 
     border-radius: 10px;
 
@@ -218,34 +259,32 @@ nav a:hover {
             #ff1744
         );
 
-    font-size: 12px;
+    font-size: 11px;
 
-    font-weight: 800;
+    font-weight: 900;
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-
-    box-shadow:
-        0 5px 20px rgba(255, 0, 50, 0.15);
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
 .youtube-button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 8px 25px rgba(255, 0, 50, 0.35);
+        0 10px 25px
+        rgba(255,0,50,0.35);
 }
 
 
 /* =========================================================
-   DISCORD BUTTON
+   DISCORD
 ========================================================= */
 
 .discord-button {
     border: none;
 
-    padding: 11px 18px;
+    padding: 11px 17px;
 
     border-radius: 10px;
 
@@ -258,18 +297,21 @@ nav a:hover {
             var(--purple)
         );
 
-    font-size: 12px;
+    font-size: 11px;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    transition: 0.25s;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
 .discord-button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 8px 25px rgba(88, 101, 242, 0.30);
+        0 10px 25px
+        rgba(88,101,242,.35);
 }
 
 
@@ -303,13 +345,12 @@ nav a:hover {
     background:
         radial-gradient(
             circle at 70% 50%,
-            rgba(70, 40, 255, 0.35),
+            rgba(70,40,255,.35),
             transparent 45%
         ),
-
         radial-gradient(
             circle at 30% 70%,
-            rgba(0, 160, 255, 0.12),
+            rgba(0,160,255,.12),
             transparent 40%
         );
 }
@@ -321,7 +362,7 @@ nav a:hover {
 .eyebrow {
     color: var(--purple2);
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 900;
 
@@ -331,9 +372,10 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: clamp(55px, 7vw, 105px);
+    font-size:
+        clamp(55px, 7vw, 105px);
 
-    line-height: 0.88;
+    line-height: .88;
 
     letter-spacing: -6px;
 
@@ -386,15 +428,19 @@ nav a:hover {
 ========================================================= */
 
 .primary-button {
-    display: inline-block;
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     padding: 14px 22px;
 
     border-radius: 11px;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    font-weight: 800;
+    font-weight: 900;
 
     color: white;
 
@@ -406,20 +452,21 @@ nav a:hover {
         );
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
 .primary-button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 12px 30px rgba(82, 53, 255, 0.30);
+        0 12px 30px
+        rgba(82,53,255,.30);
 }
 
 
 /* =========================================================
-   HERO VISUAL
+   HERO ORB
 ========================================================= */
 
 .hero-visual {
@@ -441,13 +488,14 @@ nav a:hover {
     background:
         radial-gradient(
             circle,
-            rgba(120, 80, 255, 0.35),
-            rgba(40, 80, 255, 0.08),
+            rgba(120,80,255,.35),
+            rgba(40,80,255,.08),
             transparent 70%
         );
 
     box-shadow:
-        0 0 140px rgba(80, 50, 255, 0.35);
+        0 0 140px
+        rgba(80,50,255,.35);
 
     animation:
         floatOrb 6s ease-in-out infinite;
@@ -492,17 +540,21 @@ section {
     font-size: 30px;
 
     font-weight: 900;
+
+    letter-spacing: -1px;
 }
 
 .section-heading p {
     color: var(--muted);
 
     font-size: 13px;
+
+    margin-top: 6px;
 }
 
 
 /* =========================================================
-   LIVE STATS
+   LIVE DASHBOARD
 ========================================================= */
 
 .dashboard {
@@ -530,14 +582,18 @@ section {
 }
 
 
-/* LIVE INDICATOR */
+/* =========================================================
+   LIVE
+========================================================= */
 
 .live {
     color: var(--green);
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 900;
+
+    letter-spacing: 1px;
 }
 
 .live::before {
@@ -555,25 +611,44 @@ section {
     background: var(--green);
 
     box-shadow:
-        0 0 15px var(--green);
+        0 0 15px
+        var(--green);
+
+    animation:
+        livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .45;
+        transform: scale(.75);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 
 /* =========================================================
-   STATS GRID
+   STATS
 ========================================================= */
 
 .stats {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
     gap: 12px;
 }
-
-
-/* STAT CARD */
 
 .stat {
     min-height: 125px;
@@ -588,30 +663,31 @@ section {
     background:
         linear-gradient(
             145deg,
-            rgba(16, 20, 45, 0.95),
-            rgba(6, 8, 20, 0.92)
+            rgba(16,20,45,.95),
+            rgba(6,8,20,.92)
         );
 
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
 
 .stat:hover {
     transform: translateY(-5px);
 
     border-color:
-        rgba(124, 60, 255, 0.55);
+        rgba(124,60,255,.55);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.20);
+        0 15px 35px
+        rgba(0,0,0,.20);
 }
 
 .stat-label {
     color: var(--muted);
 
-    font-size: 10px;
+    font-size: 9px;
 
     text-transform: uppercase;
 
@@ -633,14 +709,14 @@ section {
 
     color: var(--green);
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 800;
 }
 
 
 /* =========================================================
-   GAME HUB
+   GAME HUB TITLE
 ========================================================= */
 
 .game-hub-title {
@@ -657,28 +733,119 @@ section {
     border-radius: 8px;
 
     background:
-        rgba(124, 60, 255, 0.15);
+        rgba(124,60,255,.15);
 
     border:
-        1px solid rgba(124, 60, 255, 0.35);
+        1px solid
+        rgba(124,60,255,.35);
 
     color: var(--purple2);
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 900;
 }
 
 
 /* =========================================================
-   GAME GRID
+   SEARCH BAR
+========================================================= */
+
+.game-search {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin:
+        0 auto 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        4px 16px;
+
+    border:
+        1px solid
+        rgba(124,60,255,.25);
+
+    border-radius: 14px;
+
+    background:
+        rgba(10,14,30,.85);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+.game-search:hover {
+    border-color:
+        rgba(124,60,255,.45);
+}
+
+.game-search:focus-within {
+    border-color:
+        var(--purple);
+
+    box-shadow:
+        0 0 35px
+        rgba(124,60,255,.20);
+
+    transform:
+        translateY(-2px);
+}
+
+.search-icon {
+    width: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+
+    opacity: .75;
+}
+
+.game-search input {
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+.game-search input::placeholder {
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   GAMES GRID
 ========================================================= */
 
 .games {
     display: grid;
 
     grid-template-columns:
-        repeat(5, 1fr);
+        repeat(5,1fr);
 
     gap: 18px;
 }
@@ -699,24 +866,26 @@ section {
     background:
         linear-gradient(
             145deg,
-            rgba(15, 18, 40, 0.95),
-            rgba(5, 7, 18, 0.95)
+            rgba(15,18,40,.95),
+            rgba(5,7,18,.95)
         );
 
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
 
 .game:hover {
-    transform: translateY(-8px);
+    transform:
+        translateY(-8px);
 
     border-color:
-        rgba(124, 60, 255, 0.65);
+        rgba(124,60,255,.65);
 
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.30);
+        0 20px 50px
+        rgba(0,0,0,.30);
 }
 
 
@@ -737,68 +906,77 @@ section {
 
     padding: 20px;
 
-    font-size: 22px;
+    font-size: 20px;
 
     font-weight: 900;
 
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
 
     background:
         radial-gradient(
             circle at 50% 30%,
-            rgba(124, 60, 255, 0.65),
+            rgba(124,60,255,.65),
             transparent 50%
         ),
         #0c0e24;
 
     transition:
-        transform 0.5s ease;
+        transform .5s ease;
 }
 
 .game:hover .game-image {
-    transform: scale(1.03);
+    transform:
+        scale(1.03);
 }
 
 
 /* =========================================================
-   DIFFERENT GAME COLORS
+   GAME COLORS
 ========================================================= */
 
-.game:nth-child(2) .game-image {
+.game:nth-child(2)
+.game-image {
+
     background:
         radial-gradient(
             circle at 50% 30%,
-            rgba(255, 0, 170, 0.45),
+            rgba(255,0,170,.45),
             transparent 50%
         ),
         #100b24;
 }
 
-.game:nth-child(3) .game-image {
+.game:nth-child(3)
+.game-image {
+
     background:
         radial-gradient(
             circle at 50% 30%,
-            rgba(0, 180, 255, 0.45),
+            rgba(0,180,255,.45),
             transparent 50%
         ),
         #061322;
 }
 
-.game:nth-child(4) .game-image {
+.game:nth-child(4)
+.game-image {
+
     background:
         radial-gradient(
             circle at 50% 30%,
-            rgba(0, 255, 140, 0.35),
+            rgba(0,255,140,.35),
             transparent 50%
         ),
         #071713;
 }
 
-.game:nth-child(5) .game-image {
+.game:nth-child(5)
+.game-image {
+
     background:
         radial-gradient(
             circle at 50% 30%,
-            rgba(255, 190, 0, 0.45),
+            rgba(255,190,0,.45),
             transparent 50%
         ),
         #171207;
@@ -828,7 +1006,7 @@ section {
 
     font-weight: 800;
 
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
 }
 
 .game-stats {
@@ -836,9 +1014,9 @@ section {
 
     color: var(--muted);
 
-    font-size: 10px;
+    font-size: 9px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
     min-height: 70px;
 }
@@ -865,7 +1043,7 @@ section {
 
     color: white;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 900;
 
@@ -877,15 +1055,17 @@ section {
         );
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
 .game-button:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 8px 20px rgba(80, 60, 255, 0.25);
+        0 8px 20px
+        rgba(80,60,255,.30);
 }
 
 
@@ -911,7 +1091,7 @@ section {
     border-radius: var(--radius);
 
     background:
-        rgba(7, 10, 24, 0.90);
+        rgba(7,10,24,.90);
 }
 
 .panel h3 {
@@ -947,18 +1127,18 @@ section {
     border-radius: 10px;
 
     background:
-        rgba(255, 255, 255, 0.035);
+        rgba(255,255,255,.035);
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 700;
 
-    transition: 0.25s;
+    transition: .25s;
 }
 
 .ranking-item:hover {
     background:
-        rgba(124, 60, 255, 0.10);
+        rgba(124,60,255,.10);
 }
 
 .ranking-item span {
@@ -974,7 +1154,7 @@ section {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 18px;
 }
@@ -990,26 +1170,27 @@ section {
     background:
         linear-gradient(
             145deg,
-            rgba(15, 18, 40, 0.90),
-            rgba(5, 7, 18, 0.90)
+            rgba(15,18,40,.90),
+            rgba(5,7,18,.90)
         );
 
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
+        transform .3s ease,
+        border-color .3s ease;
 }
 
 .news-card:hover {
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 
     border-color:
-        rgba(124, 60, 255, 0.45);
+        rgba(124,60,255,.45);
 }
 
 .news-date {
     color: var(--purple2);
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 900;
 
@@ -1027,41 +1208,44 @@ section {
 
     color: var(--muted);
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.7;
 }
 
 
 /* =========================================================
-   CTA
+   COMMUNITY CTA
 ========================================================= */
 
 .cta {
-    padding: 75px 30px;
+    padding:
+        75px 30px;
 
     text-align: center;
 
     border:
-        1px solid rgba(124, 60, 255, 0.35);
+        1px solid
+        rgba(124,60,255,.35);
 
     border-radius: 25px;
 
     background:
         radial-gradient(
             circle,
-            rgba(124, 60, 255, 0.25),
+            rgba(124,60,255,.25),
             transparent 65%
         ),
         #080a18;
 
     box-shadow:
-        0 20px 70px rgba(0, 0, 0, 0.20);
+        0 20px 70px
+        rgba(0,0,0,.20);
 }
 
 .cta h2 {
     font-size:
-        clamp(32px, 5vw, 58px);
+        clamp(32px,5vw,58px);
 
     font-weight: 900;
 }
@@ -1069,7 +1253,8 @@ section {
 .cta p {
     max-width: 650px;
 
-    margin: 15px auto 25px;
+    margin:
+        15px auto 25px;
 
     color: var(--muted);
 
@@ -1082,12 +1267,14 @@ section {
 ========================================================= */
 
 footer {
-    padding: 60px 3% 25px;
+    padding:
+        60px 3% 25px;
 
     border-top:
         1px solid var(--border);
 
-    background: #02030a;
+    background:
+        #02030a;
 }
 
 .footer-grid {
@@ -1119,7 +1306,7 @@ footer p {
 
     color: var(--muted);
 
-    font-size: 12px;
+    font-size: 11px;
 }
 
 footer a:hover {
@@ -1136,7 +1323,8 @@ footer a:hover {
 
     max-width: 1500px;
 
-    margin: 45px auto 0;
+    margin:
+        45px auto 0;
 
     padding-top: 20px;
 
@@ -1149,12 +1337,27 @@ footer a:hover {
 
     color: #6b7280;
 
-    font-size: 10px;
+    font-size: 9px;
 }
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   FOCUS
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+
+    outline:
+        2px solid var(--cyan);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
 ========================================================= */
 
 @media (max-width: 1200px) {
@@ -1165,19 +1368,19 @@ footer a:hover {
 
     .games {
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(3,1fr);
     }
 
     .stats {
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(4,1fr);
     }
 
 }
 
 
 /* =========================================================
-   RESPONSIVE — SMALL TABLET
+   SMALL TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1206,7 +1409,8 @@ footer a:hover {
     }
 
     .news {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .footer-grid {
@@ -1214,11 +1418,21 @@ footer a:hover {
             1fr 1fr;
     }
 
+    .stats {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .games {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
 }
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -1232,7 +1446,7 @@ footer a:hover {
     }
 
     .logo {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .logo-icon {
@@ -1256,7 +1470,7 @@ footer a:hover {
     }
 
     .hero-description {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .hero-buttons {
@@ -1265,17 +1479,24 @@ footer a:hover {
         align-items: stretch;
     }
 
-    .hero-buttons .primary-button,
-    .hero-buttons .youtube-button {
+    .hero-buttons
+    .primary-button,
+    .hero-buttons
+    .youtube-button {
+
+        width: 100%;
+
         text-align: center;
     }
 
     .stats {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .games {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .game-image {
@@ -1283,11 +1504,13 @@ footer a:hover {
     }
 
     .news {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .copyright {
@@ -1298,11 +1521,15 @@ footer a:hover {
         text-align: center;
     }
 
+    .game-search {
+        max-width: 100%;
+    }
+
 }
 
 
 /* =========================================================
-   EXTRA SMALL DEVICES
+   VERY SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 400px) {
@@ -1328,24 +1555,61 @@ footer a:hover {
 
 
 /* =========================================================
-   ACCESSIBILITY
+   SMOOTH CARD APPEARANCE
 ========================================================= */
 
-a:focus-visible,
-button:focus-visible {
-    outline:
-        2px solid var(--cyan);
+.game,
+.stat,
+.news-card,
+.panel {
 
-    outline-offset: 3px;
+    animation:
+        cardAppear .6s ease both;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 
 /* =========================================================
-   SELECTION
+   SEARCH EMPTY STATE
 ========================================================= */
 
-::selection {
-    background: var(--purple);
+#noGamesFound {
+    border:
+        1px solid var(--border);
 
-    color: white;
+    border-radius:
+        var(--radius);
+
+    background:
+        rgba(10,14,30,.65);
+}
+
+
+/* =========================================================
+   MOBILE SEARCH
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .game-search {
+        margin-bottom: 25px;
+    }
+
+    .game-search input {
+        font-size: 12px;
+    }
+
 }
