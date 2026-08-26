@@ -1,6 +1,6 @@
 /* =========================================================
    JIMLIOK GAMES
-   MAIN STYLE
+   MAIN STYLE — DESKTOP ONLY
 ========================================================= */
 
 * {
@@ -27,7 +27,6 @@ body {
     overflow-x: hidden;
 }
 
-
 /* =========================================================
    GLOBAL
 ========================================================= */
@@ -53,7 +52,6 @@ section {
     padding-bottom: 90px;
 }
 
-
 /* =========================================================
    HEADER
 ========================================================= */
@@ -63,8 +61,7 @@ header {
     top: 0;
     z-index: 1000;
 
-    background:
-        rgba(7, 8, 13, .82);
+    background: rgba(7, 8, 13, .82);
 
     backdrop-filter: blur(18px);
 
@@ -74,7 +71,6 @@ header {
 
 .header-inner {
     width: min(1200px, calc(100% - 40px));
-
     min-height: 72px;
 
     margin: auto;
@@ -124,21 +120,17 @@ header {
     font-weight: 900;
 }
 
-
 nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 
     gap: 7px;
-
-    flex-wrap: wrap;
 }
 
 nav a,
 nav button {
     border: 0;
-
     background: transparent;
 
     color: #9ca3af;
@@ -168,7 +160,6 @@ nav button:hover {
     transform: translateY(-1px);
 }
 
-
 /* =========================================================
    BUTTONS
 ========================================================= */
@@ -183,7 +174,6 @@ nav button:hover {
     justify-content: center;
 
     border: 0;
-
     border-radius: 11px;
 
     font-weight: 800;
@@ -260,7 +250,6 @@ nav button:hover {
     box-shadow:
         0 8px 25px rgba(88, 101, 242, .18);
 }
-
 
 /* =========================================================
    HERO
@@ -402,7 +391,6 @@ nav button:hover {
     }
 }
 
-
 /* =========================================================
    SECTION HEADING
 ========================================================= */
@@ -434,7 +422,6 @@ nav button:hover {
     font-size: 13px;
 }
 
-
 /* =========================================================
    GAME HUB TITLE
 ========================================================= */
@@ -445,8 +432,6 @@ nav button:hover {
     align-items: center;
 
     gap: 12px;
-
-    flex-wrap: wrap;
 }
 
 .game-hub-badge {
@@ -469,7 +454,6 @@ nav button:hover {
     letter-spacing: 1px;
 }
 
-
 /* =========================================================
    SEARCH
 ========================================================= */
@@ -477,7 +461,7 @@ nav button:hover {
 .game-search {
     position: relative;
 
-    width: min(500px, 100%);
+    width: 500px;
 
     margin-bottom: 25px;
 }
@@ -538,7 +522,6 @@ nav button:hover {
 
     pointer-events: none;
 }
-
 
 /* =========================================================
    GAMES
@@ -717,7 +700,6 @@ nav button:hover {
         0 10px 30px rgba(139, 92, 246, .15);
 }
 
-
 /* =========================================================
    LIVE STATS
 ========================================================= */
@@ -877,7 +859,6 @@ nav button:hover {
     letter-spacing: 1px;
 }
 
-
 /* =========================================================
    COMING SOON
 ========================================================= */
@@ -893,8 +874,6 @@ nav button:hover {
     align-items: center;
 
     gap: 15px;
-
-    flex-wrap: wrap;
 }
 
 .coming-title h2 {
@@ -1219,7 +1198,6 @@ nav button:hover {
         statusPulse 1.8s ease-in-out infinite;
 }
 
-
 /* =========================================================
    ANALYTICS
 ========================================================= */
@@ -1299,7 +1277,6 @@ nav button:hover {
     font-weight: 800;
 }
 
-
 /* =========================================================
    NEWS
 ========================================================= */
@@ -1369,7 +1346,6 @@ nav button:hover {
     line-height: 1.7;
 }
 
-
 /* =========================================================
    COMMUNITY CTA
 ========================================================= */
@@ -1416,7 +1392,6 @@ nav button:hover {
 
     line-height: 1.7;
 }
-
 
 /* =========================================================
    FOOTER
@@ -1495,7 +1470,6 @@ footer {
     font-size: 9px;
 }
 
-
 /* =========================================================
    CHATBASE
 ========================================================= */
@@ -1504,378 +1478,63 @@ footer {
     z-index: 9999 !important;
 }
 
-
 /* =========================================================
-   MOBILE
-   ONLY APPLIES BELOW 768px
+   EXTRA DESKTOP DECOR
 ========================================================= */
 
-@media screen and (max-width: 768px) {
-
-    html {
-        overflow-x: hidden;
-    }
-
-    body {
-        overflow-x: hidden;
-    }
-
-
-    /* HEADER */
-
-    .header-inner {
-        min-height: auto;
-
-        padding-top: 12px;
-        padding-bottom: 12px;
-
-        flex-direction: column;
-
-        gap: 13px;
-    }
-
-    nav {
-        width: 100%;
-
-        justify-content: center;
-
-        gap: 4px;
-    }
-
-    nav a,
-    nav button {
-        padding: 8px 9px;
-
-        font-size: 9px;
-    }
-
-
-    /* HERO */
-
-    .hero {
-        min-height: 620px;
-
-        padding-top: 70px;
-        padding-bottom: 60px;
-    }
-
-    .hero-content {
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: clamp(
-            52px,
-            16vw,
-            78px
-        );
-
-        letter-spacing: -3px;
-    }
-
-    .hero-description {
-        max-width: 450px;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        font-size: 13px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-    .hero-buttons a {
-        width: min(
-            100%,
-            300px
-        );
-    }
-
-    .hero-visual {
-        right: -160px;
-
-        opacity: .25;
-
-        transform:
-            translateY(-50%)
-            scale(.7);
-    }
-
-
-    /* SECTIONS */
-
-    section,
-    .dashboard,
-    footer {
-        width:
-            calc(100% - 28px);
-    }
-
-    section {
-        padding-top: 65px;
-        padding-bottom: 65px;
-    }
-
-
-    /* HEADINGS */
-
-    .section-heading {
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 10px;
-    }
-
-    .section-heading h2,
-    .coming-title h2 {
-        font-size: 27px;
-    }
-
-
-    /* GAME HUB */
-
-    .games {
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-    }
-
-    .game {
-        width: 100%;
-    }
-
-    .game:hover {
-        transform:
-            translateY(-5px)
-            scale(1.005);
-    }
-
-    .game-image {
-        height: 175px;
-    }
-
-    .game-content {
-        padding: 19px;
-    }
-
-
-    /* SEARCH */
-
-    .game-search {
-        width: 100%;
-    }
-
-
-    /* STATS */
-
-    .stats {
-        grid-template-columns: 1fr 1fr;
-
-        gap: 10px;
-    }
-
-    .stat {
-        padding: 17px;
-    }
-
-    .stat-value {
-        font-size: 25px;
-    }
-
-
-    /* COMING SOON */
-
-    .coming-card {
-        min-height: auto;
-    }
-
-    .coming-content {
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: 30px;
-
-        padding: 35px 20px;
-    }
-
-    .coming-icon {
-        width: 130px;
-        height: 130px;
-
-        border-radius: 25px;
-
-        font-size: 58px;
-    }
-
-    .coming-info {
-        width: 100%;
-    }
-
-    .coming-info h3 {
-        font-size: 38px;
-
-        letter-spacing: -1px;
-    }
-
-    .coming-info p {
-        font-size: 13px;
-    }
-
-    .coming-features {
-        justify-content: center;
-    }
-
-    .coming-status {
-        font-size: 9px;
-    }
-
-
-    /* ANALYTICS */
-
-    .analytics {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* NEWS */
-
-    .news {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* CTA */
-
-    .cta {
-        padding: 40px 20px;
-    }
-
-    .cta h2 {
-        font-size: 28px;
-    }
-
-    .cta .youtube-button,
-    .cta .discord-button {
-        margin:
-            5px 0 !important;
-    }
-
-
-    /* FOOTER */
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .copyright {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
+.game,
+.news-card,
+.stat,
+.panel,
+.coming-card {
+    will-change: transform;
 }
 
+.hero::before {
+    content: "";
 
-/* =========================================================
-   SMALL PHONES
-========================================================= */
+    position: absolute;
 
-@media screen and (max-width: 480px) {
+    width: 700px;
+    height: 700px;
 
-    .logo {
-        font-size: 13px;
-    }
+    left: -350px;
+    top: 150px;
 
-    .logo-icon {
-        width: 34px;
-        height: 34px;
-    }
+    border-radius: 50%;
 
-    nav a,
-    nav button {
-        font-size: 8px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(59, 130, 246, .06),
+            transparent 70%
+        );
 
-        padding: 7px 7px;
-    }
-
-
-    .hero {
-        min-height: 570px;
-    }
-
-    .hero h1 {
-        font-size: 52px;
-    }
-
-    .eyebrow {
-        font-size: 9px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .stat-value {
-        font-size: 27px;
-    }
-
-
-    .game-image {
-        height: 150px;
-    }
-
-
-    .coming-icon {
-        width: 110px;
-        height: 110px;
-
-        font-size: 48px;
-    }
-
-    .coming-info h3 {
-        font-size: 31px;
-    }
-
-    .coming-features div {
-        font-size: 9px;
-
-        padding:
-            8px 10px;
-    }
-
-    .coming-status {
-        max-width: 100%;
-
-        justify-content: center;
-
-        font-size: 8px;
-    }
-
-
-    .ranking-item {
-        grid-template-columns:
-            32px 1fr;
-
-        gap: 7px;
-    }
-
-    .ranking-item > span:last-child {
-        grid-column: 2;
-    }
-
+    pointer-events: none;
 }
 
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    bottom: -250px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 92, 246, .08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
 
 /* =========================================================
    REDUCED MOTION
@@ -1894,5 +1553,4 @@ footer {
 
         scroll-behavior: auto !important;
     }
-
 }
