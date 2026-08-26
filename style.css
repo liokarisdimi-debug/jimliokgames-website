@@ -1,6 +1,7 @@
 /* =========================================================
    JIMLIOK GAMES
-   MAIN STYLE — DESKTOP ONLY
+   MAIN DESKTOP STYLE
+   NO MOBILE LAYOUT
 ========================================================= */
 
 * {
@@ -15,6 +16,7 @@ html {
 
 body {
     font-family: "Inter", Arial, sans-serif;
+
     background:
         radial-gradient(
             circle at 50% -10%,
@@ -22,10 +24,14 @@ body {
             transparent 35%
         ),
         #07080d;
+
     color: #f5f7ff;
+
     min-height: 100vh;
-    overflow-x: hidden;
+
+    overflow-x: auto;
 }
+
 
 /* =========================================================
    GLOBAL
@@ -47,10 +53,13 @@ button {
 
 section {
     width: min(1200px, calc(100% - 40px));
+
     margin: auto;
+
     padding-top: 90px;
     padding-bottom: 90px;
 }
+
 
 /* =========================================================
    HEADER
@@ -58,10 +67,13 @@ section {
 
 header {
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
-    background: rgba(7, 8, 13, .82);
+    background:
+        rgba(7, 8, 13, .82);
 
     backdrop-filter: blur(18px);
 
@@ -71,12 +83,15 @@ header {
 
 .header-inner {
     width: min(1200px, calc(100% - 40px));
+
     min-height: 72px;
 
     margin: auto;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 25px;
@@ -84,12 +99,18 @@ header {
 
 .logo {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 
     font-size: 15px;
+
     font-weight: 900;
+
     letter-spacing: 1px;
+
+    white-space: nowrap;
 }
 
 .logo > div:last-child span {
@@ -101,6 +122,7 @@ header {
     height: 38px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -117,20 +139,28 @@ header {
         0 0 25px rgba(139, 92, 246, .35);
 
     font-size: 12px;
+
     font-weight: 900;
+
+    flex-shrink: 0;
 }
 
 nav {
     display: flex;
+
     align-items: center;
+
     justify-content: flex-end;
 
     gap: 7px;
+
+    flex-wrap: nowrap;
 }
 
 nav a,
 nav button {
     border: 0;
+
     background: transparent;
 
     color: #9ca3af;
@@ -140,9 +170,12 @@ nav button {
     border-radius: 9px;
 
     font-size: 10px;
+
     font-weight: 800;
 
     letter-spacing: .7px;
+
+    white-space: nowrap;
 
     transition:
         color .25s ease,
@@ -160,6 +193,7 @@ nav button:hover {
     transform: translateY(-1px);
 }
 
+
 /* =========================================================
    BUTTONS
 ========================================================= */
@@ -171,9 +205,11 @@ nav button:hover {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     border: 0;
+
     border-radius: 11px;
 
     font-weight: 800;
@@ -251,6 +287,7 @@ nav button:hover {
         0 8px 25px rgba(88, 101, 242, .18);
 }
 
+
 /* =========================================================
    HERO
 ========================================================= */
@@ -261,16 +298,19 @@ nav button:hover {
     min-height: 680px;
 
     display: flex;
+
     align-items: center;
 
     overflow: hidden;
 
     padding-top: 80px;
+
     padding-bottom: 80px;
 }
 
 .hero-background {
     position: absolute;
+
     inset: 0;
 
     background:
@@ -290,6 +330,7 @@ nav button:hover {
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     max-width: 780px;
@@ -299,6 +340,7 @@ nav button:hover {
     color: #a78bfa;
 
     font-size: 11px;
+
     font-weight: 900;
 
     letter-spacing: 3px;
@@ -351,6 +393,7 @@ nav button:hover {
     position: absolute;
 
     right: -80px;
+
     top: 50%;
 
     transform:
@@ -361,6 +404,7 @@ nav button:hover {
 
 .orb {
     width: 500px;
+
     height: 500px;
 
     border-radius: 50%;
@@ -383,13 +427,18 @@ nav button:hover {
 
     0%,
     100% {
-        transform: translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 
     50% {
-        transform: translateY(-20px) scale(1.04);
+        transform:
+            translateY(-20px)
+            scale(1.04);
     }
 }
+
 
 /* =========================================================
    SECTION HEADING
@@ -399,6 +448,7 @@ nav button:hover {
     display: flex;
 
     align-items: flex-end;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -422,6 +472,7 @@ nav button:hover {
     font-size: 13px;
 }
 
+
 /* =========================================================
    GAME HUB TITLE
 ========================================================= */
@@ -432,6 +483,8 @@ nav button:hover {
     align-items: center;
 
     gap: 12px;
+
+    flex-wrap: wrap;
 }
 
 .game-hub-badge {
@@ -454,6 +507,7 @@ nav button:hover {
     letter-spacing: 1px;
 }
 
+
 /* =========================================================
    SEARCH
 ========================================================= */
@@ -461,7 +515,7 @@ nav button:hover {
 .game-search {
     position: relative;
 
-    width: 500px;
+    width: min(500px, 100%);
 
     margin-bottom: 25px;
 }
@@ -511,6 +565,7 @@ nav button:hover {
     position: absolute;
 
     left: 16px;
+
     top: 50%;
 
     transform:
@@ -522,6 +577,7 @@ nav button:hover {
 
     pointer-events: none;
 }
+
 
 /* =========================================================
    GAMES
@@ -568,9 +624,11 @@ nav button:hover {
     position: absolute;
 
     top: -100%;
+
     left: -80%;
 
     width: 50%;
+
     height: 300%;
 
     background:
@@ -583,7 +641,8 @@ nav button:hover {
 
     transform: rotate(25deg);
 
-    transition: left .7s ease;
+    transition:
+        left .7s ease;
 
     pointer-events: none;
 }
@@ -611,6 +670,7 @@ nav button:hover {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background:
@@ -625,7 +685,8 @@ nav button:hover {
             #090b12
         );
 
-    color: rgba(255, 255, 255, .75);
+    color:
+        rgba(255, 255, 255, .75);
 
     font-size: 19px;
 
@@ -691,7 +752,8 @@ nav button:hover {
 }
 
 .game-button:hover {
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
     background:
         rgba(139, 92, 246, .18);
@@ -699,6 +761,7 @@ nav button:hover {
     box-shadow:
         0 10px 30px rgba(139, 92, 246, .15);
 }
+
 
 /* =========================================================
    LIVE STATS
@@ -710,6 +773,7 @@ nav button:hover {
     margin: auto;
 
     padding-top: 60px;
+
     padding-bottom: 60px;
 }
 
@@ -717,6 +781,7 @@ nav button:hover {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -760,6 +825,7 @@ nav button:hover {
     content: "";
 
     width: 6px;
+
     height: 6px;
 
     border-radius: 50%;
@@ -778,12 +844,16 @@ nav button:hover {
     0%,
     100% {
         opacity: .45;
-        transform: scale(.8);
+
+        transform:
+            scale(.8);
     }
 
     50% {
         opacity: 1;
-        transform: scale(1.2);
+
+        transform:
+            scale(1.2);
     }
 }
 
@@ -814,7 +884,8 @@ nav button:hover {
 }
 
 .stat:hover {
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
     border-color:
         rgba(139, 92, 246, .25);
@@ -859,12 +930,14 @@ nav button:hover {
     letter-spacing: 1px;
 }
 
+
 /* =========================================================
    COMING SOON
 ========================================================= */
 
 .coming-soon-section {
     padding-top: 70px;
+
     padding-bottom: 90px;
 }
 
@@ -874,6 +947,8 @@ nav button:hover {
     align-items: center;
 
     gap: 15px;
+
+    flex-wrap: wrap;
 }
 
 .coming-title h2 {
@@ -953,9 +1028,11 @@ nav button:hover {
     position: absolute;
 
     width: 450px;
+
     height: 450px;
 
     right: -120px;
+
     top: -180px;
 
     border-radius: 50%;
@@ -1013,11 +1090,13 @@ nav button:hover {
     flex-shrink: 0;
 
     width: 190px;
+
     height: 190px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 35px;
@@ -1075,7 +1154,8 @@ nav button:hover {
 .coming-info h3 {
     margin: 0;
 
-    font-size: clamp(34px, 5vw, 62px);
+    font-size:
+        clamp(34px, 5vw, 62px);
 
     line-height: .95;
 
@@ -1185,6 +1265,7 @@ nav button:hover {
 
 .status-dot {
     width: 7px;
+
     height: 7px;
 
     border-radius: 50%;
@@ -1197,6 +1278,7 @@ nav button:hover {
     animation:
         statusPulse 1.8s ease-in-out infinite;
 }
+
 
 /* =========================================================
    ANALYTICS
@@ -1277,6 +1359,7 @@ nav button:hover {
     font-weight: 800;
 }
 
+
 /* =========================================================
    NEWS
 ========================================================= */
@@ -1346,6 +1429,7 @@ nav button:hover {
     line-height: 1.7;
 }
 
+
 /* =========================================================
    COMMUNITY CTA
 ========================================================= */
@@ -1384,7 +1468,8 @@ nav button:hover {
 .cta p {
     max-width: 600px;
 
-    margin: 15px auto 25px;
+    margin:
+        15px auto 25px;
 
     color: #8b94a5;
 
@@ -1392,6 +1477,7 @@ nav button:hover {
 
     line-height: 1.7;
 }
+
 
 /* =========================================================
    FOOTER
@@ -1403,6 +1489,7 @@ footer {
     margin: auto;
 
     padding-top: 70px;
+
     padding-bottom: 35px;
 
     border-top:
@@ -1461,6 +1548,7 @@ footer {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -1470,6 +1558,7 @@ footer {
     font-size: 9px;
 }
 
+
 /* =========================================================
    CHATBASE
 ========================================================= */
@@ -1478,63 +1567,34 @@ footer {
     z-index: 9999 !important;
 }
 
+
 /* =========================================================
-   EXTRA DESKTOP DECOR
+   EXTRA DESKTOP PROTECTION
 ========================================================= */
 
-.game,
-.news-card,
-.stat,
-.panel,
-.coming-card {
-    will-change: transform;
+/*
+   Δεν υπάρχουν εδώ:
+   @media (max-width: 768px)
+   @media (max-width: 480px)
+
+   Άρα δεν γίνεται mobile αλλαγή από αυτό το CSS.
+*/
+
+body,
+header,
+section,
+.dashboard,
+footer {
+    min-width: 1100px;
 }
 
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 700px;
-    height: 700px;
-
-    left: -350px;
-    top: 150px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(59, 130, 246, .06),
-            transparent 70%
-        );
-
-    pointer-events: none;
+.header-inner,
+section,
+.dashboard,
+footer {
+    min-width: 1060px;
 }
 
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    right: -250px;
-    bottom: -250px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(139, 92, 246, .08),
-            transparent 70%
-        );
-
-    pointer-events: none;
-}
 
 /* =========================================================
    REDUCED MOTION
