@@ -74,6 +74,61 @@
             </nav>
 
         </div>
+<style>
+@media screen and (min-width: 769px) {
+    body {
+        min-width: 1100px !important;
+    }
+
+    .header-inner,
+    section,
+    .dashboard,
+    footer {
+        width: min(1200px, calc(100% - 40px)) !important;
+    }
+
+    .games {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    .stats {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+
+    .news {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    .analytics {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+    }
+
+    .header-inner {
+        flex-direction: row !important;
+    }
+
+    nav {
+        flex-direction: row !important;
+    }
+
+    .hero-content {
+        text-align: left !important;
+    }
+
+    .hero-buttons {
+        flex-direction: row !important;
+    }
+
+    .coming-content {
+        flex-direction: row !important;
+        text-align: left !important;
+    }
+}
+</style>
 
     </header>
 
