@@ -1613,3 +1613,350 @@ input:focus-visible {
     }
 
 }
+/* =====================================================
+   MOBILE UPGRADE
+   PC DESIGN REMAINS UNCHANGED
+===================================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* -----------------------------
+       GENERAL
+    ----------------------------- */
+
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    /* -----------------------------
+       HEADER
+    ----------------------------- */
+
+    header {
+        padding: 14px 16px;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    nav a,
+    nav button {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+
+    /* -----------------------------
+       HERO
+    ----------------------------- */
+
+    .hero {
+        min-height: 650px;
+        padding: 80px 20px 60px;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 16vw, 76px);
+        line-height: .9;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.7;
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-buttons a {
+        width: min(100%, 300px);
+        text-align: center;
+    }
+
+    .hero-visual {
+        opacity: .35;
+        transform: scale(.75);
+    }
+
+
+    /* -----------------------------
+       SECTIONS
+    ----------------------------- */
+
+    section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .section-heading {
+        gap: 15px;
+    }
+
+
+    /* -----------------------------
+       GAME HUB
+    ----------------------------- */
+
+    .game-hub-title {
+        flex-wrap: wrap;
+    }
+
+    .games {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .game {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .game:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+
+    .game-image {
+        height: 180px;
+    }
+
+    .game-content {
+        padding: 20px;
+    }
+
+    .game-content h3 {
+        font-size: 21px;
+    }
+
+    .game-button {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* -----------------------------
+       SEARCH
+    ----------------------------- */
+
+    .game-search {
+        width: 100%;
+    }
+
+    .game-search input {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------
+       LIVE STATS
+    ----------------------------- */
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat {
+        padding: 20px;
+    }
+
+    .stat-value {
+        font-size: 28px;
+    }
+
+
+    /* -----------------------------
+       PERFORMANCE
+    ----------------------------- */
+
+    .analytics {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .panel {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .ranking-item {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------
+       NEWS
+    ----------------------------- */
+
+    .news {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .news-card {
+        width: 100%;
+    }
+
+
+    /* -----------------------------
+       COMMUNITY
+    ----------------------------- */
+
+    .cta {
+        padding: 35px 20px;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+    .cta p {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------
+       FOOTER
+    ----------------------------- */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .copyright {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+
+    /* -----------------------------
+       TOUCH FRIENDLY
+    ----------------------------- */
+
+    .game-button,
+    .youtube-button,
+    .discord-button,
+    nav a,
+    nav button {
+        min-height: 42px;
+    }
+
+
+    /* -----------------------------
+       CHATBASE
+    ----------------------------- */
+
+    #chatbase-bubble {
+        transform: scale(.9);
+        transform-origin: bottom right;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media screen and (max-width: 480px) {
+
+    header {
+        padding: 12px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a,
+    nav button {
+        font-size: 9px;
+        padding: 7px 8px;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding-top: 65px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .game-image {
+        height: 150px;
+    }
+
+    .game-content {
+        padding: 17px;
+    }
+
+    .stat-value {
+        font-size: 25px;
+    }
+
+    .cta h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
