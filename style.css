@@ -1,6 +1,6 @@
 /* =====================================================
-   JIMLIOK GAMES
-   OFFICIAL WEBSITE STYLE
+   JIMLIOK GAMES — DESKTOP EDITION
+   NO MOBILE RESPONSIVE DESIGN
 ===================================================== */
 
 
@@ -14,41 +14,33 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
     font-family: "Inter", Arial, sans-serif;
-
     background:
         radial-gradient(
-            circle at 20% 0%,
+            circle at 15% 0%,
             rgba(95, 65, 255, 0.16),
             transparent 30%
         ),
         radial-gradient(
-            circle at 80% 20%,
+            circle at 85% 15%,
             rgba(0, 180, 255, 0.10),
-            transparent 25%
+            transparent 28%
         ),
         #070910;
-
     color: #ffffff;
-
     min-height: 100vh;
-
     overflow-x: hidden;
 }
-
 
 a {
     color: inherit;
     text-decoration: none;
 }
-
 
 button,
 input {
@@ -57,38 +49,30 @@ input {
 
 
 /* =====================================================
-   ROOT VARIABLES
+   VARIABLES
 ===================================================== */
 
 :root {
-
     --bg: #070910;
-
     --bg-light: #0d111c;
 
     --panel: rgba(18, 23, 37, 0.78);
-
     --panel-solid: #111625;
 
     --border: rgba(255, 255, 255, 0.09);
 
     --text: #ffffff;
-
     --muted: #9aa4b7;
 
     --purple: #7c5cff;
-
     --purple-light: #a58cff;
 
     --blue: #38a8ff;
-
     --green: #38e29b;
-
     --red: #ff5577;
 
     --shadow:
         0 20px 70px rgba(0, 0, 0, 0.35);
-
 }
 
 
@@ -97,96 +81,77 @@ input {
 ===================================================== */
 
 header {
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 
     width: 100%;
 
     background:
-        rgba(7, 9, 16, 0.82);
+        rgba(7, 9, 16, 0.86);
 
     backdrop-filter: blur(18px);
-
     -webkit-backdrop-filter: blur(18px);
 
     border-bottom:
         1px solid var(--border);
-
 }
-
 
 .header-inner {
-
+    width: 100%;
     max-width: 1450px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    padding:
-        18px 35px;
+    padding: 18px 35px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    gap: 25px;
-
+    gap: 30px;
 }
 
 
+/* =====================================================
+   LOGO
+===================================================== */
+
 .logo {
-
     display: flex;
-
     align-items: center;
 
     gap: 11px;
 
     font-weight: 900;
-
     letter-spacing: 1.5px;
-
     font-size: 17px;
 
+    white-space: nowrap;
 }
 
-
 .logo span {
-
     display: block;
 
     color: var(--purple-light);
 
     font-size: 10px;
-
     letter-spacing: 4px;
 
     margin-top: 2px;
-
 }
 
-
 .logo-icon {
-
     width: 42px;
-
     height: 42px;
 
     border-radius: 12px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     font-size: 14px;
-
     font-weight: 900;
 
     background:
@@ -198,29 +163,23 @@ header {
 
     box-shadow:
         0 8px 25px rgba(100, 80, 255, 0.35);
-
 }
 
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 nav {
-
     display: flex;
-
     align-items: center;
-
     gap: 22px;
-
-    flex-wrap: wrap;
-
 }
 
-
 nav a {
-
     color: #aab2c2;
 
     font-size: 12px;
-
     font-weight: 700;
 
     letter-spacing: 0.8px;
@@ -228,16 +187,11 @@ nav a {
     transition:
         color 0.2s ease,
         transform 0.2s ease;
-
 }
 
-
 nav a:hover {
-
     color: #ffffff;
-
     transform: translateY(-1px);
-
 }
 
 
@@ -249,11 +203,9 @@ nav a:hover {
 .game-button,
 .youtube-button,
 .discord-button {
-
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     border: 0;
@@ -264,14 +216,10 @@ nav a:hover {
         transform 0.2s ease,
         box-shadow 0.2s ease,
         filter 0.2s ease;
-
 }
 
-
 .primary-button {
-
-    padding:
-        14px 22px;
+    padding: 14px 22px;
 
     border-radius: 12px;
 
@@ -285,31 +233,28 @@ nav a:hover {
     color: white;
 
     font-size: 12px;
-
     font-weight: 800;
 
     letter-spacing: 0.6px;
 
     box-shadow:
         0 10px 30px rgba(92, 79, 255, 0.25);
-
 }
 
-
 .primary-button:hover {
-
     transform: translateY(-3px);
 
     box-shadow:
         0 15px 40px rgba(92, 79, 255, 0.40);
-
 }
 
 
-.youtube-button {
+/* =====================================================
+   YOUTUBE
+===================================================== */
 
-    padding:
-        10px 15px;
+.youtube-button {
+    padding: 10px 15px;
 
     border-radius: 9px;
 
@@ -322,26 +267,26 @@ nav a:hover {
     color: #ff7184;
 
     font-size: 11px;
-
     font-weight: 800;
-
 }
 
-
 .youtube-button:hover {
-
     transform: translateY(-2px);
 
     background:
         rgba(255, 60, 80, 0.20);
 
+    box-shadow:
+        0 10px 25px rgba(255, 60, 80, 0.12);
 }
 
 
-.discord-button {
+/* =====================================================
+   DISCORD
+===================================================== */
 
-    padding:
-        10px 15px;
+.discord-button {
+    padding: 10px 15px;
 
     border-radius: 9px;
 
@@ -354,19 +299,17 @@ nav a:hover {
     color: #9da3ff;
 
     font-size: 11px;
-
     font-weight: 800;
-
 }
 
-
 .discord-button:hover {
-
     transform: translateY(-2px);
 
     background:
         rgba(99, 102, 241, 0.23);
 
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.15);
 }
 
 
@@ -375,38 +318,31 @@ nav a:hover {
 ===================================================== */
 
 .hero {
-
     position: relative;
+
+    width: 100%;
+    max-width: 1450px;
 
     min-height: 650px;
 
-    max-width: 1450px;
-
-    margin: auto;
+    margin: 0 auto;
 
     padding:
-        110px 35px
-        120px;
+        110px 35px 120px;
 
     display: flex;
-
     align-items: center;
 
     overflow: hidden;
-
 }
 
-
 .hero-background {
-
     position: absolute;
 
     width: 700px;
-
     height: 700px;
 
     right: -250px;
-
     top: -170px;
 
     background:
@@ -419,27 +355,20 @@ nav a:hover {
     filter: blur(20px);
 
     pointer-events: none;
-
 }
 
-
 .hero-content {
-
     position: relative;
 
     z-index: 2;
 
     max-width: 720px;
-
 }
 
-
 .eyebrow {
-
     display: inline-flex;
 
-    padding:
-        7px 11px;
+    padding: 7px 11px;
 
     border-radius: 999px;
 
@@ -449,36 +378,27 @@ nav a:hover {
     background:
         rgba(124, 92, 255, 0.08);
 
-    color:
-        #a995ff;
+    color: #a995ff;
 
     font-size: 10px;
-
     font-weight: 800;
 
     letter-spacing: 2px;
 
     margin-bottom: 22px;
-
 }
 
-
 .hero h1 {
-
-    font-size:
-        clamp(60px, 9vw, 130px);
+    font-size: 120px;
 
     line-height: 0.86;
 
     font-weight: 900;
 
     letter-spacing: -6px;
-
 }
 
-
 .hero h1 span {
-
     display: block;
 
     background:
@@ -490,65 +410,45 @@ nav a:hover {
         );
 
     -webkit-background-clip: text;
-
     background-clip: text;
 
     color: transparent;
-
 }
 
-
 .hero-description {
-
     max-width: 580px;
 
     color: var(--muted);
 
     font-size: 16px;
-
     line-height: 1.8;
 
     margin-top: 30px;
-
 }
 
-
 .hero-buttons {
-
     display: flex;
 
     align-items: center;
 
     gap: 13px;
 
-    flex-wrap: wrap;
-
     margin-top: 35px;
-
 }
 
-
 .hero-visual {
-
     position: absolute;
 
     right: 7%;
-
     top: 50%;
 
     transform:
         translateY(-50%);
-
 }
 
-
 .orb {
-
-    width:
-        clamp(220px, 30vw, 440px);
-
-    height:
-        clamp(220px, 30vw, 440px);
+    width: 440px;
+    height: 440px;
 
     border-radius: 50%;
 
@@ -570,9 +470,7 @@ nav a:hover {
 
     animation:
         floatingOrb 6s ease-in-out infinite;
-
 }
-
 
 @keyframes floatingOrb {
 
@@ -588,7 +486,6 @@ nav a:hover {
             translateY(-15px)
             scale(1.03);
     }
-
 }
 
 
@@ -597,66 +494,52 @@ nav a:hover {
 ===================================================== */
 
 section {
-
+    width: 100%;
     max-width: 1450px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
     padding:
         90px 35px;
-
 }
 
-
 .section-heading {
-
     display: flex;
 
     align-items: flex-end;
-
     justify-content: space-between;
 
     gap: 25px;
 
     margin-bottom: 28px;
-
 }
 
-
 .section-heading h2 {
-
     font-size: 35px;
 
     letter-spacing: -1.5px;
-
 }
 
-
 .section-heading p {
-
     margin-top: 8px;
 
     color: var(--muted);
 
     font-size: 14px;
-
 }
 
 
 /* =====================================================
-   DASHBOARD
+   LIVE DASHBOARD
 ===================================================== */
 
 .dashboard {
-
+    width: calc(100% - 70px);
     max-width: 1380px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
-    padding:
-        35px;
+    padding: 35px;
 
     border:
         1px solid var(--border);
@@ -672,34 +555,29 @@ section {
 
     box-shadow:
         var(--shadow);
-
 }
 
-
 .dashboard-title {
-
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     margin-bottom: 25px;
-
 }
 
-
 .dashboard-title h2 {
-
     font-size: 16px;
 
     letter-spacing: 1px;
-
 }
 
 
-.live {
+/* =====================================================
+   LIVE INDICATOR
+===================================================== */
 
+.live {
     display: inline-flex;
 
     align-items: center;
@@ -709,20 +587,15 @@ section {
     color: var(--green);
 
     font-size: 10px;
-
     font-weight: 800;
 
     letter-spacing: 1px;
-
 }
 
-
 .live::before {
-
     content: "";
 
     width: 7px;
-
     height: 7px;
 
     border-radius: 50%;
@@ -734,9 +607,7 @@ section {
 
     animation:
         pulseLive 1.5s infinite;
-
 }
-
 
 @keyframes pulseLive {
 
@@ -748,7 +619,6 @@ section {
     50% {
         opacity: 0.35;
     }
-
 }
 
 
@@ -757,21 +627,16 @@ section {
 ===================================================== */
 
 .stats {
-
     display: grid;
 
     grid-template-columns:
         repeat(4, 1fr);
 
     gap: 13px;
-
 }
 
-
 .stat {
-
-    padding:
-        22px;
+    padding: 22px;
 
     min-height: 125px;
 
@@ -786,34 +651,24 @@ section {
     transition:
         transform 0.2s ease,
         border-color 0.2s ease;
-
 }
 
-
 .stat:hover {
-
     transform:
         translateY(-4px);
 
     border-color:
         rgba(124,92,255,0.35);
-
 }
 
-
 .stat-label {
-
     color: var(--muted);
 
     font-size: 11px;
-
     font-weight: 600;
-
 }
 
-
 .stat-value {
-
     margin-top: 11px;
 
     font-size: 27px;
@@ -821,53 +676,40 @@ section {
     font-weight: 900;
 
     letter-spacing: -1px;
-
 }
 
-
 .stat-growth {
-
     margin-top: 7px;
 
     color: #68738a;
 
     font-size: 9px;
-
     font-weight: 800;
 
     letter-spacing: 1px;
-
 }
 
 
 /* =====================================================
-   GAME HUB TITLE
+   GAME HUB
 ===================================================== */
 
 .game-hub-title {
-
     display: flex;
 
     align-items: center;
 
     gap: 12px;
-
 }
 
-
 .game-hub-title h2 {
-
     font-size: 38px;
 
     letter-spacing: -1.5px;
-
 }
 
-
 .game-hub-badge {
-
-    padding:
-        6px 9px;
+    padding: 6px 9px;
 
     border-radius: 7px;
 
@@ -881,32 +723,25 @@ section {
         #a996ff;
 
     font-size: 9px;
-
     font-weight: 900;
-
 }
 
 
 /* =====================================================
-   SEARCH
+   SEARCH BAR
 ===================================================== */
 
 .game-search {
-
     position: relative;
 
-    max-width: 650px;
+    width: 650px;
 
     margin:
         0 auto 35px;
-
 }
 
-
 .game-search input {
-
     width: 100%;
-
     height: 58px;
 
     padding:
@@ -929,35 +764,25 @@ section {
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
-
 }
-
 
 .game-search input::placeholder {
-
     color: #68738a;
-
 }
 
-
 .game-search input:focus {
-
     border-color:
         rgba(124,92,255,0.65);
 
     box-shadow:
         0 0 0 4px
         rgba(124,92,255,0.08);
-
 }
 
-
 .search-icon {
-
     position: absolute;
 
     left: 19px;
-
     top: 50%;
 
     transform:
@@ -968,28 +793,23 @@ section {
     font-size: 17px;
 
     z-index: 2;
-
 }
 
 
 /* =====================================================
-   GAMES GRID
+   GAME GRID
 ===================================================== */
 
 .games {
-
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
     gap: 20px;
-
 }
 
-
 .game {
-
     overflow: hidden;
 
     border:
@@ -1012,12 +832,9 @@ section {
         transform 0.25s ease,
         border-color 0.25s ease,
         box-shadow 0.25s ease;
-
 }
 
-
 .game:hover {
-
     transform:
         translateY(-7px);
 
@@ -1027,18 +844,19 @@ section {
     box-shadow:
         0 25px 60px
         rgba(0,0,0,0.35);
-
 }
 
 
-.game-image {
+/* =====================================================
+   GAME IMAGE
+===================================================== */
 
+.game-image {
     height: 190px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     position: relative;
@@ -1057,25 +875,22 @@ section {
             #080b14
         );
 
-    color: rgba(255,255,255,0.82);
+    color:
+        rgba(255,255,255,0.82);
 
     font-size: 27px;
 
     font-weight: 900;
 
     letter-spacing: -1px;
-
 }
 
-
 .game-image::before {
-
     content: "";
 
     position: absolute;
 
     width: 160px;
-
     height: 160px;
 
     border-radius: 50%;
@@ -1087,18 +902,14 @@ section {
     box-shadow:
         0 0 80px
         rgba(124,92,255,0.30);
-
 }
 
-
 .game-image::after {
-
     content: "";
 
     position: absolute;
 
     width: 280px;
-
     height: 1px;
 
     background:
@@ -1111,44 +922,35 @@ section {
 
     transform:
         rotate(-25deg);
-
 }
 
+
+/* =====================================================
+   GAME CONTENT
+===================================================== */
 
 .game-content {
-
     padding: 23px;
-
 }
 
-
 .game h3 {
-
     font-size: 20px;
 
     font-weight: 800;
-
 }
 
-
 .game-type {
-
     margin-top: 7px;
 
-    color:
-        #8d98ad;
+    color: #8d98ad;
 
     font-size: 9px;
-
     font-weight: 800;
 
     letter-spacing: 1.2px;
-
 }
 
-
 .game-stats {
-
     min-height: 43px;
 
     margin:
@@ -1160,12 +962,9 @@ section {
     font-size: 11px;
 
     line-height: 1.7;
-
 }
 
-
 .game-button {
-
     width: 100%;
 
     min-height: 44px;
@@ -1183,16 +982,12 @@ section {
         #a997ff;
 
     font-size: 11px;
-
     font-weight: 900;
 
     letter-spacing: 0.8px;
-
 }
 
-
 .game-button:hover {
-
     background:
         rgba(124,92,255,0.22);
 
@@ -1200,7 +995,6 @@ section {
 
     transform:
         translateY(-2px);
-
 }
 
 
@@ -1209,19 +1003,15 @@ section {
 ===================================================== */
 
 .analytics {
-
     display: grid;
 
     grid-template-columns:
         1.25fr 0.75fr;
 
     gap: 20px;
-
 }
 
-
 .panel {
-
     padding: 28px;
 
     border:
@@ -1231,34 +1021,25 @@ section {
 
     background:
         rgba(15,20,33,0.72);
-
 }
 
-
 .panel h3 {
-
     margin-bottom: 20px;
 
     font-size: 13px;
 
     letter-spacing: 1px;
-
 }
 
-
 .ranking {
-
     display: flex;
 
     flex-direction: column;
 
     gap: 9px;
-
 }
 
-
 .ranking-item {
-
     display: grid;
 
     grid-template-columns:
@@ -1282,22 +1063,15 @@ section {
         #a8b0c0;
 
     font-size: 11px;
-
 }
-
 
 .ranking-item strong {
-
     color: white;
-
 }
 
-
 .ranking-item span:last-child {
-
     color:
         #8d99ae;
-
 }
 
 
@@ -1306,19 +1080,15 @@ section {
 ===================================================== */
 
 .news {
-
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
     gap: 18px;
-
 }
 
-
 .news-card {
-
     padding: 27px;
 
     border-radius: 19px;
@@ -1332,23 +1102,17 @@ section {
     transition:
         transform 0.2s ease,
         border-color 0.2s ease;
-
 }
 
-
 .news-card:hover {
-
     transform:
         translateY(-5px);
 
     border-color:
         rgba(124,92,255,0.3);
-
 }
 
-
 .news-date {
-
     color:
         #8975ff;
 
@@ -1359,19 +1123,13 @@ section {
     letter-spacing: 1.5px;
 
     margin-bottom: 13px;
-
 }
-
 
 .news-card h3 {
-
     font-size: 18px;
-
 }
 
-
 .news-card p {
-
     color:
         var(--muted);
 
@@ -1380,16 +1138,14 @@ section {
     line-height: 1.7;
 
     margin-top: 10px;
-
 }
 
 
 /* =====================================================
-   CTA
+   COMMUNITY CTA
 ===================================================== */
 
 .cta {
-
     position: relative;
 
     overflow: hidden;
@@ -1411,23 +1167,15 @@ section {
             transparent 60%
         ),
         rgba(14,19,32,0.75);
-
 }
-
 
 .cta h2 {
+    font-size: 55px;
 
-    font-size:
-        clamp(30px, 5vw, 55px);
-
-    letter-spacing:
-        -2px;
-
+    letter-spacing: -2px;
 }
 
-
 .cta p {
-
     max-width: 550px;
 
     margin:
@@ -1439,7 +1187,6 @@ section {
     font-size: 14px;
 
     line-height: 1.7;
-
 }
 
 
@@ -1448,7 +1195,6 @@ section {
 ===================================================== */
 
 footer {
-
     border-top:
         1px solid var(--border);
 
@@ -1457,15 +1203,13 @@ footer {
 
     padding:
         60px 35px 25px;
-
 }
 
-
 .footer-grid {
-
+    width: 100%;
     max-width: 1380px;
 
-    margin: auto;
+    margin: 0 auto;
 
     display: grid;
 
@@ -1476,24 +1220,18 @@ footer {
         1fr;
 
     gap: 50px;
-
 }
 
-
 .footer-grid p {
-
     color:
         #727d91;
 
     font-size: 11px;
 
     line-height: 1.8;
-
 }
 
-
 .footer-grid h4 {
-
     margin-bottom: 17px;
 
     color: #ffffff;
@@ -1501,12 +1239,9 @@ footer {
     font-size: 10px;
 
     letter-spacing: 1px;
-
 }
 
-
 .footer-grid a {
-
     display: block;
 
     width: fit-content;
@@ -1520,25 +1255,26 @@ footer {
 
     transition:
         color 0.2s ease;
-
 }
-
 
 .footer-grid a:hover {
-
     color: white;
-
 }
 
 
-.copyright {
+/* =====================================================
+   COPYRIGHT
+===================================================== */
 
+.copyright {
+    width: 100%;
     max-width: 1380px;
 
     margin:
         50px auto 0;
 
-    padding-top: 22px;
+    padding-top:
+        22px;
 
     border-top:
         1px solid var(--border);
@@ -1555,21 +1291,18 @@ footer {
     font-size: 9px;
 
     line-height: 1.6;
-
 }
 
 
 /* =====================================================
-   SELECTION
+   TEXT SELECTION
 ===================================================== */
 
 ::selection {
-
     background:
         rgba(124,92,255,0.45);
 
     color: white;
-
 }
 
 
@@ -1578,363 +1311,24 @@ footer {
 ===================================================== */
 
 ::-webkit-scrollbar {
-
     width: 9px;
-
 }
-
 
 ::-webkit-scrollbar-track {
-
     background:
         #060810;
-
 }
 
-
 ::-webkit-scrollbar-thumb {
-
     background:
         #252c3d;
 
     border-radius: 99px;
-
 }
-
 
 ::-webkit-scrollbar-thumb:hover {
-
     background:
         #3a435b;
-
-}
-
-
-/* =====================================================
-   RESPONSIVE — TABLET
-===================================================== */
-
-@media (max-width: 1050px) {
-
-
-    .header-inner {
-
-        padding:
-            16px 22px;
-
-    }
-
-
-    nav {
-
-        gap: 13px;
-
-    }
-
-
-    .hero {
-
-        padding:
-            90px 25px;
-
-    }
-
-
-    .hero-visual {
-
-        right: -80px;
-
-        opacity: 0.55;
-
-    }
-
-
-    .stats {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .games {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .analytics {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .footer-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-}
-
-
-/* =====================================================
-   RESPONSIVE — MOBILE
-===================================================== */
-
-@media (max-width: 700px) {
-
-
-    header {
-
-        position:
-            relative;
-
-    }
-
-
-    .header-inner {
-
-        padding:
-            15px 18px;
-
-        align-items:
-            flex-start;
-
-        flex-direction:
-            column;
-
-    }
-
-
-    nav {
-
-        width: 100%;
-
-        gap: 10px 15px;
-
-    }
-
-
-    nav a {
-
-        font-size: 10px;
-
-    }
-
-
-    .hero {
-
-        min-height:
-            580px;
-
-        padding:
-            75px 20px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size:
-            clamp(54px, 18vw, 90px);
-
-        letter-spacing:
-            -4px;
-
-    }
-
-
-    .hero-description {
-
-        font-size:
-            14px;
-
-    }
-
-
-    .hero-visual {
-
-        right:
-            -120px;
-
-        opacity:
-            0.25;
-
-    }
-
-
-    section {
-
-        padding:
-            65px 18px;
-
-    }
-
-
-    .dashboard {
-
-        margin:
-            0 18px;
-
-        padding:
-            22px;
-
-        border-radius:
-            20px;
-
-    }
-
-
-    .dashboard-title {
-
-        align-items:
-            flex-start;
-
-    }
-
-
-    .stats {
-
-        grid-template-columns:
-            1fr 1fr;
-
-        gap: 9px;
-
-    }
-
-
-    .stat {
-
-        min-height:
-            105px;
-
-        padding:
-            16px;
-
-    }
-
-
-    .stat-value {
-
-        font-size:
-            21px;
-
-    }
-
-
-    .game-hub-title h2 {
-
-        font-size:
-            30px;
-
-    }
-
-
-    .games {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .game-image {
-
-        height:
-            170px;
-
-    }
-
-
-    .news {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .footer-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            32px;
-
-    }
-
-
-    .copyright {
-
-        flex-direction:
-            column;
-
-    }
-
-}
-
-
-/* =====================================================
-   SMALL PHONES
-===================================================== */
-
-@media (max-width: 430px) {
-
-
-    .stats {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .hero-buttons {
-
-        align-items:
-            stretch;
-
-        flex-direction:
-            column;
-
-    }
-
-
-    .primary-button,
-    .hero-buttons .youtube-button {
-
-        width:
-            100%;
-
-    }
-
-
-    .game-search input {
-
-        height:
-            52px;
-
-    }
-
-
-    .section-heading {
-
-        align-items:
-            flex-start;
-
-        flex-direction:
-            column;
-
-    }
-
-
 }
 
 
@@ -1944,28 +1338,15 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
 
-
     html {
-
-        scroll-behavior:
-            auto;
-
+        scroll-behavior: auto;
     }
-
 
     *,
     *::before,
     *::after {
-
-        animation-duration:
-            0.01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        transition-duration:
-            0.01ms !important;
-
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
-
 }
