@@ -70,6 +70,7 @@
             <a
                 href="https://www.youtube.com/@Jimliokmusic-o8n"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="youtube-button"
             >
                 ▶ YOUTUBE
@@ -407,6 +408,7 @@
                 <a
                     href="https://www.roblox.com/games/118307484925962/ARMMAGEDON"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="game-button"
                 >
                     PLAY GAME
@@ -447,6 +449,7 @@
                 <a
                     href="https://www.roblox.com/games/109370449470980/Jims-laser-tag"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="game-button"
                 >
                     PLAY GAME
@@ -487,6 +490,7 @@
                 <a
                     href="https://www.roblox.com/games/73482230314135/zompie-world"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="game-button"
                 >
                     PLAY GAME
@@ -527,6 +531,7 @@
                 <a
                     href="https://www.roblox.com/games/113111954801108/mega-hyper-obby"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="game-button"
                 >
                     PLAY GAME
@@ -567,42 +572,11 @@
                 <a
                     href="https://www.roblox.com/games/103846454830311/op-fun-obby"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="game-button"
                 >
                     PLAY GAME
                 </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- DIAMOND CITY -->
-
-        <div class="game">
-
-            <div class="game-image">
-                DIAMOND CITY
-            </div>
-
-            <div class="game-content">
-
-                <h3>
-                    Diamond City 2RP
-                </h3>
-
-                <div class="game-type">
-                    ROLEPLAY
-                </div>
-
-                <div class="game-stats">
-
-                    <span style="color:#ffd166;">
-                        🟡 IN DEVELOPMENT
-                    </span>
-
-                </div>
 
             </div>
 
@@ -953,16 +927,19 @@
             <a
                 href="https://www.youtube.com/@Jimliokmusic-o8n"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="youtube-button"
             >
                 ▶ YOUTUBE
             </a>
 
 
-            <!-- DISCORD BUTTON -->
+            <!-- DISCORD FIX -->
 
             <a
                 href="https://discord.gg/SWRw2Dbn3"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="discord-button"
                 id="discordLink"
             >
@@ -1070,14 +1047,18 @@
             <a
                 href="https://www.youtube.com/@Jimliokmusic-o8n"
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 YouTube
             </a>
 
-            <!-- FOOTER DISCORD -->
+
+            <!-- DISCORD FIX -->
 
             <a
                 href="https://discord.gg/SWRw2Dbn3"
+                target="_blank"
+                rel="noopener noreferrer"
                 id="footerDiscord"
             >
                 Discord
@@ -1206,58 +1187,6 @@
 
 const API_URL =
     "http://127.0.0.1:5000/api/games";
-
-
-/* =====================================================
-   DISCORD
-===================================================== */
-
-const DISCORD_URL =
-    "https://discord.gg/SWRw2Dbn3";
-
-
-function openDiscord(event){
-
-    event.preventDefault();
-
-    window.open(
-        DISCORD_URL,
-        "_blank",
-        "noopener,noreferrer"
-    );
-
-}
-
-
-/* =====================================================
-   DISCORD BUTTONS
-===================================================== */
-
-const discordLink =
-    document.getElementById("discordLink");
-
-const footerDiscord =
-    document.getElementById("footerDiscord");
-
-
-if(discordLink){
-
-    discordLink.addEventListener(
-        "click",
-        openDiscord
-    );
-
-}
-
-
-if(footerDiscord){
-
-    footerDiscord.addEventListener(
-        "click",
-        openDiscord
-    );
-
-}
 
 
 /* =====================================================
@@ -1519,6 +1448,7 @@ function renderGames(games){
                         <a
                             href="${gameUrl}"
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="game-button"
                         >
 
